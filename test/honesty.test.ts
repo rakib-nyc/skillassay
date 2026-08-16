@@ -160,6 +160,18 @@ describe('the package always carries a compiled CLI', () => {
     expect(pkg.scripts?.['prepack']).toBe('npm run build');
   });
 
+  it('keeps the description inside the registry limit', () => {
+    /*
+     * npm stores 255 characters and discards the rest — silently, at publish
+     * time, mid-word. A 305-character description shipped in v0.1.2 and the
+     * package page ended on "duplicate skill names and instruction ", losing the
+     * harness list and the research-project framing. There is no way to correct
+     * a published version, so the cost of going one character over is a whole
+     * release.
+     */
+    expect((pkg as { description?: string }).description?.length ?? 0).toBeLessThanOrEqual(255);
+  });
+
   it('includes every path the bin entries point into', () => {
     const files = pkg.files ?? [];
     for (const target of Object.values(pkg.bin ?? {})) {

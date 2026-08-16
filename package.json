@@ -1,7 +1,7 @@
 {
   "name": "skillassay",
-  "version": "0.1.2",
-  "description": "Static analyzer for AI coding-agent context, and an Agent Skill. Measures always-on context-window cost of CLAUDE.md, AGENTS.md and Agent Skills, and finds skills that will not load, redundant and stale instructions, duplicate skill names and instruction conflicts. Claude Code, Codex, Cursor, Gemini CLI. Research project.",
+  "version": "0.1.3",
+  "description": "Static analyzer for AI coding-agent context, and an Agent Skill. Measures always-on context cost of CLAUDE.md, AGENTS.md and Agent Skills; finds skills that will not load, stale paths, duplicates. Claude Code, Codex, Cursor, Gemini CLI. Research project.",
   "keywords": [
     "claude",
     "claude-code",

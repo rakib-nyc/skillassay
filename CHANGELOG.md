@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.1.3 — 2026-08-16
+
+No functional change.
+
+- **The package description fits npm's limit.** The registry stores 255
+  characters and discards the rest, without warning, at publish time. The v0.1.2
+  description was 305, so the package page ended mid-word on "duplicate skill
+  names and instruction " and lost both the harness list and the research-project
+  framing. Rewritten to 254 characters with all of it intact, and a test now
+  asserts the bound — a published version cannot be corrected, so exceeding it
+  costs a release.
+
 ## v0.1.2 — 2026-08-16
 
 No functional change. The registry serves a package's README, description and
