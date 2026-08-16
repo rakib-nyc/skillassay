@@ -1,7 +1,7 @@
 {
-  "method": "Findings sorted by (ruleId, repo, location) then sampled at a fixed stride of 2. Deterministic: no RNG, and the sample cannot be re-drawn until it looks favourable.",
+  "method": "Findings sorted by (ruleId, repo, location) then sampled at a fixed stride of 3. Deterministic: no RNG, and the sample cannot be re-drawn until it looks favourable.",
   "corpusSkills": 1029,
-  "totalFindings": 1640,
+  "totalFindings": 1721,
   "sampleSize": 50,
   "findings": [
     {
@@ -18,21 +18,10 @@
     {
       "repo": "alirezarezvani_claude-skills",
       "ruleId": "AMB-DUPLICATE-NAME",
-      "summary": "2 skills share the canonical name \"a11yaudit\"",
+      "summary": "2 skills share the canonical name \"arquitetodeempresa\"",
       "locations": [
-        ".gemini/skills/a11y-audit/SKILL.md",
-        ".gemini/skills/cmd-a11y-audit/SKILL.md"
-      ],
-      "verdict": null,
-      "note": ""
-    },
-    {
-      "repo": "alirezarezvani_claude-skills",
-      "ruleId": "AMB-DUPLICATE-NAME",
-      "summary": "2 skills share the canonical name \"chaosengineering\"",
-      "locations": [
-        ".gemini/skills/chaos-engineering/SKILL.md",
-        ".gemini/skills/skills-chaos-engineering/SKILL.md"
+        ".gemini/skills/arquiteto-de-empresa/SKILL.md",
+        ".gemini/skills/skills-arquiteto-de-empresa/SKILL.md"
       ],
       "verdict": null,
       "note": ""
@@ -51,21 +40,10 @@
     {
       "repo": "alirezarezvani_claude-skills",
       "ruleId": "AMB-DUPLICATE-NAME",
-      "summary": "2 skills share the canonical name \"codetoprd\"",
+      "summary": "2 skills share the canonical name \"csaeo\"",
       "locations": [
-        ".gemini/skills/cmd-code-to-prd/SKILL.md",
-        ".gemini/skills/code-to-prd/SKILL.md"
-      ],
-      "verdict": null,
-      "note": ""
-    },
-    {
-      "repo": "alirezarezvani_claude-skills",
-      "ruleId": "AMB-DUPLICATE-NAME",
-      "summary": "2 skills share the canonical name \"focusedfix\"",
-      "locations": [
-        ".gemini/skills/cmd-focused-fix/SKILL.md",
-        ".gemini/skills/focused-fix/SKILL.md"
+        ".gemini/skills/cmd-cs-aeo/SKILL.md",
+        ".gemini/skills/cs-aeo/SKILL.md"
       ],
       "verdict": null,
       "note": ""
@@ -84,21 +62,10 @@
     {
       "repo": "alirezarezvani_claude-skills",
       "ruleId": "AMB-DUPLICATE-NAME",
-      "summary": "2 skills share the canonical name \"handoff\"",
+      "summary": "2 skills share the canonical name \"init\"",
       "locations": [
-        ".gemini/skills/handoff/SKILL.md",
-        ".gemini/skills/skills-handoff/SKILL.md"
-      ],
-      "verdict": null,
-      "note": ""
-    },
-    {
-      "repo": "alirezarezvani_claude-skills",
-      "ruleId": "AMB-DUPLICATE-NAME",
-      "summary": "2 skills share the canonical name \"iso42001specialist\"",
-      "locations": [
-        ".gemini/skills/iso42001-specialist/SKILL.md",
-        ".gemini/skills/skills-iso42001-specialist/SKILL.md"
+        ".gemini/skills/init/SKILL.md",
+        ".gemini/skills/skills-init/SKILL.md"
       ],
       "verdict": null,
       "note": ""
@@ -117,21 +84,10 @@
     {
       "repo": "alirezarezvani_claude-skills",
       "ruleId": "AMB-DUPLICATE-NAME",
-      "summary": "2 skills share the canonical name \"run\"",
+      "summary": "2 skills share the canonical name \"sloarchitect\"",
       "locations": [
-        ".gemini/skills/run/SKILL.md",
-        ".gemini/skills/skills-run/SKILL.md"
-      ],
-      "verdict": null,
-      "note": ""
-    },
-    {
-      "repo": "alirezarezvani_claude-skills",
-      "ruleId": "AMB-DUPLICATE-NAME",
-      "summary": "2 skills share the canonical name \"status\"",
-      "locations": [
-        ".gemini/skills/skills-status/SKILL.md",
-        ".gemini/skills/status/SKILL.md"
+        ".gemini/skills/skills-slo-architect/SKILL.md",
+        ".gemini/skills/slo-architect/SKILL.md"
       ],
       "verdict": null,
       "note": ""
@@ -149,19 +105,9 @@
     {
       "repo": "ConardLi_garden-skills",
       "ruleId": "AMB-NO-TRIGGER",
-      "summary": "Skill \"kb-retriever\" does not say when to use it",
+      "summary": "Skill \"web-video-presentation\" does not say when to use it",
       "locations": [
-        "skills/kb-retriever/SKILL.md"
-      ],
-      "verdict": null,
-      "note": ""
-    },
-    {
-      "repo": "alirezarezvani_claude-skills",
-      "ruleId": "AMB-NO-TRIGGER",
-      "summary": "Skill \"Agent Name\" does not say when to use it",
-      "locations": [
-        ".gemini/skills/TEMPLATE/SKILL.md"
+        "skills/web-video-presentation/SKILL.md"
       ],
       "verdict": null,
       "note": ""
@@ -179,19 +125,9 @@
     {
       "repo": "alirezarezvani_claude-skills",
       "ruleId": "AMB-NO-TRIGGER",
-      "summary": "Skill \"code-to-prd\" does not say when to use it",
+      "summary": "Skill \"cs-aeo\" does not say when to use it",
       "locations": [
-        ".gemini/skills/cmd-code-to-prd/SKILL.md"
-      ],
-      "verdict": null,
-      "note": ""
-    },
-    {
-      "repo": "alirezarezvani_claude-skills",
-      "ruleId": "AMB-NO-TRIGGER",
-      "summary": "Skill \"focused-fix\" does not say when to use it",
-      "locations": [
-        ".gemini/skills/cmd-focused-fix/SKILL.md"
+        ".gemini/skills/cmd-cs-aeo/SKILL.md"
       ],
       "verdict": null,
       "note": ""
@@ -209,19 +145,9 @@
     {
       "repo": "alirezarezvani_claude-skills",
       "ruleId": "AMB-NO-TRIGGER",
-      "summary": "Skill \"cs-engineer-grill\" does not say when to use it",
+      "summary": "Skill \"cs-frontend-engineer\" does not say when to use it",
       "locations": [
-        ".gemini/skills/cs-engineer-grill/SKILL.md"
-      ],
-      "verdict": null,
-      "note": ""
-    },
-    {
-      "repo": "alirezarezvani_claude-skills",
-      "ruleId": "AMB-NO-TRIGGER",
-      "summary": "Skill \"cs-frontend-review\" does not say when to use it",
-      "locations": [
-        ".gemini/skills/cs-frontend-review/SKILL.md"
+        ".gemini/skills/cs-frontend-engineer/SKILL.md"
       ],
       "verdict": null,
       "note": ""
@@ -239,19 +165,9 @@
     {
       "repo": "alirezarezvani_claude-skills",
       "ruleId": "AMB-NO-TRIGGER",
-      "summary": "Skill \"financial-health\" does not say when to use it",
+      "summary": "Skill \"flag-cleanup\" does not say when to use it",
       "locations": [
-        ".gemini/skills/financial-health/SKILL.md"
-      ],
-      "verdict": null,
-      "note": ""
-    },
-    {
-      "repo": "alirezarezvani_claude-skills",
-      "ruleId": "AMB-NO-TRIGGER",
-      "summary": "Skill \"google-workspace\" does not say when to use it",
-      "locations": [
-        ".gemini/skills/google-workspace/SKILL.md"
+        ".gemini/skills/flag-cleanup/SKILL.md"
       ],
       "verdict": null,
       "note": ""
@@ -269,19 +185,9 @@
     {
       "repo": "alirezarezvani_claude-skills",
       "ruleId": "AMB-NO-TRIGGER",
-      "summary": "Skill \"persona\" does not say when to use it",
+      "summary": "Skill \"pipeline\" does not say when to use it",
       "locations": [
-        ".gemini/skills/persona/SKILL.md"
-      ],
-      "verdict": null,
-      "note": ""
-    },
-    {
-      "repo": "alirezarezvani_claude-skills",
-      "ruleId": "AMB-NO-TRIGGER",
-      "summary": "Skill \"plugin-audit\" does not say when to use it",
-      "locations": [
-        ".gemini/skills/plugin-audit/SKILL.md"
+        ".gemini/skills/pipeline/SKILL.md"
       ],
       "verdict": null,
       "note": ""
@@ -299,19 +205,9 @@
     {
       "repo": "alirezarezvani_claude-skills",
       "ruleId": "AMB-NO-TRIGGER",
-      "summary": "Skill \"rice\" does not say when to use it",
+      "summary": "Skill \"saas-health\" does not say when to use it",
       "locations": [
-        ".gemini/skills/rice/SKILL.md"
-      ],
-      "verdict": null,
-      "note": ""
-    },
-    {
-      "repo": "alirezarezvani_claude-skills",
-      "ruleId": "AMB-NO-TRIGGER",
-      "summary": "Skill \"seo-auditor\" does not say when to use it",
-      "locations": [
-        ".gemini/skills/seo-auditor/SKILL.md"
+        ".gemini/skills/saas-health/SKILL.md"
       ],
       "verdict": null,
       "note": ""
@@ -329,19 +225,9 @@
     {
       "repo": "alirezarezvani_claude-skills",
       "ruleId": "AMB-NO-TRIGGER",
-      "summary": "Skill \"tc\" does not say when to use it",
+      "summary": "Skill \"tdd\" does not say when to use it",
       "locations": [
-        ".gemini/skills/tc/SKILL.md"
-      ],
-      "verdict": null,
-      "note": ""
-    },
-    {
-      "repo": "alirezarezvani_claude-skills",
-      "ruleId": "AMB-NO-TRIGGER",
-      "summary": "Skill \"tech-debt\" does not say when to use it",
-      "locations": [
-        ".gemini/skills/tech-debt/SKILL.md"
+        ".gemini/skills/tdd/SKILL.md"
       ],
       "verdict": null,
       "note": ""
@@ -359,19 +245,9 @@
     {
       "repo": "alirezarezvani_claude-skills",
       "ruleId": "AMB-NO-TRIGGER",
-      "summary": "Skill \"wiki-lint\" does not say when to use it",
+      "summary": "Skill \"wiki-log\" does not say when to use it",
       "locations": [
-        ".gemini/skills/wiki-lint/SKILL.md"
-      ],
-      "verdict": null,
-      "note": ""
-    },
-    {
-      "repo": "alirezarezvani_claude-skills",
-      "ruleId": "AMB-NO-TRIGGER",
-      "summary": "Skill \"wiki-query\" does not say when to use it",
-      "locations": [
-        ".gemini/skills/wiki-query/SKILL.md"
+        ".gemini/skills/wiki-log/SKILL.md"
       ],
       "verdict": null,
       "note": ""
@@ -387,21 +263,11 @@
       "note": ""
     },
     {
-      "repo": "hashicorp_agent-skills",
-      "ruleId": "AMB-NO-TRIGGER",
-      "summary": "Skill \"refactor-module\" does not say when to use it",
-      "locations": [
-        "plugins/terraform/skills/refactor-module/SKILL.md"
-      ],
-      "verdict": null,
-      "note": ""
-    },
-    {
       "repo": "softaworks_agent-toolkit",
       "ruleId": "AMB-NO-TRIGGER",
-      "summary": "Skill \"database-schema-designer\" does not say when to use it",
+      "summary": "Skill \"agent-md-refactor\" does not say when to use it",
       "locations": [
-        "skills/database-schema-designer/SKILL.md"
+        "skills/agent-md-refactor/SKILL.md"
       ],
       "verdict": null,
       "note": ""
@@ -419,39 +285,9 @@
     {
       "repo": "softaworks_agent-toolkit",
       "ruleId": "AMB-NO-TRIGGER",
-      "summary": "Skill \"naming-analyzer\" does not say when to use it",
+      "summary": "Skill \"qa-test-planner\" does not say when to use it",
       "locations": [
-        "skills/naming-analyzer/SKILL.md"
-      ],
-      "verdict": null,
-      "note": ""
-    },
-    {
-      "repo": "ConardLi_garden-skills",
-      "ruleId": "BUD-BODY-OUTLIER",
-      "summary": "Skill body is 10706 tokens, above the published 99th percentile (9253)",
-      "locations": [
-        "skills/beautiful-article/SKILL.md"
-      ],
-      "verdict": null,
-      "note": ""
-    },
-    {
-      "repo": "anthropics_skills",
-      "ruleId": "BUD-BODY-OUTLIER",
-      "summary": "Skill body is 18366 tokens, above the published 99th percentile (9253)",
-      "locations": [
-        "skills/claude-api/SKILL.md"
-      ],
-      "verdict": null,
-      "note": ""
-    },
-    {
-      "repo": "alirezarezvani_claude-skills",
-      "ruleId": "RED-GENERIC",
-      "summary": "Generic advice that applies to any repository: \"provide clear error messages\"",
-      "locations": [
-        "finance/CLAUDE.md:91"
+        "skills/qa-test-planner/SKILL.md"
       ],
       "verdict": null,
       "note": ""
@@ -459,9 +295,9 @@
     {
       "repo": "alirezarezvani_claude-skills",
       "ruleId": "RED-REPO-OVERVIEW",
-      "summary": "Repository overview section spanning 30 lines",
+      "summary": "Repository overview section spanning 21 lines",
       "locations": [
-        "CLAUDE.md:56"
+        "CLAUDE.md:33"
       ],
       "verdict": null,
       "note": ""
@@ -477,21 +313,11 @@
       "note": ""
     },
     {
-      "repo": "samber_cc-skills-golang",
+      "repo": "softaworks_agent-toolkit",
       "ruleId": "RED-REPO-OVERVIEW",
       "summary": "Repository overview section spanning 4 lines",
       "locations": [
-        "CLAUDE.md:3"
-      ],
-      "verdict": null,
-      "note": ""
-    },
-    {
-      "repo": "alirezarezvani_claude-skills",
-      "ruleId": "RED-STALE-PATH",
-      "summary": "References `.github/workflows/test.yml`, which is not present in the repository",
-      "locations": [
-        "engineering-team/CLAUDE.md:278"
+        "CLAUDE.md:5"
       ],
       "verdict": null,
       "note": ""
@@ -509,9 +335,179 @@
     {
       "repo": "alirezarezvani_claude-skills",
       "ruleId": "RED-STALE-PATH",
-      "summary": "References `progress`, which is not present in the repository",
+      "summary": "References `results`, which is not present in the repository",
       "locations": [
-        "engineering/agenthub/CLAUDE.md:47"
+        "engineering/agenthub/CLAUDE.md:48"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "ConardLi_garden-skills",
+      "ruleId": "SPEC-BODY-TOO-LARGE",
+      "summary": "Skill body exceeds the recommended ceiling — 7801 tokens (limit 5000)",
+      "locations": [
+        "skills/web-design-engineer/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "SPEC-BODY-TOO-LARGE",
+      "summary": "Skill body exceeds the recommended ceiling — 502 lines (limit 500)",
+      "locations": [
+        ".codex/skills/senior-secops/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "SPEC-BODY-TOO-LARGE",
+      "summary": "Skill body exceeds the recommended ceiling — 5492 tokens (limit 5000), 508 lines (limit 500)",
+      "locations": [
+        ".gemini/skills/cs-project-manager/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "SPEC-BODY-TOO-LARGE",
+      "summary": "Skill body exceeds the recommended ceiling — 502 lines (limit 500)",
+      "locations": [
+        ".gemini/skills/senior-secops/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "anthropics_skills",
+      "ruleId": "SPEC-BODY-TOO-LARGE",
+      "summary": "Skill body exceeds the recommended ceiling — 5160 tokens (limit 5000)",
+      "locations": [
+        "skills/pptx/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "hashicorp_agent-skills",
+      "ruleId": "SPEC-BODY-TOO-LARGE",
+      "summary": "Skill body exceeds the recommended ceiling — 508 lines (limit 500)",
+      "locations": [
+        "plugins/terraform/skills/provider-actions/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "softaworks_agent-toolkit",
+      "ruleId": "SPEC-BODY-TOO-LARGE",
+      "summary": "Skill body exceeds the recommended ceiling — 683 lines (limit 500)",
+      "locations": [
+        "skills/database-schema-designer/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "softaworks_agent-toolkit",
+      "ruleId": "SPEC-BODY-TOO-LARGE",
+      "summary": "Skill body exceeds the recommended ceiling — 753 lines (limit 500)",
+      "locations": [
+        "skills/qa-test-planner/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "utkusen_sast-skills",
+      "ruleId": "SPEC-BODY-TOO-LARGE",
+      "summary": "Skill body exceeds the recommended ceiling — 6508 tokens (limit 5000)",
+      "locations": [
+        "sast-files/.agents/skills/sast-hardcodedsecrets/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "utkusen_sast-skills",
+      "ruleId": "SPEC-BODY-TOO-LARGE",
+      "summary": "Skill body exceeds the recommended ceiling — 6550 tokens (limit 5000), 534 lines (limit 500)",
+      "locations": [
+        "sast-files/.agents/skills/sast-pathtraversal/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "utkusen_sast-skills",
+      "ruleId": "SPEC-BODY-TOO-LARGE",
+      "summary": "Skill body exceeds the recommended ceiling — 6641 tokens (limit 5000), 534 lines (limit 500)",
+      "locations": [
+        "sast-files/.agents/skills/sast-ssrf/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "utkusen_sast-skills",
+      "ruleId": "SPEC-BODY-TOO-LARGE",
+      "summary": "Skill body exceeds the recommended ceiling — 6916 tokens (limit 5000), 559 lines (limit 500)",
+      "locations": [
+        "sast-files/.agents/skills/sast-xxe/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "utkusen_sast-skills",
+      "ruleId": "SPEC-BODY-TOO-LARGE",
+      "summary": "Skill body exceeds the recommended ceiling — 5645 tokens (limit 5000)",
+      "locations": [
+        "sast-files/.claude/skills/sast-jwt/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "utkusen_sast-skills",
+      "ruleId": "SPEC-BODY-TOO-LARGE",
+      "summary": "Skill body exceeds the recommended ceiling — 8167 tokens (limit 5000), 703 lines (limit 500)",
+      "locations": [
+        "sast-files/.claude/skills/sast-rce/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "utkusen_sast-skills",
+      "ruleId": "SPEC-BODY-TOO-LARGE",
+      "summary": "Skill body exceeds the recommended ceiling — 7377 tokens (limit 5000), 597 lines (limit 500)",
+      "locations": [
+        "sast-files/.claude/skills/sast-ssti/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "SPEC-DESCRIPTION-TOO-LONG",
+      "summary": "Description is 1161 characters, over the 1024 limit",
+      "locations": [
+        ".codex/skills/litreview/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "SPEC-NAME-DIR-MISMATCH",
+      "summary": "Skill name \"playwright-pro\" does not match its directory \"pw\"",
+      "locations": [
+        ".codex/skills/playwright-pro/skills/pw/SKILL.md"
       ],
       "verdict": null,
       "note": ""

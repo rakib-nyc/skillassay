@@ -71,6 +71,11 @@ program
   )
   .option('--exclude <path...>', 'relative paths to skip')
   .option('--fail-on <severity>', 'exit 1 at or above this severity: error | warn | info | never', 'warn')
+  .option(
+    '--top <n>',
+    'show at most N findings, highest severity first. Keeps output bounded when ' +
+      'an agent is reading it; the total is always reported.',
+  )
   .option('--no-color', 'disable ANSI colour')
   .option(
     '--mcp-probe',
@@ -90,7 +95,21 @@ program
       process.exit(0);
     }
 
-    const root = path.resolve(targetPath);
+    /*
+     * A single `SKILL.md` is a valid target, not just a directory.
+     *
+     * That is the atomic operation for an agent authoring a skill: check this
+     * file. The root is set two levels up so the skill's own directory name is
+     * still visible, which the name/directory conformance rule needs.
+     */
+    let root = path.resolve(targetPath);
+    let only: string | undefined;
+    if (fs.existsSync(root) && fs.statSync(root).isFile()) {
+      const fileName = path.basename(root);
+      const skillDir = path.dirname(root);
+      root = path.dirname(skillDir);
+      only = `${path.basename(skillDir)}/${fileName}`;
+    }
 
     if (options['registry'] === true) {
       const audit = auditRegistry(root, options['target'] as string | undefined);
@@ -120,6 +139,7 @@ program
       // the repository rather than assumed to be Claude Code.
       ...(typeof options['harness'] === 'string' ? { harnessId: options['harness'] } : {}),
       experimentalAmbiguity: options['experimentalAmbiguity'] === true,
+      ...(only === undefined ? {} : { only }),
       ...(mcpMeasurements === undefined ? {} : { mcpMeasurements }),
       // Commander sets `global: false` when --no-global is passed. User-level
       // config is real always-on cost, so it is on by default here even though
@@ -155,6 +175,7 @@ program
         `${renderTerminal(result, {
           color: options['color'] !== false && process.stdout.isTTY === true,
           verbose: options['verbose'] === true,
+          ...(typeof options['top'] === 'string' ? { top: Number(options['top']) } : {}),
         })}\n`,
       );
     }

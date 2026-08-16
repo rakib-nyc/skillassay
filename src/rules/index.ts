@@ -84,6 +84,31 @@ const LING_LENGTH: Citation = {
     'which can consume prompt budgets and hinder reliable selection and auditing when loaded in full',
 };
 
+const SPEC_NAME: Citation = {
+  ref: 'Agent Skills specification, `name` field (fetched 2026-08-16)',
+  url: 'https://agentskills.io/specification',
+  quote:
+    'Must be 1-64 characters. May only contain unicode lowercase alphanumeric characters ' +
+    '(a-z, 0-9) and hyphens (-). Must not start or end with a hyphen. Must not contain ' +
+    'consecutive hyphens. Must match the parent directory name.',
+};
+
+const SPEC_DESCRIPTION: Citation = {
+  ref: 'Agent Skills specification, `description` field (fetched 2026-08-16)',
+  url: 'https://agentskills.io/specification',
+  quote:
+    'Must be 1-1024 characters. Should describe both what the skill does and when to use it.',
+};
+
+const SPEC_BODY: Citation = {
+  ref: 'Agent Skills, best practices for skill creators (fetched 2026-08-16)',
+  url: 'https://agentskills.io/skill-creation/best-practices',
+  quote:
+    'The specification recommends keeping SKILL.md under 500 lines and 5,000 tokens — just the ' +
+    'core instructions the agent needs on every run. When a skill legitimately needs more ' +
+    'content, move detailed reference material to separate files in references/ or similar.',
+};
+
 const ANTHROPIC_ROUTING: Citation = {
   ref: 'Anthropic, "Agent Skills" overview (fetched 2026-08-16)',
   url: 'https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview',
@@ -101,6 +126,61 @@ const ANTHROPIC_DISCLOSURE: Citation = {
 };
 
 export const RULES: readonly Rule[] = [
+  {
+    id: 'SPEC-NAME-INVALID',
+    title: 'Skill name violates the Agent Skills specification',
+    defaultSeverity: 'error',
+    rationale:
+      'The specification constrains `name` to 1-64 lowercase alphanumeric characters and ' +
+      'single hyphens. A name outside that set is not a style preference: compliant clients ' +
+      'reject the skill, so it never appears in the catalogue and never triggers. The failure ' +
+      'is silent, which is why a linter is the only thing likely to catch it.',
+    citations: [SPEC_NAME],
+    limitation:
+      'Checks the format the specification defines. It cannot confirm that any particular ' +
+      'client enforces every clause — some may be more permissive — only that a conforming ' +
+      'client is entitled to reject the skill.',
+  },
+  {
+    id: 'SPEC-NAME-DIR-MISMATCH',
+    title: 'Skill name does not match its parent directory',
+    defaultSeverity: 'error',
+    rationale:
+      'The specification requires the declared `name` to match the directory containing ' +
+      '`SKILL.md`. Clients that key on the directory will not find the skill under the name it ' +
+      'advertises, and clients that key on the name will not find its resources.',
+    citations: [SPEC_NAME],
+    limitation:
+      'Not reported when the name was inferred from the directory in the first place, where ' +
+      'the comparison would be circular.',
+  },
+  {
+    id: 'SPEC-DESCRIPTION-TOO-LONG',
+    title: 'Description exceeds the specification limit',
+    defaultSeverity: 'error',
+    rationale:
+      'The specification caps `description` at 1024 characters. Beyond it a conforming client ' +
+      'may reject the skill outright, and since the description is always-on context in every ' +
+      'session, an oversized one is also the most expensive kind of text in the file.',
+    citations: [SPEC_DESCRIPTION, ANTHROPIC_DISCLOSURE],
+    limitation:
+      'Measures characters, as the specification does. It does not judge whether the ' +
+      'description is well written, only whether it is legal.',
+  },
+  {
+    id: 'SPEC-BODY-TOO-LARGE',
+    title: 'Skill body exceeds the recommended size',
+    defaultSeverity: 'warn',
+    rationale:
+      'Published guidance recommends a body under 500 lines and 5,000 tokens, with reference ' +
+      'material moved to files that load on demand. This is conditional cost rather than ' +
+      'always-on, so it is a recommendation rather than a hard limit — but a body this large ' +
+      'is loaded in full every time the skill triggers.',
+    citations: [SPEC_BODY, LING_LENGTH, ANTHROPIC_DISCLOSURE],
+    limitation:
+      'A recommendation, not a constraint: the skill still loads. A long body is not itself a ' +
+      'defect, and some skills legitimately need one.',
+  },
   {
     id: 'RED-REPO-OVERVIEW',
     title: 'Context file describes repository structure',
@@ -233,19 +313,6 @@ export const RULES: readonly Rule[] = [
       'correct out of 3 across 33 repositories, the failures being qualified permissions read ' +
       'as prohibitions. Capped at `warn` for that reason, and it misses paraphrased conflicts ' +
       'entirely.',
-  },
-  {
-    id: 'BUD-BODY-OUTLIER',
-    title: 'Skill body is in the top 1% of public-corpus length',
-    defaultSeverity: 'info',
-    rationale:
-      'The body is a conditional cost, not an always-on one, so this is not a budget ' +
-      'emergency. It is flagged because the measured public distribution puts this skill in ' +
-      'the extreme tail, where the source paper notes selection and auditing become harder.',
-    citations: [LING_LENGTH, ANTHROPIC_DISCLOSURE],
-    limitation:
-      'A long body is not itself a defect. This rule reports a percentile against a published ' +
-      'distribution; it does not claim the skill is bad.',
   },
 ];
 

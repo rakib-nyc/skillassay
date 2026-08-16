@@ -1,5 +1,30 @@
 # Changelog
 
+## Unreleased
+
+Agent Skills specification conformance, and usability as a skill.
+
+- **`SPEC-*` rules** validate against the published specification: `name`
+  format (1–64 chars, lowercase alphanumeric, single hyphens, matching the
+  parent directory) and `description` length (≤1024). A skill breaking these is
+  rejected silently by compliant clients, so they are `error` severity. Across
+  1,022 published skills this finds **37 hard violations**.
+- **`.agents/skills/` is now counted for every harness.** It is the cross-client
+  convention from the specification's implementation guide; treating it as an
+  unknown third-party directory excluded the one location whose purpose is to be
+  shared.
+- **A single `SKILL.md` is a valid target** — the atomic operation when
+  authoring a skill.
+- **`conformance.willLoad`** in the JSON: one boolean answering the question
+  that precedes every other.
+- **`--top`** bounds rendered output and always reports what it withheld.
+- **Ships an Agent Skill** in `.agents/skills/skillassay/`, read by Claude Code,
+  Codex and Gemini CLI alike. 98 always-on tokens; passes its own audit with
+  zero findings, asserted by a test.
+- `BUD-BODY-OUTLIER` retired in favour of `SPEC-BODY-TOO-LARGE`, which uses the
+  published 500-line / 5,000-token recommendation rather than an
+  ecosystem percentile.
+
 ## v0.1.0 — 2026-08-16
 
 Research project. Apache-2.0. Provided as is, without warranties or conditions

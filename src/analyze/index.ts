@@ -10,6 +10,7 @@ import { analyzeBudget, renderDiscoverySurface } from './budget.js';
 import { analyzeRedundancy } from './redundancy.js';
 import { analyzeAmbiguity } from './ambiguity.js';
 import { analyzeConflicts, type ContextFileDirectives } from './conflict.js';
+import { analyzeSpecConformance } from './spec.js';
 import { SEVERITY_ORDER } from '../types.js';
 import type {
   AnalysisResult,
@@ -17,16 +18,6 @@ import type {
   Finding,
   SkillRecord,
 } from '../types.js';
-
-/**
- * Top 1% of the public skill-length distribution, from Ling et al. (2026) §3.1.
- *
- * A measured percentile from a published corpus, not a threshold someone picked
- * because it sounded round. Note the tokenizers differ — that paper's counts and
- * ours are both BPE but not the same encoding — so this is a percentile estimate,
- * and the finding says so.
- */
-const BODY_TOP_1_PERCENT_TOKENS = 9253;
 
 export interface AnalyzeOptions extends DiscoveryOptions {
   readonly targetId?: string;
@@ -43,6 +34,15 @@ export interface AnalyzeOptions extends DiscoveryOptions {
   readonly experimentalAmbiguity?: boolean;
   /** Measured MCP tool-schema cost, from the opt-in `--mcp-probe` pass. */
   readonly mcpMeasurements?: readonly import('../types.js').McpMeasurement[];
+  /**
+   * Restrict analysis to one artifact, by path relative to `root`.
+   *
+   * The atomic operation for an agent authoring a skill: check *this*
+   * `SKILL.md`, not the whole repository. Pairwise rules necessarily go quiet
+   * — a single skill cannot collide with anything — so the report says so
+   * rather than implying a clean portfolio.
+   */
+  readonly only?: string;
 }
 
 export function analyze(root: string, options: AnalyzeOptions = {}): AnalysisResult {
@@ -60,7 +60,15 @@ export function analyze(root: string, options: AnalyzeOptions = {}): AnalysisRes
     return relative.split(path.sep).join('/');
   })();
 
-  const discovery = discoverArtifacts(root, options);
+  const fullDiscovery = discoverArtifacts(root, options);
+  const discovery =
+    options.only === undefined
+      ? fullDiscovery
+      : {
+          ...fullDiscovery,
+          artifacts: fullDiscovery.artifacts.filter((a) => a.relPath === options.only),
+          errors: fullDiscovery.errors.filter((e) => e.relPath === options.only),
+        };
   const errors: ArtifactError[] = [...discovery.errors];
 
   // Detect from what the repository actually contains unless told otherwise.
@@ -171,25 +179,14 @@ export function analyze(root: string, options: AnalyzeOptions = {}): AnalysisRes
 
   const conflicts = analyzeConflicts(skills, contextFiles);
 
-  const bodyOutliers: Finding[] = skills
-    .filter((record) => record.bodyCost.value > BODY_TOP_1_PERCENT_TOKENS)
-    .map((record) => ({
-      ruleId: 'BUD-BODY-OUTLIER',
-      severity: 'info' as const,
-      locations: [{ path: record.artifact.relPath }],
-      summary:
-        `Skill body is ${record.bodyCost.value} tokens, above the published 99th percentile ` +
-        `(${BODY_TOP_1_PERCENT_TOKENS})`,
-      evidence: {
-        bodyTokens: record.bodyCost.value,
-        percentile99: BODY_TOP_1_PERCENT_TOKENS,
-        note: 'Conditional cost — loaded only when this skill triggers, not always-on.',
-      },
-      suggestion:
-        'Consider splitting reference material into separate files the skill links to, so it ' +
-        'loads only when actually needed.',
-      alwaysOnSavings: 0,
-    }));
+  /*
+   * Conformance is checked before anything else in spirit: a skill that will not
+   * load has a more urgent problem than one that is merely verbose. The
+   * published size recommendation (5,000 tokens / 500 lines) supersedes the
+   * 99th-percentile figure this analyzer previously used, which described what
+   * the ecosystem does rather than what the specification advises.
+   */
+  const specFindings = analyzeSpecConformance(skills);
 
   /*
    * Zero the claimed savings for findings in files the budget does not count.
@@ -219,7 +216,7 @@ export function analyze(root: string, options: AnalyzeOptions = {}): AnalysisRes
     };
   });
 
-  const findings = [...scoped, ...ambiguity.findings, ...conflicts, ...bodyOutliers].sort(
+  const findings = [...scoped, ...ambiguity.findings, ...conflicts, ...specFindings].sort(
     (a, b) => {
       const bySeverity = SEVERITY_ORDER[a.severity] - SEVERITY_ORDER[b.severity];
       if (bySeverity !== 0) return bySeverity;
@@ -230,8 +227,13 @@ export function analyze(root: string, options: AnalyzeOptions = {}): AnalysisRes
     },
   );
 
+  const blocking = findings.filter(
+    (f) => f.ruleId.startsWith('SPEC-') && f.severity === 'error',
+  ).length;
+
   return {
     root,
+    conformance: { willLoad: blocking === 0, blockingFindings: blocking },
     target,
     artifacts: discovery.artifacts,
     skills,

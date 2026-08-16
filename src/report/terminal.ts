@@ -14,6 +14,8 @@ import type { AnalysisResult, Finding, Severity } from '../types.js';
 export interface TerminalOptions {
   readonly color: boolean;
   readonly verbose: boolean;
+  /** Cap on findings shown. The total is still reported when truncating. */
+  readonly top?: number;
 }
 
 const SEVERITY_ICON: Record<Severity, string> = { error: '✖', warn: '▲', info: '·' };
@@ -179,6 +181,12 @@ export function renderTerminal(result: AnalysisResult, options: TerminalOptions)
     .join(paint(' · ', '90'));
 
   out.push(`  ${paint('FINDINGS', '1')}   ${summary}`);
+  if (budget.harness !== undefined && !result.conformance.willLoad) {
+    out.push(
+      `  ${paint('✖ ' + result.conformance.blockingFindings + ' skill(s) will not load', '31')}` +
+        paint(' — fix the SPEC- findings first; nothing else matters until then', '90'),
+    );
+  }
   out.push('');
 
   /*
@@ -198,9 +206,18 @@ export function renderTerminal(result: AnalysisResult, options: TerminalOptions)
     else byRule.set(finding.ruleId, [finding]);
   }
 
+  /*
+   * `--top` truncates for readability, never silently: the count of what was
+   * withheld is printed, because a report that quietly drops findings is worse
+   * than a long one.
+   */
+  const limit = options.top;
+  const shownFindings = limit === undefined ? findings : findings.slice(0, limit);
+  const withheld = findings.length - shownFindings.length;
+
   const seen = new Set<string>();
-  for (const finding of findings) {
-    const group = byRule.get(finding.ruleId) ?? [];
+  for (const finding of shownFindings) {
+    const group = (byRule.get(finding.ruleId) ?? []).filter((f) => shownFindings.includes(f));
     if (options.verbose || group.length <= MAX_PER_RULE) {
       out.push(renderFinding(finding, paint, options.verbose));
       continue;
@@ -217,6 +234,16 @@ export function renderTerminal(result: AnalysisResult, options: TerminalOptions)
       paint(
         `      … and ${rest} more ${finding.ruleId} finding${rest === 1 ? '' : 's'} ` +
           `(--verbose to list, or --json for all of them)`,
+        '90',
+      ),
+    );
+    out.push('');
+  }
+
+  if (withheld > 0) {
+    out.push(
+      paint(
+        `  ${withheld} further finding(s) not shown (--top ${limit}). Use --json for all of them.`,
         '90',
       ),
     );

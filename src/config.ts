@@ -121,6 +121,8 @@ export function detectHarness(
       }
       continue;
     }
+    // A `.agents/skills/` entry is loaded by every client, so it is evidence
+    // for none of them in particular.
     for (const harness of Object.values(HARNESSES)) {
       if (artifact.namespace === harness.namespaceDir) {
         skillCounts.set(harness.id, (skillCounts.get(harness.id) ?? 0) + 1);
@@ -185,11 +187,27 @@ export function resolveHarness(id: string | undefined): HarnessDefinition {
 }
 
 /**
- * Namespace assigned to skills that sit outside any harness-specific directory
- * (a bare `skills/` folder, say). These are counted for whichever harness is
- * selected, because nothing in the path says otherwise.
+ * Namespaces whose skills every compliant client loads.
+ *
+ * `default` is a bare `skills/` folder with no harness marker — nothing in the
+ * path says who owns it, so it counts for whichever harness is selected.
+ *
+ * `.agents` is the cross-client convention from the Agent Skills
+ * specification. The implementation guide lists `<project>/.agents/skills/` and
+ * `~/.agents/skills/` alongside each client's native directory, precisely so a
+ * skill installed by one compliant client is visible to all of them. Treating
+ * it as an unknown third-party harness — as this analyzer previously did —
+ * excluded the one location whose entire purpose is to be shared, and
+ * under-reported the budget for every client that reads it.
  */
+export const AGNOSTIC_NAMESPACES: readonly string[] = ['default', '.agents'];
+
+/** @deprecated Use `AGNOSTIC_NAMESPACES`. Retained for the public API surface. */
 export const AGNOSTIC_NAMESPACE = 'default';
+
+export function isAgnosticNamespace(namespace: string): boolean {
+  return AGNOSTIC_NAMESPACES.includes(namespace);
+}
 
 export function homeDirectory(): string {
   return os.homedir();

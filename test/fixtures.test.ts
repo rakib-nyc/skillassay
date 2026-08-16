@@ -52,9 +52,9 @@ describe('clean/ — the single most important test', () => {
     // One line per context file and one per skill frontmatter. package.json is
     // not an agent artifact and must not appear.
     expect(result.budget.lines.map((l) => l.relPath).sort()).toEqual([
-      '.claude/skills/db-query/SKILL.md',
+      '.claude/skills/admin-ui-component/SKILL.md',
+      '.claude/skills/ledger-db-query/SKILL.md',
       '.claude/skills/release-notes/SKILL.md',
-      '.claude/skills/ui-component/SKILL.md',
       'CLAUDE.md',
     ]);
   });

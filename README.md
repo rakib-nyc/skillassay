@@ -17,7 +17,11 @@ offline. No API key.
 
 ## Install
 
-Not on npm yet. From source:
+```bash
+npx skillassay .                  # once published to npm
+```
+
+Until the package is published, from source:
 
 ```bash
 git clone https://github.com/rakib-nyc/skillassay && cd skillassay
@@ -26,6 +30,25 @@ node dist/cli.js /path/to/your/repo
 ```
 
 Requires Node.js ≥ 20.11.
+
+## Use it as a skill
+
+The package ships an Agent Skill in `.agents/skills/skillassay/` — the
+cross-client location that **Claude Code, Codex and Gemini CLI all read**, so one
+file serves every harness:
+
+```bash
+mkdir -p .agents/skills
+cp -r node_modules/skillassay/.agents/skills/skillassay .agents/skills/
+```
+
+It costs **98 always-on tokens** and passes its own audit with zero findings —
+asserted by a test, because a linter for skill authors that ships a
+non-conformant skill has refuted itself.
+
+The skill is deliberately thin: it invokes the CLI and interprets the result.
+All analysis stays in the deterministic binary, so adding the skill does not
+turn the tool into the non-deterministic thing it was built to replace.
 
 ## What problem this measures
 
@@ -60,6 +83,13 @@ the file tree.
 **Tier 0 — always-on context budget.** Every token loaded before you type:
 context files along the root→cwd chain, your global `~/.claude/CLAUDE.md`, skill
 and subagent frontmatter, and — with `--mcp-probe` — real MCP tool-schema cost.
+
+**Conformance — will this skill load at all?** The Agent Skills specification
+constrains `name` (1–64 characters, lowercase alphanumeric and single hyphens,
+matching the parent directory) and `description` (≤1024 characters). A skill
+breaking those is rejected silently by compliant clients. Across 1,022 published
+skills this finds **37 hard violations**, including names like `DevOps Engineer`
+and `Product Manager` that no client will register.
 
 **Tier 1 — skill selection ambiguity.** Skills competing for the same routing
 slot. Duplicate canonical names and missing trigger clauses are on by default;
@@ -145,6 +175,8 @@ assay --baseline b.json        # record a baseline
 assay --compare b.json         # diff against one; exit 1 on new findings
 assay --fail-on error          # error | warn | info | never
 assay --registry ./corpus --markdown   # audit a whole skill corpus
+assay path/to/SKILL.md         # check one skill — the atomic authoring operation
+assay --top 10                 # bound the output; the total is still reported
 assay --mcp-probe              # start MCP servers and measure their tool schemas
 assay --experimental-ambiguity # enable the 62%-precision trigger-overlap rule
 ```
@@ -197,6 +229,7 @@ Reproducible from the repo: `npm run corpus:fetch && npm run corpus:validate -- 
 | Collateral | **1.3%** | legitimate lines a `--fix` patch would remove |
 | Trigger-clause coverage | **94.3%** | descriptions whose "when to use" clause is parsed |
 | Runtime | **0.49s / 100 skills** | 3.9s for a real 790-skill repository |
+| Hard spec violations found | **37** | across the same 1,022 published skills |
 | Crash rate | **0 / 33** | real repositories, `npm run wild` |
 
 Precision *and* recall are both published because either alone is the easy half.
@@ -304,7 +337,7 @@ it.
 
 ```bash
 npm install
-npm test              # 109 tests
+npm test              # 143 tests
 npm run verify        # honesty lint + typecheck + tests
 npm run calibrate     # re-derive the threshold from the labelled set
 npm run measure:recall -- corpus

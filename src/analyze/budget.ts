@@ -1,6 +1,6 @@
 import { countFor, addTokens } from '../tokenize/index.js';
 import { parseMcpConfig } from '../parse/mcp.js';
-import { AGNOSTIC_NAMESPACE, type HarnessDefinition } from '../config.js';
+import { isAgnosticNamespace, type HarnessDefinition } from '../config.js';
 import type {
   HarnessId,
   BudgetLine,
@@ -119,7 +119,7 @@ export function analyzeBudget(input: BudgetInput): BudgetReport {
   };
 
   const belongsToHarness = (namespace: string): boolean =>
-    namespace === harness.namespaceDir || namespace === AGNOSTIC_NAMESPACE;
+    namespace === harness.namespaceDir || isAgnosticNamespace(namespace);
 
   // --- context files ---------------------------------------------------------
   for (const artifact of artifacts) {

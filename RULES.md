@@ -6,6 +6,10 @@ Every rule carries at least one citation with a quoted sentence from the source,
 
 | Rule | Severity | Default | Title |
 |---|---|---|---|
+| [`SPEC-NAME-INVALID`](#spec-name-invalid) | error | on | Skill name violates the Agent Skills specification |
+| [`SPEC-NAME-DIR-MISMATCH`](#spec-name-dir-mismatch) | error | on | Skill name does not match its parent directory |
+| [`SPEC-DESCRIPTION-TOO-LONG`](#spec-description-too-long) | error | on | Description exceeds the specification limit |
+| [`SPEC-BODY-TOO-LARGE`](#spec-body-too-large) | warn | on | Skill body exceeds the recommended size |
 | [`RED-REPO-OVERVIEW`](#red-repo-overview) | warn | on | Context file describes repository structure |
 | [`RED-TECHSTACK`](#red-techstack) | warn | on | Context file restates the dependency manifest |
 | [`RED-GENERIC`](#red-generic) | warn | on | Context file contains generic programming advice |
@@ -15,7 +19,80 @@ Every rule carries at least one citation with a quoted sentence from the source,
 | [`AMB-TRIGGER-OVERLAP`](#amb-trigger-overlap) | warn | opt-in | Two skills declare overlapping trigger conditions |
 | [`AMB-NO-TRIGGER`](#amb-no-trigger) | info | on | Skill description states no trigger condition |
 | [`CFL-CONTRADICTION`](#cfl-contradiction) | warn | on | Two skills give opposed instructions on the same subject |
-| [`BUD-BODY-OUTLIER`](#bud-body-outlier) | info | on | Skill body is in the top 1% of public-corpus length |
+
+## SPEC-NAME-INVALID
+
+**Skill name violates the Agent Skills specification** · default severity `error`
+
+### Why this is a finding
+
+The specification constrains `name` to 1-64 lowercase alphanumeric characters and single hyphens. A name outside that set is not a style preference: compliant clients reject the skill, so it never appears in the catalogue and never triggers. The failure is silent, which is why a linter is the only thing likely to catch it.
+
+### Sources
+
+- **Agent Skills specification, `name` field (fetched 2026-08-16)** — <https://agentskills.io/specification>
+  > Must be 1-64 characters. May only contain unicode lowercase alphanumeric characters (a-z, 0-9) and hyphens (-). Must not start or end with a hyphen. Must not contain consecutive hyphens. Must match the parent directory name.
+
+### What this rule does not establish
+
+Checks the format the specification defines. It cannot confirm that any particular client enforces every clause — some may be more permissive — only that a conforming client is entitled to reject the skill.
+
+## SPEC-NAME-DIR-MISMATCH
+
+**Skill name does not match its parent directory** · default severity `error`
+
+### Why this is a finding
+
+The specification requires the declared `name` to match the directory containing `SKILL.md`. Clients that key on the directory will not find the skill under the name it advertises, and clients that key on the name will not find its resources.
+
+### Sources
+
+- **Agent Skills specification, `name` field (fetched 2026-08-16)** — <https://agentskills.io/specification>
+  > Must be 1-64 characters. May only contain unicode lowercase alphanumeric characters (a-z, 0-9) and hyphens (-). Must not start or end with a hyphen. Must not contain consecutive hyphens. Must match the parent directory name.
+
+### What this rule does not establish
+
+Not reported when the name was inferred from the directory in the first place, where the comparison would be circular.
+
+## SPEC-DESCRIPTION-TOO-LONG
+
+**Description exceeds the specification limit** · default severity `error`
+
+### Why this is a finding
+
+The specification caps `description` at 1024 characters. Beyond it a conforming client may reject the skill outright, and since the description is always-on context in every session, an oversized one is also the most expensive kind of text in the file.
+
+### Sources
+
+- **Agent Skills specification, `description` field (fetched 2026-08-16)** — <https://agentskills.io/specification>
+  > Must be 1-1024 characters. Should describe both what the skill does and when to use it.
+- **Anthropic, "Agent Skills" overview (fetched 2026-08-16)** — <https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview>
+  > Claude loads this metadata at startup and includes it in the system prompt. until a Skill is triggered, only its name and description occupy context.
+
+### What this rule does not establish
+
+Measures characters, as the specification does. It does not judge whether the description is well written, only whether it is legal.
+
+## SPEC-BODY-TOO-LARGE
+
+**Skill body exceeds the recommended size** · default severity `warn`
+
+### Why this is a finding
+
+Published guidance recommends a body under 500 lines and 5,000 tokens, with reference material moved to files that load on demand. This is conditional cost rather than always-on, so it is a recommendation rather than a hard limit — but a body this large is loaded in full every time the skill triggers.
+
+### Sources
+
+- **Agent Skills, best practices for skill creators (fetched 2026-08-16)** — <https://agentskills.io/skill-creation/best-practices>
+  > The specification recommends keeping SKILL.md under 500 lines and 5,000 tokens — just the core instructions the agent needs on every run. When a skill legitimately needs more content, move detailed reference material to separate files in references/ or similar.
+- **Ling, Zhong & Huang (2026), arXiv:2602.08004, §3.1** — <https://arxiv.org/abs/2602.08004>
+  > The top 1% of skills exceed 9,253 tokens, and the maximum reaches 116,239 tokens, which can consume prompt budgets and hinder reliable selection and auditing when loaded in full
+- **Anthropic, "Agent Skills" overview (fetched 2026-08-16)** — <https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview>
+  > Claude loads this metadata at startup and includes it in the system prompt. until a Skill is triggered, only its name and description occupy context.
+
+### What this rule does not establish
+
+A recommendation, not a constraint: the skill still loads. A long body is not itself a defect, and some skills legitimately need one.
 
 ## RED-REPO-OVERVIEW
 
@@ -187,23 +264,4 @@ The ETH Zurich study measured that agents follow context instructions faithfully
 ### What this rule does not establish
 
 The study measured instruction-following, not conflict outcomes. That contradictions are harmful is an inference from that finding, not a separately measured result. Measured detection precision is poor: 0 findings across 1,022 corpus skills and 1 correct out of 3 across 33 repositories, the failures being qualified permissions read as prohibitions. Capped at `warn` for that reason, and it misses paraphrased conflicts entirely.
-
-## BUD-BODY-OUTLIER
-
-**Skill body is in the top 1% of public-corpus length** · default severity `info`
-
-### Why this is a finding
-
-The body is a conditional cost, not an always-on one, so this is not a budget emergency. It is flagged because the measured public distribution puts this skill in the extreme tail, where the source paper notes selection and auditing become harder.
-
-### Sources
-
-- **Ling, Zhong & Huang (2026), arXiv:2602.08004, §3.1** — <https://arxiv.org/abs/2602.08004>
-  > The top 1% of skills exceed 9,253 tokens, and the maximum reaches 116,239 tokens, which can consume prompt budgets and hinder reliable selection and auditing when loaded in full
-- **Anthropic, "Agent Skills" overview (fetched 2026-08-16)** — <https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview>
-  > Claude loads this metadata at startup and includes it in the system prompt. until a Skill is triggered, only its name and description occupy context.
-
-### What this rule does not establish
-
-A long body is not itself a defect. This rule reports a percentile against a published distribution; it does not claim the skill is bad.
 

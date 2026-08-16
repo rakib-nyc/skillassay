@@ -57,6 +57,7 @@ export function renderJson(result: AnalysisResult): string {
       alwaysOnTokensAfterFixes: result.budget.total.value - savings,
       tokensSaved: savings,
     },
+    conformance: result.conformance,
     summary: {
       artifacts: result.artifacts.length,
       skillsParsed: result.stats.skillsParsed,

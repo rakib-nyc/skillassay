@@ -224,6 +224,18 @@ export interface ModelTarget {
 
 export interface AnalysisResult {
   readonly root: string;
+  /**
+   * Whether every analysed skill satisfies the hard specification constraints.
+   *
+   * Exposed as one boolean because it is the first question an agent needs
+   * answered and the only one with a yes/no answer: a skill that violates the
+   * format is not registered by compliant clients at all, so every other
+   * finding about it is moot until this is true.
+   */
+  readonly conformance: {
+    readonly willLoad: boolean;
+    readonly blockingFindings: number;
+  };
   readonly target: ModelTarget;
   readonly artifacts: readonly DiscoveredArtifact[];
   readonly skills: readonly SkillRecord[];
