@@ -1,0 +1,2121 @@
+{
+  "criterion": "A pair is labelled `collide` when a plausible single user request satisfies BOTH stated trigger conditions, so the description alone gives the router no basis to prefer one skill. It is `distinct` when each trigger states an explicit discriminator (named framework, library, slash command, file type, vulnerability class, workflow phase) that excludes requests matching the other.",
+  "provenance": "Pairs drawn by scripts/sample-pairs.ts from 948 trigger-bearing skills across 11 public GitHub skill collections, stratified into equal-size bands by combined overlap score so both sides of every candidate threshold are represented. Sampling is deterministic: no RNG is involved.",
+  "labelledBy": "Single annotator (the tool author). There is no second annotator and therefore no inter-annotator agreement figure. This is a real limitation and is stated in README.md.",
+  "labelledOn": "2026-08-16",
+  "counts": {
+    "total": 124,
+    "collide": 53,
+    "distinct": 71
+  },
+  "pairs": [
+    {
+      "id": "0-0",
+      "band": "0-0.1",
+      "score": 0,
+      "a": {
+        "name": "web-design-engineer",
+        "path": "ConardLi_garden-skills/skills/web-design-engineer/SKILL.md",
+        "trigger": "for visual front-end creation, design-system exploration, design critique, or explicit browser acceptance / QA of a web artifact. Not for back-end, CLI, non-visual coding, source-to-longform article conversion, or narration-driven click-through video presentations."
+      },
+      "b": {
+        "name": "angular-architect",
+        "path": "Jeffallan_claude-skills/skills/angular-architect/SKILL.md",
+        "trigger": "when building Angular 17+ applications with standalone components or signals, setting up NgRx stores, establishing RxJS reactive patterns, performance tuning, or writing Angular tests for enterprise apps."
+      },
+      "label": "distinct",
+      "rationale": "unrelated domains: visual front-end vs Angular app build"
+    },
+    {
+      "id": "0-1",
+      "band": "0-0.1",
+      "score": 0,
+      "a": {
+        "name": "web-design-engineer",
+        "path": "ConardLi_garden-skills/skills/web-design-engineer/SKILL.md",
+        "trigger": "for visual front-end creation, design-system exploration, design critique, or explicit browser acceptance / QA of a web artifact. Not for back-end, CLI, non-visual coding, source-to-longform article conversion, or narration-driven click-through video presentations."
+      },
+      "b": {
+        "name": "api-designer",
+        "path": "Jeffallan_claude-skills/skills/api-designer/SKILL.md",
+        "trigger": "when designing REST or GraphQL APIs, creating OpenAPI specifications, or planning API architecture. Invoke for resource modeling, versioning strategies, pagination patterns, error handling standards."
+      },
+      "label": "distinct",
+      "rationale": "unrelated: visual design vs REST/GraphQL API design"
+    },
+    {
+      "id": "0-2",
+      "band": "0-0.1",
+      "score": 0.0273,
+      "a": {
+        "name": "web-design-engineer",
+        "path": "ConardLi_garden-skills/skills/web-design-engineer/SKILL.md",
+        "trigger": "for visual front-end creation, design-system exploration, design critique, or explicit browser acceptance / QA of a web artifact. Not for back-end, CLI, non-visual coding, source-to-longform article conversion, or narration-driven click-through video presentations."
+      },
+      "b": {
+        "name": "architecture-designer",
+        "path": "Jeffallan_claude-skills/skills/architecture-designer/SKILL.md",
+        "trigger": "when designing new high-level system architecture, reviewing existing designs, or making architectural decisions. Invoke to create architecture diagrams, write Architecture Decision Records (ADRs), evaluate technology trade-offs, design component interactions, and plan for scalability. Use for system design, architecture review, microservices structuring, ADR authoring, scalability planning, and infrastructure pattern selection — distinct from code-level design patterns or database-only design tasks."
+      },
+      "label": "distinct",
+      "rationale": "visual/design-system work vs system architecture"
+    },
+    {
+      "id": "0-3",
+      "band": "0-0.1",
+      "score": 0,
+      "a": {
+        "name": "web-design-engineer",
+        "path": "ConardLi_garden-skills/skills/web-design-engineer/SKILL.md",
+        "trigger": "for visual front-end creation, design-system exploration, design critique, or explicit browser acceptance / QA of a web artifact. Not for back-end, CLI, non-visual coding, source-to-longform article conversion, or narration-driven click-through video presentations."
+      },
+      "b": {
+        "name": "atlassian-mcp",
+        "path": "Jeffallan_claude-skills/skills/atlassian-mcp/SKILL.md",
+        "trigger": "when querying Jira issues with JQL filters, creating and updating tickets with custom fields, searching or editing Confluence pages with CQL, managing sprints and backlogs, setting up MCP server authentication, syncing documentation, or debugging Atlassian API integrations."
+      },
+      "label": "distinct",
+      "rationale": "unrelated: design vs Jira/Confluence operations"
+    },
+    {
+      "id": "0-4",
+      "band": "0-0.1",
+      "score": 0,
+      "a": {
+        "name": "web-design-engineer",
+        "path": "ConardLi_garden-skills/skills/web-design-engineer/SKILL.md",
+        "trigger": "for visual front-end creation, design-system exploration, design critique, or explicit browser acceptance / QA of a web artifact. Not for back-end, CLI, non-visual coding, source-to-longform article conversion, or narration-driven click-through video presentations."
+      },
+      "b": {
+        "name": "chaos-engineer",
+        "path": "Jeffallan_claude-skills/skills/chaos-engineer/SKILL.md",
+        "trigger": "when designing chaos experiments, implementing failure injection frameworks, or conducting game day exercises. Invoke for chaos experiments, resilience testing, blast radius control, game days, antifragile systems, fault injection, Chaos Monkey, Litmus Chaos."
+      },
+      "label": "distinct",
+      "rationale": "unrelated: design vs chaos experiments"
+    },
+    {
+      "id": "0-5",
+      "band": "0-0.1",
+      "score": 0.0473,
+      "a": {
+        "name": "web-design-engineer",
+        "path": "ConardLi_garden-skills/skills/web-design-engineer/SKILL.md",
+        "trigger": "for visual front-end creation, design-system exploration, design critique, or explicit browser acceptance / QA of a web artifact. Not for back-end, CLI, non-visual coding, source-to-longform article conversion, or narration-driven click-through video presentations."
+      },
+      "b": {
+        "name": "cli-developer",
+        "path": "Jeffallan_claude-skills/skills/cli-developer/SKILL.md",
+        "trigger": "when building CLI tools, implementing argument parsing, or adding interactive prompts. Invoke for parsing flags and subcommands, displaying progress bars and spinners, generating bash/zsh/fish completion scripts, CLI design, shell completions, and cross-platform terminal applications using commander, click, typer, or cobra."
+      },
+      "label": "distinct",
+      "rationale": "unrelated: design vs CLI tooling"
+    },
+    {
+      "id": "0-6",
+      "band": "0-0.1",
+      "score": 0.0196,
+      "a": {
+        "name": "web-design-engineer",
+        "path": "ConardLi_garden-skills/skills/web-design-engineer/SKILL.md",
+        "trigger": "for visual front-end creation, design-system exploration, design critique, or explicit browser acceptance / QA of a web artifact. Not for back-end, CLI, non-visual coding, source-to-longform article conversion, or narration-driven click-through video presentations."
+      },
+      "b": {
+        "name": "cloud-architect",
+        "path": "Jeffallan_claude-skills/skills/cloud-architect/SKILL.md",
+        "trigger": "when designing cloud architectures, planning migrations, or optimizing multi-cloud deployments. Invoke for Well-Architected Framework, cost optimization, disaster recovery, landing zones, security architecture, serverless design."
+      },
+      "label": "distinct",
+      "rationale": "unrelated: design vs cloud architecture"
+    },
+    {
+      "id": "0-7",
+      "band": "0-0.1",
+      "score": 0,
+      "a": {
+        "name": "web-design-engineer",
+        "path": "ConardLi_garden-skills/skills/web-design-engineer/SKILL.md",
+        "trigger": "for visual front-end creation, design-system exploration, design critique, or explicit browser acceptance / QA of a web artifact. Not for back-end, CLI, non-visual coding, source-to-longform article conversion, or narration-driven click-through video presentations."
+      },
+      "b": {
+        "name": "code-documenter",
+        "path": "Jeffallan_claude-skills/skills/code-documenter/SKILL.md",
+        "trigger": "when adding docstrings to functions or classes, creating API documentation, building documentation sites, or writing tutorials and user guides. Invoke for OpenAPI/Swagger specs, JSDoc, doc portals, getting started guides."
+      },
+      "label": "distinct",
+      "rationale": "unrelated: design vs docstrings/API docs"
+    },
+    {
+      "id": "0-8",
+      "band": "0-0.1",
+      "score": 0,
+      "a": {
+        "name": "web-design-engineer",
+        "path": "ConardLi_garden-skills/skills/web-design-engineer/SKILL.md",
+        "trigger": "for visual front-end creation, design-system exploration, design critique, or explicit browser acceptance / QA of a web artifact. Not for back-end, CLI, non-visual coding, source-to-longform article conversion, or narration-driven click-through video presentations."
+      },
+      "b": {
+        "name": "code-reviewer",
+        "path": "Jeffallan_claude-skills/skills/code-reviewer/SKILL.md",
+        "trigger": "when reviewing pull requests, conducting code quality audits, identifying refactoring opportunities, or checking for security issues. Invoke for PR reviews, code quality checks, refactoring suggestions, review code, code quality. Complements specialized skills (security-reviewer, test-master) by providing broad-scope review across correctness, performance, maintainability, and test coverage in a single pass."
+      },
+      "label": "distinct",
+      "rationale": "unrelated: design vs PR review"
+    },
+    {
+      "id": "0-9",
+      "band": "0-0.1",
+      "score": 0,
+      "a": {
+        "name": "web-design-engineer",
+        "path": "ConardLi_garden-skills/skills/web-design-engineer/SKILL.md",
+        "trigger": "for visual front-end creation, design-system exploration, design critique, or explicit browser acceptance / QA of a web artifact. Not for back-end, CLI, non-visual coding, source-to-longform article conversion, or narration-driven click-through video presentations."
+      },
+      "b": {
+        "name": "cpp-pro",
+        "path": "Jeffallan_claude-skills/skills/cpp-pro/SKILL.md",
+        "trigger": "when building or refactoring C++ code requiring concepts, ranges, coroutines, SIMD optimization, or careful memory management — or when addressing performance bottlenecks, concurrency issues, and build system configuration with CMake."
+      },
+      "label": "distinct",
+      "rationale": "unrelated: design vs C++"
+    },
+    {
+      "id": "0-10",
+      "band": "0-0.1",
+      "score": 0.0158,
+      "a": {
+        "name": "web-design-engineer",
+        "path": "ConardLi_garden-skills/skills/web-design-engineer/SKILL.md",
+        "trigger": "for visual front-end creation, design-system exploration, design critique, or explicit browser acceptance / QA of a web artifact. Not for back-end, CLI, non-visual coding, source-to-longform article conversion, or narration-driven click-through video presentations."
+      },
+      "b": {
+        "name": "csharp-developer",
+        "path": "Jeffallan_claude-skills/skills/csharp-developer/SKILL.md",
+        "trigger": "when building C# applications with .NET 8+, ASP.NET Core APIs, or Blazor web apps. Builds REST APIs using minimal or controller-based routing, configures database access with Entity Framework Core, implements async patterns and cancellation, structures applications with CQRS via MediatR, and scaffolds Blazor components with state management. Invoke for C#, .NET, ASP.NET Core, Blazor, Entity Framework, EF Core, Minimal API, MAUI, SignalR."
+      },
+      "label": "distinct",
+      "rationale": "unrelated: design vs C#/.NET"
+    },
+    {
+      "id": "0-11",
+      "band": "0-0.1",
+      "score": 0.0194,
+      "a": {
+        "name": "web-design-engineer",
+        "path": "ConardLi_garden-skills/skills/web-design-engineer/SKILL.md",
+        "trigger": "for visual front-end creation, design-system exploration, design critique, or explicit browser acceptance / QA of a web artifact. Not for back-end, CLI, non-visual coding, source-to-longform article conversion, or narration-driven click-through video presentations."
+      },
+      "b": {
+        "name": "database-optimizer",
+        "path": "Jeffallan_claude-skills/skills/database-optimizer/SKILL.md",
+        "trigger": "when investigating slow queries, analyzing execution plans, or optimizing database performance. Invoke for index design, query rewrites, configuration tuning, partitioning strategies, lock contention resolution."
+      },
+      "label": "distinct",
+      "rationale": "unrelated: design vs query optimisation"
+    },
+    {
+      "id": "0-12",
+      "band": "0-0.1",
+      "score": 0,
+      "a": {
+        "name": "web-design-engineer",
+        "path": "ConardLi_garden-skills/skills/web-design-engineer/SKILL.md",
+        "trigger": "for visual front-end creation, design-system exploration, design critique, or explicit browser acceptance / QA of a web artifact. Not for back-end, CLI, non-visual coding, source-to-longform article conversion, or narration-driven click-through video presentations."
+      },
+      "b": {
+        "name": "debugging-wizard",
+        "path": "Jeffallan_claude-skills/skills/debugging-wizard/SKILL.md",
+        "trigger": "when investigating errors, analyzing stack traces, finding root causes of unexpected behavior, troubleshooting crashes, or performing log analysis, error investigation, or root cause analysis."
+      },
+      "label": "distinct",
+      "rationale": "unrelated: design vs debugging stack traces"
+    },
+    {
+      "id": "0-13",
+      "band": "0-0.1",
+      "score": 0,
+      "a": {
+        "name": "web-design-engineer",
+        "path": "ConardLi_garden-skills/skills/web-design-engineer/SKILL.md",
+        "trigger": "for visual front-end creation, design-system exploration, design critique, or explicit browser acceptance / QA of a web artifact. Not for back-end, CLI, non-visual coding, source-to-longform article conversion, or narration-driven click-through video presentations."
+      },
+      "b": {
+        "name": "devops-engineer",
+        "path": "Jeffallan_claude-skills/skills/devops-engineer/SKILL.md",
+        "trigger": "when setting up CI/CD pipelines, containerizing applications, managing infrastructure as code, deploying to Kubernetes clusters, configuring cloud platforms, automating releases, or responding to production incidents. Invoke for pipelines, Docker, Kubernetes, GitOps, Terraform, GitHub Actions, on-call, or platform engineering."
+      },
+      "label": "distinct",
+      "rationale": "unrelated: design vs CI/CD"
+    },
+    {
+      "id": "0-14",
+      "band": "0-0.1",
+      "score": 0.0197,
+      "a": {
+        "name": "web-design-engineer",
+        "path": "ConardLi_garden-skills/skills/web-design-engineer/SKILL.md",
+        "trigger": "for visual front-end creation, design-system exploration, design critique, or explicit browser acceptance / QA of a web artifact. Not for back-end, CLI, non-visual coding, source-to-longform article conversion, or narration-driven click-through video presentations."
+      },
+      "b": {
+        "name": "django-expert",
+        "path": "Jeffallan_claude-skills/skills/django-expert/SKILL.md",
+        "trigger": "when building Django web applications or REST APIs with Django REST Framework. Invoke when working with settings.py, models.py, manage.py, or any Django project file. Creates Django models with proper indexes, optimizes ORM queries using select_related/prefetch_related, builds DRF serializers and viewsets, and configures JWT authentication. Trigger terms: Django, DRF, Django REST Framework, Django ORM, Django model, serializer, viewset, Python web."
+      },
+      "label": "distinct",
+      "rationale": "unrelated: design vs Django"
+    },
+    {
+      "id": "0-15",
+      "band": "0-0.1",
+      "score": 0,
+      "a": {
+        "name": "web-design-engineer",
+        "path": "ConardLi_garden-skills/skills/web-design-engineer/SKILL.md",
+        "trigger": "for visual front-end creation, design-system exploration, design critique, or explicit browser acceptance / QA of a web artifact. Not for back-end, CLI, non-visual coding, source-to-longform article conversion, or narration-driven click-through video presentations."
+      },
+      "b": {
+        "name": "django-storages-s3",
+        "path": "Jeffallan_claude-skills/skills/django-storages-s3/SKILL.md",
+        "trigger": "when configuring Django to store static and media files on AWS S3 with django-storages. Invoke when working with the STORAGES setting, S3 buckets, presigned URLs, CloudFront, or boto3-backed file storage in settings.py. Configures the Django 4.2+ STORAGES dict, public/private custom backends, presigned GET/POST URLs, IAM policies, and S3 mocking for tests. Trigger terms: django-storages, S3, boto3, S3Boto3Storage, STORAGES, presigned URL, CloudFront, media files, collectstatic, AWS_STORAGE_BUCKET_NAME."
+      },
+      "label": "distinct",
+      "rationale": "unrelated: design vs django-storages S3"
+    },
+    {
+      "id": "0-16",
+      "band": "0-0.1",
+      "score": 0,
+      "a": {
+        "name": "web-design-engineer",
+        "path": "ConardLi_garden-skills/skills/web-design-engineer/SKILL.md",
+        "trigger": "for visual front-end creation, design-system exploration, design critique, or explicit browser acceptance / QA of a web artifact. Not for back-end, CLI, non-visual coding, source-to-longform article conversion, or narration-driven click-through video presentations."
+      },
+      "b": {
+        "name": "dotnet-core-expert",
+        "path": "Jeffallan_claude-skills/skills/dotnet-core-expert/SKILL.md",
+        "trigger": "when building .NET 8 applications with minimal APIs, clean architecture, or cloud-native microservices. Invoke for Entity Framework Core, CQRS with MediatR, JWT authentication, AOT compilation."
+      },
+      "label": "distinct",
+      "rationale": "unrelated: design vs .NET"
+    },
+    {
+      "id": "0-17",
+      "band": "0-0.1",
+      "score": 0,
+      "a": {
+        "name": "web-design-engineer",
+        "path": "ConardLi_garden-skills/skills/web-design-engineer/SKILL.md",
+        "trigger": "for visual front-end creation, design-system exploration, design critique, or explicit browser acceptance / QA of a web artifact. Not for back-end, CLI, non-visual coding, source-to-longform article conversion, or narration-driven click-through video presentations."
+      },
+      "b": {
+        "name": "embedded-systems",
+        "path": "Jeffallan_claude-skills/skills/embedded-systems/SKILL.md",
+        "trigger": "when developing firmware for microcontrollers, implementing RTOS applications, or optimizing power consumption. Invoke for STM32, ESP32, FreeRTOS, bare-metal, power optimization, real-time systems, configure peripherals, write interrupt handlers, implement DMA transfers, debug timing issues."
+      },
+      "label": "distinct",
+      "rationale": "unrelated: design vs embedded firmware"
+    },
+    {
+      "id": "0-18",
+      "band": "0-0.1",
+      "score": 0,
+      "a": {
+        "name": "web-design-engineer",
+        "path": "ConardLi_garden-skills/skills/web-design-engineer/SKILL.md",
+        "trigger": "for visual front-end creation, design-system exploration, design critique, or explicit browser acceptance / QA of a web artifact. Not for back-end, CLI, non-visual coding, source-to-longform article conversion, or narration-driven click-through video presentations."
+      },
+      "b": {
+        "name": "fastapi-expert",
+        "path": "Jeffallan_claude-skills/skills/fastapi-expert/SKILL.md",
+        "trigger": "when building high-performance async Python APIs with FastAPI and Pydantic V2. Invoke to create REST endpoints, define Pydantic models, implement authentication flows, set up async SQLAlchemy database operations, add JWT authentication, build WebSocket endpoints, or generate OpenAPI documentation. Trigger terms: FastAPI, Pydantic, async Python, Python API, REST API Python, SQLAlchemy async, JWT authentication, OpenAPI, Swagger Python."
+      },
+      "label": "distinct",
+      "rationale": "unrelated: design vs FastAPI"
+    },
+    {
+      "id": "0-19",
+      "band": "0-0.1",
+      "score": 0.0305,
+      "a": {
+        "name": "web-design-engineer",
+        "path": "ConardLi_garden-skills/skills/web-design-engineer/SKILL.md",
+        "trigger": "for visual front-end creation, design-system exploration, design critique, or explicit browser acceptance / QA of a web artifact. Not for back-end, CLI, non-visual coding, source-to-longform article conversion, or narration-driven click-through video presentations."
+      },
+      "b": {
+        "name": "feature-forge",
+        "path": "Jeffallan_claude-skills/skills/feature-forge/SKILL.md",
+        "trigger": "when defining new features, gathering requirements, or writing specifications. Invoke for feature definition, requirements gathering, user stories, EARS format specs, PRDs, acceptance criteria, or requirement matrices."
+      },
+      "label": "distinct",
+      "rationale": "unrelated: design vs requirements/specs"
+    },
+    {
+      "id": "0-20",
+      "band": "0-0.1",
+      "score": 0,
+      "a": {
+        "name": "web-design-engineer",
+        "path": "ConardLi_garden-skills/skills/web-design-engineer/SKILL.md",
+        "trigger": "for visual front-end creation, design-system exploration, design critique, or explicit browser acceptance / QA of a web artifact. Not for back-end, CLI, non-visual coding, source-to-longform article conversion, or narration-driven click-through video presentations."
+      },
+      "b": {
+        "name": "fine-tuning-expert",
+        "path": "Jeffallan_claude-skills/skills/fine-tuning-expert/SKILL.md",
+        "trigger": "when fine-tuning LLMs, training custom models, or adapting foundation models for specific tasks. Invoke for configuring LoRA/QLoRA adapters, preparing JSONL training datasets, setting hyperparameters for fine-tuning runs, adapter training, transfer learning, finetuning with Hugging Face PEFT, OpenAI fine-tuning, instruction tuning, RLHF, DPO, or quantizing and deploying fine-tuned models. Trigger terms include: LoRA, QLoRA, PEFT, finetuning, fine-tuning, adapter tuning, LLM training, model training, custom model."
+      },
+      "label": "distinct",
+      "rationale": "unrelated: design vs LLM fine-tuning"
+    },
+    {
+      "id": "0-21",
+      "band": "0-0.1",
+      "score": 0,
+      "a": {
+        "name": "web-design-engineer",
+        "path": "ConardLi_garden-skills/skills/web-design-engineer/SKILL.md",
+        "trigger": "for visual front-end creation, design-system exploration, design critique, or explicit browser acceptance / QA of a web artifact. Not for back-end, CLI, non-visual coding, source-to-longform article conversion, or narration-driven click-through video presentations."
+      },
+      "b": {
+        "name": "flutter-expert",
+        "path": "Jeffallan_claude-skills/skills/flutter-expert/SKILL.md",
+        "trigger": "when building cross-platform applications with Flutter 3+ and Dart. Invoke for widget development, Riverpod/Bloc state management, GoRouter navigation, platform-specific implementations, performance optimization."
+      },
+      "label": "distinct",
+      "rationale": "unrelated: design vs Flutter"
+    },
+    {
+      "id": "0-22",
+      "band": "0-0.1",
+      "score": 0.0142,
+      "a": {
+        "name": "web-design-engineer",
+        "path": "ConardLi_garden-skills/skills/web-design-engineer/SKILL.md",
+        "trigger": "for visual front-end creation, design-system exploration, design critique, or explicit browser acceptance / QA of a web artifact. Not for back-end, CLI, non-visual coding, source-to-longform article conversion, or narration-driven click-through video presentations."
+      },
+      "b": {
+        "name": "fullstack-guardian",
+        "path": "Jeffallan_claude-skills/skills/fullstack-guardian/SKILL.md",
+        "trigger": "when implementing features across frontend and backend, building REST APIs with corresponding UI, connecting frontend components to backend endpoints, creating end-to-end data flows from database to UI, or implementing CRUD operations with UI forms. Distinct from frontend-only, backend-only, or API-only skills in that it simultaneously addresses all three perspectives—Frontend, Backend, and Security—within a single implementation workflow. Invoke for full-stack feature work, web app development, authenticated API routes with views, microservices, real-time features, monorepo architecture, or technology selection decisions."
+      },
+      "label": "distinct",
+      "rationale": "unrelated: design vs fullstack feature work"
+    },
+    {
+      "id": "0-23",
+      "band": "0-0.1",
+      "score": 0.0107,
+      "a": {
+        "name": "web-design-engineer",
+        "path": "ConardLi_garden-skills/skills/web-design-engineer/SKILL.md",
+        "trigger": "for visual front-end creation, design-system exploration, design critique, or explicit browser acceptance / QA of a web artifact. Not for back-end, CLI, non-visual coding, source-to-longform article conversion, or narration-driven click-through video presentations."
+      },
+      "b": {
+        "name": "game-developer",
+        "path": "Jeffallan_claude-skills/skills/game-developer/SKILL.md",
+        "trigger": "when building game systems, implementing Unity/Unreal Engine features, or optimizing game performance. Invoke to implement ECS architecture, configure physics systems and colliders, set up multiplayer networking with lag compensation, optimize frame rates to 60+ FPS targets, develop shaders, or apply game design patterns such as object pooling and state machines. Trigger keywords: Unity, Unreal Engine, game development, ECS architecture, game physics, multiplayer networking, game optimization, shader programming, game AI."
+      },
+      "label": "distinct",
+      "rationale": "unrelated: design vs game engines"
+    },
+    {
+      "id": "0-24",
+      "band": "0-0.1",
+      "score": 0.0283,
+      "a": {
+        "name": "web-design-engineer",
+        "path": "ConardLi_garden-skills/skills/web-design-engineer/SKILL.md",
+        "trigger": "for visual front-end creation, design-system exploration, design critique, or explicit browser acceptance / QA of a web artifact. Not for back-end, CLI, non-visual coding, source-to-longform article conversion, or narration-driven click-through video presentations."
+      },
+      "b": {
+        "name": "golang-pro",
+        "path": "Jeffallan_claude-skills/skills/golang-pro/SKILL.md",
+        "trigger": "when building Go applications requiring concurrent programming, microservices architecture, or high-performance systems. Invoke for goroutines, channels, Go generics, gRPC integration, CLI tools, benchmarks, or table-driven testing."
+      },
+      "label": "distinct",
+      "rationale": "unrelated: design vs Go concurrency"
+    },
+    {
+      "id": "0-25",
+      "band": "0-0.1",
+      "score": 0.0204,
+      "a": {
+        "name": "web-design-engineer",
+        "path": "ConardLi_garden-skills/skills/web-design-engineer/SKILL.md",
+        "trigger": "for visual front-end creation, design-system exploration, design critique, or explicit browser acceptance / QA of a web artifact. Not for back-end, CLI, non-visual coding, source-to-longform article conversion, or narration-driven click-through video presentations."
+      },
+      "b": {
+        "name": "graphql-architect",
+        "path": "Jeffallan_claude-skills/skills/graphql-architect/SKILL.md",
+        "trigger": "when designing GraphQL schemas, implementing Apollo Federation, or building real-time subscriptions. Invoke for schema design, resolvers with DataLoader, query optimization, federation directives."
+      },
+      "label": "distinct",
+      "rationale": "unrelated: design vs GraphQL federation"
+    },
+    {
+      "id": "1-0",
+      "band": "0.1-0.2",
+      "score": 0.1181,
+      "a": {
+        "name": "angular-architect",
+        "path": "Jeffallan_claude-skills/skills/angular-architect/SKILL.md",
+        "trigger": "when building Angular 17+ applications with standalone components or signals, setting up NgRx stores, establishing RxJS reactive patterns, performance tuning, or writing Angular tests for enterprise apps."
+      },
+      "b": {
+        "name": "java-architect",
+        "path": "Jeffallan_claude-skills/skills/java-architect/SKILL.md",
+        "trigger": "when building, configuring, or debugging enterprise Java applications with Spring Boot 3.x, microservices, or reactive programming. Invoke to implement WebFlux endpoints, optimize JPA queries and database performance, configure Spring Security with OAuth2/JWT, or resolve authentication issues and async processing challenges in cloud-native Spring applications."
+      },
+      "label": "distinct",
+      "rationale": "Angular vs enterprise Java: explicit framework discriminators"
+    },
+    {
+      "id": "1-1",
+      "band": "0.1-0.2",
+      "score": 0.1207,
+      "a": {
+        "name": "angular-architect",
+        "path": "Jeffallan_claude-skills/skills/angular-architect/SKILL.md",
+        "trigger": "when building Angular 17+ applications with standalone components or signals, setting up NgRx stores, establishing RxJS reactive patterns, performance tuning, or writing Angular tests for enterprise apps."
+      },
+      "b": {
+        "name": "laravel-specialist",
+        "path": "Jeffallan_claude-skills/skills/laravel-specialist/SKILL.md",
+        "trigger": "when creating Laravel models, setting up queue workers, implementing Sanctum auth flows, building Livewire components, optimising Eloquent queries, or writing Pest/PHPUnit tests for Laravel features."
+      },
+      "label": "distinct",
+      "rationale": "Angular vs Laravel"
+    },
+    {
+      "id": "1-2",
+      "band": "0.1-0.2",
+      "score": 0.1012,
+      "a": {
+        "name": "angular-architect",
+        "path": "Jeffallan_claude-skills/skills/angular-architect/SKILL.md",
+        "trigger": "when building Angular 17+ applications with standalone components or signals, setting up NgRx stores, establishing RxJS reactive patterns, performance tuning, or writing Angular tests for enterprise apps."
+      },
+      "b": {
+        "name": "ml-pipeline",
+        "path": "Jeffallan_claude-skills/skills/ml-pipeline/SKILL.md",
+        "trigger": "when building ML pipelines, orchestrating training workflows, automating model lifecycle, implementing feature stores, managing experiment tracking systems, setting up DVC for data versioning, tuning hyperparameters, or configuring MLOps tooling like Kubeflow, Airflow, MLflow, or Prefect."
+      },
+      "label": "distinct",
+      "rationale": "Angular vs ML pipelines"
+    },
+    {
+      "id": "1-3",
+      "band": "0.1-0.2",
+      "score": 0.1303,
+      "a": {
+        "name": "angular-architect",
+        "path": "Jeffallan_claude-skills/skills/angular-architect/SKILL.md",
+        "trigger": "when building Angular 17+ applications with standalone components or signals, setting up NgRx stores, establishing RxJS reactive patterns, performance tuning, or writing Angular tests for enterprise apps."
+      },
+      "b": {
+        "name": "vue-expert",
+        "path": "Jeffallan_claude-skills/skills/vue-expert/SKILL.md",
+        "trigger": "when creating Vue 3 applications with Composition API, writing reusable composables, managing state with Pinia, building hybrid mobile apps with Quasar or Capacitor, configuring service workers, or tuning Vite configuration and TypeScript integration."
+      },
+      "label": "distinct",
+      "rationale": "Angular vs Vue: named frameworks are mutually exclusive"
+    },
+    {
+      "id": "1-4",
+      "band": "0.1-0.2",
+      "score": 0.1206,
+      "a": {
+        "name": "api-designer",
+        "path": "Jeffallan_claude-skills/skills/api-designer/SKILL.md",
+        "trigger": "when designing REST or GraphQL APIs, creating OpenAPI specifications, or planning API architecture. Invoke for resource modeling, versioning strategies, pagination patterns, error handling standards."
+      },
+      "b": {
+        "name": "fastapi-expert",
+        "path": "Jeffallan_claude-skills/skills/fastapi-expert/SKILL.md",
+        "trigger": "when building high-performance async Python APIs with FastAPI and Pydantic V2. Invoke to create REST endpoints, define Pydantic models, implement authentication flows, set up async SQLAlchemy database operations, add JWT authentication, build WebSocket endpoints, or generate OpenAPI documentation. Trigger terms: FastAPI, Pydantic, async Python, Python API, REST API Python, SQLAlchemy async, JWT authentication, OpenAPI, Swagger Python."
+      },
+      "label": "distinct",
+      "rationale": "generic API design vs FastAPI-specific implementation"
+    },
+    {
+      "id": "1-5",
+      "band": "0.1-0.2",
+      "score": 0.1046,
+      "a": {
+        "name": "api-designer",
+        "path": "Jeffallan_claude-skills/skills/api-designer/SKILL.md",
+        "trigger": "when designing REST or GraphQL APIs, creating OpenAPI specifications, or planning API architecture. Invoke for resource modeling, versioning strategies, pagination patterns, error handling standards."
+      },
+      "b": {
+        "name": "nestjs-expert",
+        "path": "Jeffallan_claude-skills/skills/nestjs-expert/SKILL.md",
+        "trigger": "when building NestJS REST APIs or GraphQL services, implementing dependency injection, scaffolding modular architecture, adding JWT/Passport authentication, integrating TypeORM or Prisma, or working with .module.ts, .controller.ts, and .service.ts files. Invoke for guards, interceptors, pipes, validation, Swagger documentation, and unit/E2E testing in NestJS projects."
+      },
+      "label": "distinct",
+      "rationale": "generic API design vs NestJS-specific"
+    },
+    {
+      "id": "1-6",
+      "band": "0.1-0.2",
+      "score": 0.1173,
+      "a": {
+        "name": "api-designer",
+        "path": "Jeffallan_claude-skills/skills/api-designer/SKILL.md",
+        "trigger": "when designing REST or GraphQL APIs, creating OpenAPI specifications, or planning API architecture. Invoke for resource modeling, versioning strategies, pagination patterns, error handling standards."
+      },
+      "b": {
+        "name": "php-pro",
+        "path": "Jeffallan_claude-skills/skills/php-pro/SKILL.md",
+        "trigger": "when building PHP applications with modern PHP 8.3+ features, Laravel, or Symfony frameworks. Invokes strict typing, PHPStan level 9, async patterns with Swoole, and PSR standards. Creates controllers, configures middleware, generates migrations, writes PHPUnit/Pest tests, defines typed DTOs and value objects, sets up dependency injection, and scaffolds REST/GraphQL APIs. Use when working with Eloquent, Doctrine, Composer, Psalm, ReactPHP, or any PHP API development."
+      },
+      "label": "distinct",
+      "rationale": "API design vs PHP language work"
+    },
+    {
+      "id": "1-7",
+      "band": "0.1-0.2",
+      "score": 0.1108,
+      "a": {
+        "name": "api-designer",
+        "path": "Jeffallan_claude-skills/skills/api-designer/SKILL.md",
+        "trigger": "when designing REST or GraphQL APIs, creating OpenAPI specifications, or planning API architecture. Invoke for resource modeling, versioning strategies, pagination patterns, error handling standards."
+      },
+      "b": {
+        "name": "api-design-reviewer",
+        "path": "alirezarezvani_claude-skills/.codex/skills/api-design-reviewer/SKILL.md",
+        "trigger": "when reviewing a PR that adds or changes API endpoints, auditing an existing API for v2 migration, or establishing API standards for a team."
+      },
+      "label": "distinct",
+      "rationale": "designing a new API vs reviewing a PR that changes one: different phase"
+    },
+    {
+      "id": "1-8",
+      "band": "0.1-0.2",
+      "score": 0.1876,
+      "a": {
+        "name": "api-designer",
+        "path": "Jeffallan_claude-skills/skills/api-designer/SKILL.md",
+        "trigger": "when designing REST or GraphQL APIs, creating OpenAPI specifications, or planning API architecture. Invoke for resource modeling, versioning strategies, pagination patterns, error handling standards."
+      },
+      "b": {
+        "name": "senior-backend",
+        "path": "alirezarezvani_claude-skills/.codex/skills/senior-backend/SKILL.md",
+        "trigger": "when the user asks to \"design REST APIs\", \"optimize database queries\", \"implement authentication\", \"build microservices\", \"review backend code\", \"set up GraphQL\", \"handle database migrations\", or \"load test APIs\". Covers Node.js/Express/Fastify development, PostgreSQL optimization, API security, and backend architecture patterns."
+      },
+      "label": "collide",
+      "rationale": "both trigger on 'design REST APIs'"
+    },
+    {
+      "id": "1-9",
+      "band": "0.1-0.2",
+      "score": 0.1414,
+      "a": {
+        "name": "api-designer",
+        "path": "Jeffallan_claude-skills/skills/api-designer/SKILL.md",
+        "trigger": "when designing REST or GraphQL APIs, creating OpenAPI specifications, or planning API architecture. Invoke for resource modeling, versioning strategies, pagination patterns, error handling standards."
+      },
+      "b": {
+        "name": "provider-resources",
+        "path": "hashicorp_agent-skills/plugins/terraform/skills/provider-resources/SKILL.md",
+        "trigger": "when adding or changing a resource or data source, deciding whether an API concept should be a resource, wiring a resource to the provider's configured client, handling drift or resource-not-found, or reviewing a resource implementation before submission."
+      },
+      "label": "distinct",
+      "rationale": "API design vs Terraform provider resource authoring"
+    },
+    {
+      "id": "1-10",
+      "band": "0.1-0.2",
+      "score": 0.1001,
+      "a": {
+        "name": "api-designer",
+        "path": "Jeffallan_claude-skills/skills/api-designer/SKILL.md",
+        "trigger": "when designing REST or GraphQL APIs, creating OpenAPI specifications, or planning API architecture. Invoke for resource modeling, versioning strategies, pagination patterns, error handling standards."
+      },
+      "b": {
+        "name": "golang-design-patterns",
+        "path": "samber_cc-skills-golang/skills/golang-design-patterns/SKILL.md",
+        "trigger": "when explicitly choosing between architectural patterns, implementing functional options, designing constructor APIs, setting up graceful shutdown, applying resilience patterns, or asking which idiomatic Go pattern fits a specific problem."
+      },
+      "label": "distinct",
+      "rationale": "API design vs Go design patterns"
+    },
+    {
+      "id": "1-11",
+      "band": "0.1-0.2",
+      "score": 0.1187,
+      "a": {
+        "name": "api-designer",
+        "path": "Jeffallan_claude-skills/skills/api-designer/SKILL.md",
+        "trigger": "when designing REST or GraphQL APIs, creating OpenAPI specifications, or planning API architecture. Invoke for resource modeling, versioning strategies, pagination patterns, error handling standards."
+      },
+      "b": {
+        "name": "golang-graphql",
+        "path": "samber_cc-skills-golang/skills/golang-graphql/SKILL.md",
+        "trigger": "when building GraphQL servers, designing schemas, writing resolvers, handling subscriptions, or integrating GraphQL with existing Go HTTP services. Also apply when the codebase imports `github.com/99designs/gqlgen` or `github.com/graph-gophers/graphql-go`."
+      },
+      "label": "collide",
+      "rationale": "'design a GraphQL schema' matches both; B states no Go discriminator in its trigger"
+    },
+    {
+      "id": "1-12",
+      "band": "0.1-0.2",
+      "score": 0.1006,
+      "a": {
+        "name": "api-designer",
+        "path": "Jeffallan_claude-skills/skills/api-designer/SKILL.md",
+        "trigger": "when designing REST or GraphQL APIs, creating OpenAPI specifications, or planning API architecture. Invoke for resource modeling, versioning strategies, pagination patterns, error handling standards."
+      },
+      "b": {
+        "name": "openapi-to-typescript",
+        "path": "softaworks_agent-toolkit/skills/openapi-to-typescript/SKILL.md",
+        "trigger": "when the user asks to generate types from OpenAPI, convert schema to TS, create API interfaces, or generate TypeScript types from an API specification."
+      },
+      "label": "distinct",
+      "rationale": "API design vs generating TS types from an existing OpenAPI doc"
+    },
+    {
+      "id": "1-13",
+      "band": "0.1-0.2",
+      "score": 0.1052,
+      "a": {
+        "name": "architecture-designer",
+        "path": "Jeffallan_claude-skills/skills/architecture-designer/SKILL.md",
+        "trigger": "when designing new high-level system architecture, reviewing existing designs, or making architectural decisions. Invoke to create architecture diagrams, write Architecture Decision Records (ADRs), evaluate technology trade-offs, design component interactions, and plan for scalability. Use for system design, architecture review, microservices structuring, ADR authoring, scalability planning, and infrastructure pattern selection — distinct from code-level design patterns or database-only design tasks."
+      },
+      "b": {
+        "name": "cloud-architect",
+        "path": "Jeffallan_claude-skills/skills/cloud-architect/SKILL.md",
+        "trigger": "when designing cloud architectures, planning migrations, or optimizing multi-cloud deployments. Invoke for Well-Architected Framework, cost optimization, disaster recovery, landing zones, security architecture, serverless design."
+      },
+      "label": "collide",
+      "rationale": "'design the architecture for our cloud platform' satisfies both triggers"
+    },
+    {
+      "id": "1-14",
+      "band": "0.1-0.2",
+      "score": 0.1297,
+      "a": {
+        "name": "architecture-designer",
+        "path": "Jeffallan_claude-skills/skills/architecture-designer/SKILL.md",
+        "trigger": "when designing new high-level system architecture, reviewing existing designs, or making architectural decisions. Invoke to create architecture diagrams, write Architecture Decision Records (ADRs), evaluate technology trade-offs, design component interactions, and plan for scalability. Use for system design, architecture review, microservices structuring, ADR authoring, scalability planning, and infrastructure pattern selection — distinct from code-level design patterns or database-only design tasks."
+      },
+      "b": {
+        "name": "agent-designer",
+        "path": "alirezarezvani_claude-skills/.codex/skills/agent-designer/SKILL.md",
+        "trigger": "when the user asks to design a multi-agent system, pick an orchestration pattern (supervisor/swarm/pipeline), generate tool schemas for agents, or evaluate agent execution logs for cost, latency, and failure bottlenecks. Examples: 'design an agent architecture for research automation', 'generate Anthropic tool schemas from these tool descriptions', 'analyze these agent run logs for bottlenecks'. NOT for Claude Code workflow files (use workflow-builder) or single-agent prompt design (use agent-workflow-designer)."
+      },
+      "label": "distinct",
+      "rationale": "general architecture vs multi-agent orchestration specifically"
+    },
+    {
+      "id": "1-15",
+      "band": "0.1-0.2",
+      "score": 0.1239,
+      "a": {
+        "name": "architecture-designer",
+        "path": "Jeffallan_claude-skills/skills/architecture-designer/SKILL.md",
+        "trigger": "when designing new high-level system architecture, reviewing existing designs, or making architectural decisions. Invoke to create architecture diagrams, write Architecture Decision Records (ADRs), evaluate technology trade-offs, design component interactions, and plan for scalability. Use for system design, architecture review, microservices structuring, ADR authoring, scalability planning, and infrastructure pattern selection — distinct from code-level design patterns or database-only design tasks."
+      },
+      "b": {
+        "name": "cto-advisor",
+        "path": "alirezarezvani_claude-skills/.codex/skills/cto-advisor/SKILL.md",
+        "trigger": "when assessing technical debt, scaling engineering teams, evaluating technologies, making architecture decisions, establishing engineering metrics, or when user mentions CTO, tech debt, technical debt, team scaling, architecture decisions, technology evaluation, engineering metrics, DORA metrics, or technology strategy."
+      },
+      "label": "collide",
+      "rationale": "both claim 'making architectural decisions'"
+    },
+    {
+      "id": "1-16",
+      "band": "0.1-0.2",
+      "score": 0.1106,
+      "a": {
+        "name": "architecture-designer",
+        "path": "Jeffallan_claude-skills/skills/architecture-designer/SKILL.md",
+        "trigger": "when designing new high-level system architecture, reviewing existing designs, or making architectural decisions. Invoke to create architecture diagrams, write Architecture Decision Records (ADRs), evaluate technology trade-offs, design component interactions, and plan for scalability. Use for system design, architecture review, microservices structuring, ADR authoring, scalability planning, and infrastructure pattern selection — distinct from code-level design patterns or database-only design tasks."
+      },
+      "b": {
+        "name": "database-schema-designer",
+        "path": "alirezarezvani_claude-skills/.codex/skills/database-schema-designer/SKILL.md",
+        "trigger": "when the user asks to create ERD diagrams, normalize database schemas, design table relationships, or plan schema migrations."
+      },
+      "label": "distinct",
+      "rationale": "system architecture vs ERD/table normalisation"
+    },
+    {
+      "id": "1-17",
+      "band": "0.1-0.2",
+      "score": 0.1095,
+      "a": {
+        "name": "architecture-designer",
+        "path": "Jeffallan_claude-skills/skills/architecture-designer/SKILL.md",
+        "trigger": "when designing new high-level system architecture, reviewing existing designs, or making architectural decisions. Invoke to create architecture diagrams, write Architecture Decision Records (ADRs), evaluate technology trade-offs, design component interactions, and plan for scalability. Use for system design, architecture review, microservices structuring, ADR authoring, scalability planning, and infrastructure pattern selection — distinct from code-level design patterns or database-only design tasks."
+      },
+      "b": {
+        "name": "senior-backend",
+        "path": "alirezarezvani_claude-skills/.codex/skills/senior-backend/SKILL.md",
+        "trigger": "when the user asks to \"design REST APIs\", \"optimize database queries\", \"implement authentication\", \"build microservices\", \"review backend code\", \"set up GraphQL\", \"handle database migrations\", or \"load test APIs\". Covers Node.js/Express/Fastify development, PostgreSQL optimization, API security, and backend architecture patterns."
+      },
+      "label": "distinct",
+      "rationale": "B triggers on quoted concrete backend tasks, not architecture design"
+    },
+    {
+      "id": "1-18",
+      "band": "0.1-0.2",
+      "score": 0.1837,
+      "a": {
+        "name": "architecture-designer",
+        "path": "Jeffallan_claude-skills/skills/architecture-designer/SKILL.md",
+        "trigger": "when designing new high-level system architecture, reviewing existing designs, or making architectural decisions. Invoke to create architecture diagrams, write Architecture Decision Records (ADRs), evaluate technology trade-offs, design component interactions, and plan for scalability. Use for system design, architecture review, microservices structuring, ADR authoring, scalability planning, and infrastructure pattern selection — distinct from code-level design patterns or database-only design tasks."
+      },
+      "b": {
+        "name": "c4-architecture",
+        "path": "softaworks_agent-toolkit/skills/c4-architecture/SKILL.md",
+        "trigger": "when asked to create architecture diagrams, document system architecture, visualize software structure, create C4 diagrams, or generate context/container/component/deployment diagrams. Triggers include \"architecture diagram\", \"C4 diagram\", \"system context\", \"container diagram\", \"component diagram\", \"deployment diagram\", \"document architecture\", \"visualize architecture\"."
+      },
+      "label": "collide",
+      "rationale": "both claim creating/documenting architecture diagrams"
+    },
+    {
+      "id": "1-19",
+      "band": "0.1-0.2",
+      "score": 0.1501,
+      "a": {
+        "name": "architecture-designer",
+        "path": "Jeffallan_claude-skills/skills/architecture-designer/SKILL.md",
+        "trigger": "when designing new high-level system architecture, reviewing existing designs, or making architectural decisions. Invoke to create architecture diagrams, write Architecture Decision Records (ADRs), evaluate technology trade-offs, design component interactions, and plan for scalability. Use for system design, architecture review, microservices structuring, ADR authoring, scalability planning, and infrastructure pattern selection — distinct from code-level design patterns or database-only design tasks."
+      },
+      "b": {
+        "name": "mermaid-diagrams",
+        "path": "softaworks_agent-toolkit/skills/mermaid-diagrams/SKILL.md",
+        "trigger": "when users need to create, visualize, or document software through diagrams including class diagrams (domain modeling, object-oriented design), sequence diagrams (application flows, API interactions, code execution), flowcharts (processes, algorithms, user journeys), entity relationship diagrams (database schemas), C4 architecture diagrams (system context, containers, components), state diagrams, git graphs, pie charts, gantt charts, or any other diagram type. Triggers include requests to \"diagram\", \"visualize\", \"model\", \"map out\", \"show the flow\", or when explaining system architecture, database design, code structure, or user/application flows."
+      },
+      "label": "collide",
+      "rationale": "both claim producing architecture/software diagrams"
+    },
+    {
+      "id": "1-20",
+      "band": "0.1-0.2",
+      "score": 0.1056,
+      "a": {
+        "name": "atlassian-mcp",
+        "path": "Jeffallan_claude-skills/skills/atlassian-mcp/SKILL.md",
+        "trigger": "when querying Jira issues with JQL filters, creating and updating tickets with custom fields, searching or editing Confluence pages with CQL, managing sprints and backlogs, setting up MCP server authentication, syncing documentation, or debugging Atlassian API integrations."
+      },
+      "b": {
+        "name": "atlassian-admin",
+        "path": "alirezarezvani_claude-skills/.codex/skills/atlassian-admin/SKILL.md",
+        "trigger": "when asked to add users to Jira, change Confluence permissions, configure access control, update admin settings, manage Atlassian groups, set up SSO, install marketplace apps, review security policies, or handle any org-wide Atlassian administration task."
+      },
+      "label": "distinct",
+      "rationale": "Jira/Confluence content operations vs user and permission administration"
+    },
+    {
+      "id": "1-21",
+      "band": "0.1-0.2",
+      "score": 0.1101,
+      "a": {
+        "name": "atlassian-mcp",
+        "path": "Jeffallan_claude-skills/skills/atlassian-mcp/SKILL.md",
+        "trigger": "when querying Jira issues with JQL filters, creating and updating tickets with custom fields, searching or editing Confluence pages with CQL, managing sprints and backlogs, setting up MCP server authentication, syncing documentation, or debugging Atlassian API integrations."
+      },
+      "b": {
+        "name": "confluence-expert",
+        "path": "alirezarezvani_claude-skills/.codex/skills/confluence-expert/SKILL.md",
+        "trigger": "when users need to build or restructure a Confluence space, design page hierarchies with permission structures, author or standardise documentation templates, embed Jira reports in pages, run knowledge base audits, or establish documentation standards and collaborative workflows."
+      },
+      "label": "collide",
+      "rationale": "both cover editing/structuring Confluence pages"
+    },
+    {
+      "id": "1-22",
+      "band": "0.1-0.2",
+      "score": 0.1459,
+      "a": {
+        "name": "atlassian-mcp",
+        "path": "Jeffallan_claude-skills/skills/atlassian-mcp/SKILL.md",
+        "trigger": "when querying Jira issues with JQL filters, creating and updating tickets with custom fields, searching or editing Confluence pages with CQL, managing sprints and backlogs, setting up MCP server authentication, syncing documentation, or debugging Atlassian API integrations."
+      },
+      "b": {
+        "name": "jira-expert",
+        "path": "alirezarezvani_claude-skills/.codex/skills/jira-expert/SKILL.md",
+        "trigger": "when setting up or configuring Jira projects, writing JQL and advanced searches, creating dashboards, designing workflows, or performing technical Jira operations."
+      },
+      "label": "collide",
+      "rationale": "both claim JQL search over Jira issues"
+    },
+    {
+      "id": "1-23",
+      "band": "0.1-0.2",
+      "score": 0.1691,
+      "a": {
+        "name": "atlassian-mcp",
+        "path": "Jeffallan_claude-skills/skills/atlassian-mcp/SKILL.md",
+        "trigger": "when querying Jira issues with JQL filters, creating and updating tickets with custom fields, searching or editing Confluence pages with CQL, managing sprints and backlogs, setting up MCP server authentication, syncing documentation, or debugging Atlassian API integrations."
+      },
+      "b": {
+        "name": "mcp-server-builder",
+        "path": "alirezarezvani_claude-skills/.codex/skills/mcp-server-builder/SKILL.md",
+        "trigger": "when exposing an existing API as an MCP server, building tool integrations for Claude or Codex or Cursor, or scaffolding an MCP project from scratch."
+      },
+      "label": "distinct",
+      "rationale": "using Atlassian MCP vs authoring an MCP server"
+    },
+    {
+      "id": "1-24",
+      "band": "0.1-0.2",
+      "score": 0.1164,
+      "a": {
+        "name": "atlassian-mcp",
+        "path": "Jeffallan_claude-skills/skills/atlassian-mcp/SKILL.md",
+        "trigger": "when querying Jira issues with JQL filters, creating and updating tickets with custom fields, searching or editing Confluence pages with CQL, managing sprints and backlogs, setting up MCP server authentication, syncing documentation, or debugging Atlassian API integrations."
+      },
+      "b": {
+        "name": "pm-skills",
+        "path": "alirezarezvani_claude-skills/.codex/skills/pm-skills/SKILL.md",
+        "trigger": "when coordinating project-delivery work across the 8 project-management sub-skills — sprint/velocity analytics, portfolio health, Jira/JQL, Confluence, Atlassian admin, templates, meeting analysis, team comms. Triggers on 'our sprints feel off', 'project health report', 'audit our Jira permissions', 'when will it be done', 'run the delivery loop'. Forks context to route to one sub-skill via a deterministic signal router and returns a digest; can also drive a full goal→plan→execute→verify→close delivery loop through the repo-wide agent-harness with Jira MCP data bridged into the domain's analytics tools. Distinct from product-team (what to build vs how to deliver it), business-operations (internal ops), and engineering/agent-harness (the generic loop engine this orchestrator plugs into)."
+      },
+      "label": "distinct",
+      "rationale": "Jira operations vs PM sub-skill routing"
+    },
+    {
+      "id": "1-25",
+      "band": "0.1-0.2",
+      "score": 0.1169,
+      "a": {
+        "name": "atlassian-mcp",
+        "path": "Jeffallan_claude-skills/skills/atlassian-mcp/SKILL.md",
+        "trigger": "when querying Jira issues with JQL filters, creating and updating tickets with custom fields, searching or editing Confluence pages with CQL, managing sprints and backlogs, setting up MCP server authentication, syncing documentation, or debugging Atlassian API integrations."
+      },
+      "b": {
+        "name": "jira",
+        "path": "softaworks_agent-toolkit/skills/jira/SKILL.md",
+        "trigger": "when the user mentions Jira issues (e.g., \"PROJ-123\"), asks about tickets, wants to create/view/update issues, check sprint status, or manage their Jira workflow. Triggers on keywords like \"jira\", \"issue\", \"ticket\", \"sprint\", \"backlog\", or issue key patterns."
+      },
+      "label": "collide",
+      "rationale": "both trigger on creating and viewing Jira tickets"
+    },
+    {
+      "id": "2-0",
+      "band": "0.2-0.3",
+      "score": 0.2252,
+      "a": {
+        "name": "code-documenter",
+        "path": "Jeffallan_claude-skills/skills/code-documenter/SKILL.md",
+        "trigger": "when adding docstrings to functions or classes, creating API documentation, building documentation sites, or writing tutorials and user guides. Invoke for OpenAPI/Swagger specs, JSDoc, doc portals, getting started guides."
+      },
+      "b": {
+        "name": "golang-documentation",
+        "path": "samber_cc-skills-golang/skills/golang-documentation/SKILL.md",
+        "trigger": "when writing or reviewing doc comments, documentation, adding code examples, setting up doc sites, or discussing documentation best practices. Triggers for both libraries and applications/CLIs."
+      },
+      "label": "collide",
+      "rationale": "both trigger on writing documentation and doc sites; B's trigger names no language"
+    },
+    {
+      "id": "2-1",
+      "band": "0.2-0.3",
+      "score": 0.2512,
+      "a": {
+        "name": "code-reviewer",
+        "path": "Jeffallan_claude-skills/skills/code-reviewer/SKILL.md",
+        "trigger": "when reviewing pull requests, conducting code quality audits, identifying refactoring opportunities, or checking for security issues. Invoke for PR reviews, code quality checks, refactoring suggestions, review code, code quality. Complements specialized skills (security-reviewer, test-master) by providing broad-scope review across correctness, performance, maintainability, and test coverage in a single pass."
+      },
+      "b": {
+        "name": "pr-review-expert",
+        "path": "alirezarezvani_claude-skills/.codex/skills/pr-review-expert/SKILL.md",
+        "trigger": "when the user asks to review pull requests, analyze code changes, check for security issues in PRs, or assess code quality of diffs."
+      },
+      "label": "collide",
+      "rationale": "both trigger on reviewing pull requests for quality and security"
+    },
+    {
+      "id": "2-2",
+      "band": "0.2-0.3",
+      "score": 0.2398,
+      "a": {
+        "name": "database-optimizer",
+        "path": "Jeffallan_claude-skills/skills/database-optimizer/SKILL.md",
+        "trigger": "when investigating slow queries, analyzing execution plans, or optimizing database performance. Invoke for index design, query rewrites, configuration tuning, partitioning strategies, lock contention resolution."
+      },
+      "b": {
+        "name": "sql-pro",
+        "path": "Jeffallan_claude-skills/skills/sql-pro/SKILL.md",
+        "trigger": "when a user asks why their query is slow, needs help writing complex joins or aggregations, mentions database performance issues, or wants to design or migrate a schema. Invoke for complex queries, window functions, CTEs, indexing strategies, query plan analysis, covering index creation, recursive queries, EXPLAIN/ANALYZE interpretation, before/after query benchmarking, or migrating queries between database dialects (PostgreSQL, MySQL, SQL Server, Oracle)."
+      },
+      "label": "collide",
+      "rationale": "both trigger on diagnosing and optimising slow SQL queries"
+    },
+    {
+      "id": "2-3",
+      "band": "0.2-0.3",
+      "score": 0.2308,
+      "a": {
+        "name": "devops-engineer",
+        "path": "Jeffallan_claude-skills/skills/devops-engineer/SKILL.md",
+        "trigger": "when setting up CI/CD pipelines, containerizing applications, managing infrastructure as code, deploying to Kubernetes clusters, configuring cloud platforms, automating releases, or responding to production incidents. Invoke for pipelines, Docker, Kubernetes, GitOps, Terraform, GitHub Actions, on-call, or platform engineering."
+      },
+      "b": {
+        "name": "senior-devops",
+        "path": "alirezarezvani_claude-skills/.codex/skills/senior-devops/SKILL.md",
+        "trigger": "when setting up pipelines, deploying applications, managing infrastructure, implementing monitoring, or optimizing deployment processes."
+      },
+      "label": "collide",
+      "rationale": "both trigger on CI/CD pipelines, deployment and infrastructure"
+    },
+    {
+      "id": "2-4",
+      "band": "0.2-0.3",
+      "score": 0.2024,
+      "a": {
+        "name": "feature-forge",
+        "path": "Jeffallan_claude-skills/skills/feature-forge/SKILL.md",
+        "trigger": "when defining new features, gathering requirements, or writing specifications. Invoke for feature definition, requirements gathering, user stories, EARS format specs, PRDs, acceptance criteria, or requirement matrices."
+      },
+      "b": {
+        "name": "spec-driven-workflow",
+        "path": "alirezarezvani_claude-skills/.codex/skills/spec-driven-workflow/SKILL.md",
+        "trigger": "when the user asks to write specs before code, define acceptance criteria, plan features before implementation, generate tests from specifications, or follow spec-first development practices."
+      },
+      "label": "collide",
+      "rationale": "both trigger on defining features and writing specifications before code"
+    },
+    {
+      "id": "2-5",
+      "band": "0.2-0.3",
+      "score": 0.2186,
+      "a": {
+        "name": "fullstack-guardian",
+        "path": "Jeffallan_claude-skills/skills/fullstack-guardian/SKILL.md",
+        "trigger": "when implementing features across frontend and backend, building REST APIs with corresponding UI, connecting frontend components to backend endpoints, creating end-to-end data flows from database to UI, or implementing CRUD operations with UI forms. Distinct from frontend-only, backend-only, or API-only skills in that it simultaneously addresses all three perspectives—Frontend, Backend, and Security—within a single implementation workflow. Invoke for full-stack feature work, web app development, authenticated API routes with views, microservices, real-time features, monorepo architecture, or technology selection decisions."
+      },
+      "b": {
+        "name": "frontend-to-backend-requirements",
+        "path": "softaworks_agent-toolkit/skills/frontend-to-backend-requirements/SKILL.md",
+        "trigger": "when frontend needs to communicate API requirements to backend, or user says 'backend requirements', 'what data do I need', 'API requirements', or is describing data needs for a UI."
+      },
+      "label": "collide",
+      "rationale": "both cover communicating API requirements between frontend and backend"
+    },
+    {
+      "id": "2-6",
+      "band": "0.2-0.3",
+      "score": 0.2325,
+      "a": {
+        "name": "graphql-architect",
+        "path": "Jeffallan_claude-skills/skills/graphql-architect/SKILL.md",
+        "trigger": "when designing GraphQL schemas, implementing Apollo Federation, or building real-time subscriptions. Invoke for schema design, resolvers with DataLoader, query optimization, federation directives."
+      },
+      "b": {
+        "name": "golang-graphql",
+        "path": "samber_cc-skills-golang/skills/golang-graphql/SKILL.md",
+        "trigger": "when building GraphQL servers, designing schemas, writing resolvers, handling subscriptions, or integrating GraphQL with existing Go HTTP services. Also apply when the codebase imports `github.com/99designs/gqlgen` or `github.com/graph-gophers/graphql-go`."
+      },
+      "label": "collide",
+      "rationale": "both trigger on designing GraphQL schemas, resolvers and subscriptions"
+    },
+    {
+      "id": "2-7",
+      "band": "0.2-0.3",
+      "score": 0.2286,
+      "a": {
+        "name": "javascript-pro",
+        "path": "Jeffallan_claude-skills/skills/javascript-pro/SKILL.md",
+        "trigger": "when building vanilla JavaScript applications, implementing Promise-based async flows, optimising browser or Node.js performance, working with Web Workers or Fetch API, or reviewing .js/.mjs/.cjs files for correctness and best practices."
+      },
+      "b": {
+        "name": "vue-expert-js",
+        "path": "Jeffallan_claude-skills/skills/vue-expert-js/SKILL.md",
+        "trigger": "when building Vue 3 applications with JavaScript only (no TypeScript), when projects require JSDoc-based type hints, when migrating from Vue 2 Options API to Composition API in JS, or when teams prefer vanilla JavaScript, .mjs modules, or need quick prototypes without TypeScript setup."
+      },
+      "label": "distinct",
+      "rationale": "vanilla JS vs Vue 3 with JS: explicit framework discriminator"
+    },
+    {
+      "id": "2-8",
+      "band": "0.2-0.3",
+      "score": 0.2481,
+      "a": {
+        "name": "kubernetes-specialist",
+        "path": "Jeffallan_claude-skills/skills/kubernetes-specialist/SKILL.md",
+        "trigger": "when deploying or managing Kubernetes workloads. Invoke to create deployment manifests, configure pod security policies, set up service accounts, define network isolation rules, debug pod crashes, analyze resource limits, inspect container logs, or right-size workloads. Use for Helm charts, RBAC policies, NetworkPolicies, storage configuration, performance optimization, GitOps pipelines, and multi-cluster management."
+      },
+      "b": {
+        "name": "helm-chart-builder",
+        "path": "alirezarezvani_claude-skills/.codex/skills/helm-chart-builder/SKILL.md",
+        "trigger": "when: user wants to create or improve Helm charts, design values.yaml files, implement template helpers, audit chart security (RBAC, network policies, pod security), manage subcharts, or run helm lint/test."
+      },
+      "label": "distinct",
+      "rationale": "raw Kubernetes manifests vs Helm chart authoring: distinct artifacts"
+    },
+    {
+      "id": "2-9",
+      "band": "0.2-0.3",
+      "score": 0.2099,
+      "a": {
+        "name": "mcp-developer",
+        "path": "Jeffallan_claude-skills/skills/mcp-developer/SKILL.md",
+        "trigger": "when building, debugging, or extending MCP servers or clients that connect AI systems with external tools and data sources. Invoke to implement tool handlers, configure resource providers, set up stdio/HTTP/SSE transport layers, validate schemas with Zod or Pydantic, debug protocol compliance issues, or scaffold complete MCP server/client projects using TypeScript or Python SDKs."
+      },
+      "b": {
+        "name": "mcp-builder",
+        "path": "anthropics_skills/skills/mcp-builder/SKILL.md",
+        "trigger": "when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK)."
+      },
+      "label": "collide",
+      "rationale": "both trigger on building MCP servers"
+    },
+    {
+      "id": "2-10",
+      "band": "0.2-0.3",
+      "score": 0.2242,
+      "a": {
+        "name": "ml-pipeline",
+        "path": "Jeffallan_claude-skills/skills/ml-pipeline/SKILL.md",
+        "trigger": "when building ML pipelines, orchestrating training workflows, automating model lifecycle, implementing feature stores, managing experiment tracking systems, setting up DVC for data versioning, tuning hyperparameters, or configuring MLOps tooling like Kubeflow, Airflow, MLflow, or Prefect."
+      },
+      "b": {
+        "name": "senior-ml-engineer",
+        "path": "alirezarezvani_claude-skills/.codex/skills/senior-ml-engineer/SKILL.md",
+        "trigger": "when the user asks about deploying ML models to production, setting up MLOps infrastructure (MLflow, Kubeflow, Kubernetes, Docker), monitoring model performance or drift, building RAG pipelines, or integrating LLM APIs with retry logic and cost controls. Focused on production and operational concerns rather than model research or initial training."
+      },
+      "label": "collide",
+      "rationale": "both cover ML pipeline/MLOps infrastructure work"
+    },
+    {
+      "id": "2-11",
+      "band": "0.2-0.3",
+      "score": 0.2053,
+      "a": {
+        "name": "monitoring-expert",
+        "path": "Jeffallan_claude-skills/skills/monitoring-expert/SKILL.md",
+        "trigger": "when setting up application monitoring, adding observability to services, debugging production issues with logs/metrics/traces, running load tests with k6 or Artillery, profiling CPU/memory bottlenecks, or forecasting capacity needs."
+      },
+      "b": {
+        "name": "golang-observability",
+        "path": "samber_cc-skills-golang/skills/golang-observability/SKILL.md",
+        "trigger": "when instrumenting Go services for production monitoring, setting up metrics or alerting, adding OpenTelemetry tracing, correlating logs with traces, migrating legacy loggers (zap/logrus/zerolog) to slog, adding observability to new features, or implementing GDPR/CCPA-compliant tracking with Customer Data Platforms (CDP). Not for temporary deep-dive performance investigation (→ See `a real repository@golang-benchmark` and `a real repository@golang-performance` skills)."
+      },
+      "label": "distinct",
+      "rationale": "general monitoring vs Go-specific instrumentation"
+    },
+    {
+      "id": "2-12",
+      "band": "0.2-0.3",
+      "score": 0.2285,
+      "a": {
+        "name": "monitoring-expert",
+        "path": "Jeffallan_claude-skills/skills/monitoring-expert/SKILL.md",
+        "trigger": "when setting up application monitoring, adding observability to services, debugging production issues with logs/metrics/traces, running load tests with k6 or Artillery, profiling CPU/memory bottlenecks, or forecasting capacity needs."
+      },
+      "b": {
+        "name": "datadog-cli",
+        "path": "softaworks_agent-toolkit/skills/datadog-cli/SKILL.md",
+        "trigger": "when debugging production issues or working with Datadog observability."
+      },
+      "label": "distinct",
+      "rationale": "general monitoring vs Datadog-specific CLI"
+    },
+    {
+      "id": "2-13",
+      "band": "0.2-0.3",
+      "score": 0.2495,
+      "a": {
+        "name": "nextjs-developer",
+        "path": "Jeffallan_claude-skills/skills/nextjs-developer/SKILL.md",
+        "trigger": "when building Next.js 14+ applications with App Router, server components, or server actions. Invoke to configure route handlers, implement middleware, set up API routes, add streaming SSR, write generateMetadata for SEO, scaffold loading.tsx/error.tsx boundaries, or deploy to Vercel. Triggers on: Next.js, Next.js 14, App Router, RSC, use server, Server Components, Server Actions, React Server Components, generateMetadata, loading.tsx, Next.js deployment, Vercel, Next.js performance."
+      },
+      "b": {
+        "name": "react-expert",
+        "path": "Jeffallan_claude-skills/skills/react-expert/SKILL.md",
+        "trigger": "when building React 18+ applications in .jsx or .tsx files, Next.js App Router projects, or create-react-app setups. Creates components, implements custom hooks, debugs rendering issues, migrates class components to functional, and implements state management. Invoke for Server Components, Suspense boundaries, useActionState forms, performance optimization, or React 19 features."
+      },
+      "label": "collide",
+      "rationale": "B explicitly claims Next.js App Router projects, which is A's whole scope"
+    },
+    {
+      "id": "2-14",
+      "band": "0.2-0.3",
+      "score": 0.2196,
+      "a": {
+        "name": "playwright-expert",
+        "path": "Jeffallan_claude-skills/skills/playwright-expert/SKILL.md",
+        "trigger": "when writing E2E tests with Playwright, setting up test infrastructure, or debugging flaky browser tests. Invoke to write test scripts, create page objects, configure test fixtures, set up reporters, add CI integration, implement API mocking, or perform visual regression testing. Trigger terms: Playwright, E2E test, end-to-end, browser testing, automation, UI testing, visual testing, Page Object Model, test flakiness."
+      },
+      "b": {
+        "name": "api-test-suite-builder",
+        "path": "alirezarezvani_claude-skills/.codex/skills/api-test-suite-builder/SKILL.md",
+        "trigger": "when the user asks to generate API tests, create integration test suites, test REST endpoints, or build contract tests."
+      },
+      "label": "distinct",
+      "rationale": "browser E2E tests vs API/contract tests: different test layer"
+    },
+    {
+      "id": "2-15",
+      "band": "0.2-0.3",
+      "score": 0.202,
+      "a": {
+        "name": "playwright-expert",
+        "path": "Jeffallan_claude-skills/skills/playwright-expert/SKILL.md",
+        "trigger": "when writing E2E tests with Playwright, setting up test infrastructure, or debugging flaky browser tests. Invoke to write test scripts, create page objects, configure test fixtures, set up reporters, add CI integration, implement API mocking, or perform visual regression testing. Trigger terms: Playwright, E2E test, end-to-end, browser testing, automation, UI testing, visual testing, Page Object Model, test flakiness."
+      },
+      "b": {
+        "name": "browserstack",
+        "path": "alirezarezvani_claude-skills/.codex/skills/browserstack/SKILL.md",
+        "trigger": "when user mentions \"browserstack\", \"cross-browser\", \"cloud testing\", \"browser matrix\", \"test on safari\", \"test on firefox\", or \"browser compatibility\"."
+      },
+      "label": "distinct",
+      "rationale": "local Playwright vs BrowserStack cloud grid"
+    },
+    {
+      "id": "2-16",
+      "band": "0.2-0.3",
+      "score": 0.2935,
+      "a": {
+        "name": "playwright-expert",
+        "path": "Jeffallan_claude-skills/skills/playwright-expert/SKILL.md",
+        "trigger": "when writing E2E tests with Playwright, setting up test infrastructure, or debugging flaky browser tests. Invoke to write test scripts, create page objects, configure test fixtures, set up reporters, add CI integration, implement API mocking, or perform visual regression testing. Trigger terms: Playwright, E2E test, end-to-end, browser testing, automation, UI testing, visual testing, Page Object Model, test flakiness."
+      },
+      "b": {
+        "name": "playwright-pro",
+        "path": "alirezarezvani_claude-skills/.codex/skills/playwright-pro/skills/pw/SKILL.md",
+        "trigger": "when the user mentions Playwright tests, end-to-end testing, browser automation, fixing flaky tests, test migration, CI/CD testing, or test suites. Generate tests, fix flaky failures, migrate from Cypress/Selenium, sync with TestRail, run on BrowserStack. 55 templates, 3 agents, smart reporting."
+      },
+      "label": "collide",
+      "rationale": "both trigger on Playwright E2E tests and flaky-test debugging"
+    },
+    {
+      "id": "2-17",
+      "band": "0.2-0.3",
+      "score": 0.2012,
+      "a": {
+        "name": "playwright-expert",
+        "path": "Jeffallan_claude-skills/skills/playwright-expert/SKILL.md",
+        "trigger": "when writing E2E tests with Playwright, setting up test infrastructure, or debugging flaky browser tests. Invoke to write test scripts, create page objects, configure test fixtures, set up reporters, add CI integration, implement API mocking, or perform visual regression testing. Trigger terms: Playwright, E2E test, end-to-end, browser testing, automation, UI testing, visual testing, Page Object Model, test flakiness."
+      },
+      "b": {
+        "name": "golang-testing",
+        "path": "samber_cc-skills-golang/skills/golang-testing/SKILL.md",
+        "trigger": "when writing or reviewing Go tests, choosing a testing approach, setting up Go test CI, or debugging flaky/slow tests. For testify-specific APIs see `a real repository@golang-stretchr-testify`; for measurement methodology see `a real repository@golang-benchmark`."
+      },
+      "label": "distinct",
+      "rationale": "Playwright browser tests vs Go unit tests"
+    },
+    {
+      "id": "2-18",
+      "band": "0.2-0.3",
+      "score": 0.2162,
+      "a": {
+        "name": "prompt-engineer",
+        "path": "Jeffallan_claude-skills/skills/prompt-engineer/SKILL.md",
+        "trigger": "when designing prompts for new LLM applications, refactoring existing prompts for better accuracy or token efficiency, implementing chain-of-thought or few-shot learning, creating system prompts with personas and guardrails, building JSON/function-calling schemas, or developing prompt evaluation frameworks to measure and improve model performance."
+      },
+      "b": {
+        "name": "prompt-governance",
+        "path": "alirezarezvani_claude-skills/.codex/skills/prompt-governance/SKILL.md",
+        "trigger": "when managing prompts in production at scale: versioning prompts, running A/B tests on prompts, building prompt registries, preventing prompt regressions, or creating eval pipelines for production AI features. Triggers: 'manage prompts in production', 'prompt versioning', 'prompt regression', 'prompt A/B test', 'prompt registry', 'eval pipeline'. NOT for writing or improving individual prompts (use senior-prompt-engineer). NOT for RAG pipeline design (use rag-architect). NOT for LLM cost reduction (use llm-cost-optimizer)."
+      },
+      "label": "distinct",
+      "rationale": "authoring prompts vs operating a prompt registry in production"
+    },
+    {
+      "id": "2-19",
+      "band": "0.2-0.3",
+      "score": 0.2658,
+      "a": {
+        "name": "react-expert",
+        "path": "Jeffallan_claude-skills/skills/react-expert/SKILL.md",
+        "trigger": "when building React 18+ applications in .jsx or .tsx files, Next.js App Router projects, or create-react-app setups. Creates components, implements custom hooks, debugs rendering issues, migrates class components to functional, and implements state management. Invoke for Server Components, Suspense boundaries, useActionState forms, performance optimization, or React 19 features."
+      },
+      "b": {
+        "name": "react-dev",
+        "path": "softaworks_agent-toolkit/skills/react-dev/SKILL.md",
+        "trigger": "when building React components with TypeScript, typing hooks, handling events, or when React TypeScript, React 19, Server Components are mentioned. Covers type-safe patterns for React 18-19 including generic components, proper event typing, and routing integration (TanStack Router, React Router)."
+      },
+      "label": "collide",
+      "rationale": "both trigger on building React components"
+    },
+    {
+      "id": "2-20",
+      "band": "0.2-0.3",
+      "score": 0.2189,
+      "a": {
+        "name": "secure-code-guardian",
+        "path": "Jeffallan_claude-skills/skills/secure-code-guardian/SKILL.md",
+        "trigger": "when implementing authentication/authorization, securing user input, or preventing OWASP Top 10 vulnerabilities — including custom security implementations such as hashing passwords with bcrypt/argon2, sanitizing SQL queries with parameterized statements, configuring CORS/CSP headers, validating input with Zod, and setting up JWT tokens. Invoke for authentication, authorization, input validation, encryption, OWASP Top 10 prevention, secure session management, and security hardening. For pre-built OAuth/SSO integrations or standalone security audits, consider a more specialized skill."
+      },
+      "b": {
+        "name": "senior-secops",
+        "path": "alirezarezvani_claude-skills/.codex/skills/senior-secops/SKILL.md",
+        "trigger": "when conducting a security review or audit, responding to a CVE or security incident, hardening infrastructure, implementing authentication or secrets management, running penetration test prep, checking OWASP Top 10 exposure, or enforcing security controls in CI/CD pipelines."
+      },
+      "label": "distinct",
+      "rationale": "implementing secure code vs conducting security audits and incident response"
+    },
+    {
+      "id": "2-21",
+      "band": "0.2-0.3",
+      "score": 0.2049,
+      "a": {
+        "name": "terraform-engineer",
+        "path": "Jeffallan_claude-skills/skills/terraform-engineer/SKILL.md",
+        "trigger": "when implementing infrastructure as code with Terraform across AWS, Azure, or GCP. Invoke for module development (create reusable modules, manage module versioning), state management (migrate backends, import existing resources, resolve state conflicts), provider configuration, multi-environment workflows, and infrastructure testing."
+      },
+      "b": {
+        "name": "terraform-patterns",
+        "path": "alirezarezvani_claude-skills/.codex/skills/terraform-patterns/SKILL.md",
+        "trigger": "when: user wants to design Terraform modules, manage state backends, review Terraform security, implement multi-region deployments, or follow IaC best practices."
+      },
+      "label": "collide",
+      "rationale": "both trigger on Terraform module design and state management"
+    },
+    {
+      "id": "2-22",
+      "band": "0.2-0.3",
+      "score": 0.224,
+      "a": {
+        "name": "test-master",
+        "path": "Jeffallan_claude-skills/skills/test-master/SKILL.md",
+        "trigger": "when writing unit tests, integration tests, or E2E tests; creating test strategies or automation frameworks; analyzing coverage gaps; performance testing with k6 or Artillery; security testing with OWASP methods; debugging flaky tests; or working on QA, regression, test automation, quality gates, shift-left testing, or test maintenance."
+      },
+      "b": {
+        "name": "api-test-suite-builder",
+        "path": "alirezarezvani_claude-skills/.codex/skills/api-test-suite-builder/SKILL.md",
+        "trigger": "when the user asks to generate API tests, create integration test suites, test REST endpoints, or build contract tests."
+      },
+      "label": "collide",
+      "rationale": "both claim integration test suite creation"
+    },
+    {
+      "id": "2-23",
+      "band": "0.2-0.3",
+      "score": 0.2575,
+      "a": {
+        "name": "test-master",
+        "path": "Jeffallan_claude-skills/skills/test-master/SKILL.md",
+        "trigger": "when writing unit tests, integration tests, or E2E tests; creating test strategies or automation frameworks; analyzing coverage gaps; performance testing with k6 or Artillery; security testing with OWASP methods; debugging flaky tests; or working on QA, regression, test automation, quality gates, shift-left testing, or test maintenance."
+      },
+      "b": {
+        "name": "coverage",
+        "path": "alirezarezvani_claude-skills/.codex/skills/coverage/SKILL.md",
+        "trigger": "when user says \"test coverage\", \"what's not tested\", \"coverage gaps\", \"missing tests\", \"coverage report\", or \"what needs testing\"."
+      },
+      "label": "collide",
+      "rationale": "both claim analysing test coverage gaps"
+    },
+    {
+      "id": "2-24",
+      "band": "0.2-0.3",
+      "score": 0.2695,
+      "a": {
+        "name": "test-master",
+        "path": "Jeffallan_claude-skills/skills/test-master/SKILL.md",
+        "trigger": "when writing unit tests, integration tests, or E2E tests; creating test strategies or automation frameworks; analyzing coverage gaps; performance testing with k6 or Artillery; security testing with OWASP methods; debugging flaky tests; or working on QA, regression, test automation, quality gates, shift-left testing, or test maintenance."
+      },
+      "b": {
+        "name": "generate",
+        "path": "alirezarezvani_claude-skills/.codex/skills/generate/SKILL.md",
+        "trigger": "when user says \"write tests\", \"generate tests\", \"add tests for\", \"test this component\", \"e2e test\", \"create test for\", \"test this page\", or \"test this feature\"."
+      },
+      "label": "collide",
+      "rationale": "both trigger on 'write tests' / 'generate tests'"
+    },
+    {
+      "id": "2-25",
+      "band": "0.2-0.3",
+      "score": 0.2532,
+      "a": {
+        "name": "test-master",
+        "path": "Jeffallan_claude-skills/skills/test-master/SKILL.md",
+        "trigger": "when writing unit tests, integration tests, or E2E tests; creating test strategies or automation frameworks; analyzing coverage gaps; performance testing with k6 or Artillery; security testing with OWASP methods; debugging flaky tests; or working on QA, regression, test automation, quality gates, shift-left testing, or test maintenance."
+      },
+      "b": {
+        "name": "playwright-pro",
+        "path": "alirezarezvani_claude-skills/.codex/skills/playwright-pro/skills/pw/SKILL.md",
+        "trigger": "when the user mentions Playwright tests, end-to-end testing, browser automation, fixing flaky tests, test migration, CI/CD testing, or test suites. Generate tests, fix flaky failures, migrate from Cypress/Selenium, sync with TestRail, run on BrowserStack. 55 templates, 3 agents, smart reporting."
+      },
+      "label": "collide",
+      "rationale": "both claim E2E/Playwright test authoring"
+    },
+    {
+      "id": "3-0",
+      "band": "0.3-0.4",
+      "score": 0.309,
+      "a": {
+        "name": "chaos-engineer",
+        "path": "Jeffallan_claude-skills/skills/chaos-engineer/SKILL.md",
+        "trigger": "when designing chaos experiments, implementing failure injection frameworks, or conducting game day exercises. Invoke for chaos experiments, resilience testing, blast radius control, game days, antifragile systems, fault injection, Chaos Monkey, Litmus Chaos."
+      },
+      "b": {
+        "name": "chaos-engineering",
+        "path": "alirezarezvani_claude-skills/.codex/skills/chaos-engineering/SKILL.md",
+        "trigger": "when planning, running, or learning from chaos engineering experiments. Triggers on \"chaos experiment\", \"fault injection\", \"gameday\", \"resilience test\", \"blast radius\", \"steady state\", \"abort criteria\", \"Chaos Toolkit\", \"Chaos Mesh\", \"Litmus\", \"Gremlin\", \"AWS FIS\", or any deliberate failure-injection question. Ships experiment designer, blast-radius calculator, and postmortem generator (all stdlib Python), 4 references on chaos principles + experiment design + attack taxonomy + tooling landscape, and a /chaos-experiment slash command. Composes with feature-flags-architect (kill switches as abort triggers) and kubernetes-operator (common chaos targets)."
+      },
+      "label": "collide",
+      "rationale": "near-identical: chaos experiments, fault injection, game days"
+    },
+    {
+      "id": "3-1",
+      "band": "0.3-0.4",
+      "score": 0.3522,
+      "a": {
+        "name": "csharp-developer",
+        "path": "Jeffallan_claude-skills/skills/csharp-developer/SKILL.md",
+        "trigger": "when building C# applications with .NET 8+, ASP.NET Core APIs, or Blazor web apps. Builds REST APIs using minimal or controller-based routing, configures database access with Entity Framework Core, implements async patterns and cancellation, structures applications with CQRS via MediatR, and scaffolds Blazor components with state management. Invoke for C#, .NET, ASP.NET Core, Blazor, Entity Framework, EF Core, Minimal API, MAUI, SignalR."
+      },
+      "b": {
+        "name": "dotnet-core-expert",
+        "path": "Jeffallan_claude-skills/skills/dotnet-core-expert/SKILL.md",
+        "trigger": "when building .NET 8 applications with minimal APIs, clean architecture, or cloud-native microservices. Invoke for Entity Framework Core, CQRS with MediatR, JWT authentication, AOT compilation."
+      },
+      "label": "collide",
+      "rationale": "both trigger on building .NET 8 APIs"
+    },
+    {
+      "id": "3-2",
+      "band": "0.3-0.4",
+      "score": 0.3363,
+      "a": {
+        "name": "playwright-expert",
+        "path": "Jeffallan_claude-skills/skills/playwright-expert/SKILL.md",
+        "trigger": "when writing E2E tests with Playwright, setting up test infrastructure, or debugging flaky browser tests. Invoke to write test scripts, create page objects, configure test fixtures, set up reporters, add CI integration, implement API mocking, or perform visual regression testing. Trigger terms: Playwright, E2E test, end-to-end, browser testing, automation, UI testing, visual testing, Page Object Model, test flakiness."
+      },
+      "b": {
+        "name": "test-master",
+        "path": "Jeffallan_claude-skills/skills/test-master/SKILL.md",
+        "trigger": "when writing unit tests, integration tests, or E2E tests; creating test strategies or automation frameworks; analyzing coverage gaps; performance testing with k6 or Artillery; security testing with OWASP methods; debugging flaky tests; or working on QA, regression, test automation, quality gates, shift-left testing, or test maintenance."
+      },
+      "label": "collide",
+      "rationale": "both claim E2E test authoring"
+    },
+    {
+      "id": "3-3",
+      "band": "0.3-0.4",
+      "score": 0.3427,
+      "a": {
+        "name": "playwright-expert",
+        "path": "Jeffallan_claude-skills/skills/playwright-expert/SKILL.md",
+        "trigger": "when writing E2E tests with Playwright, setting up test infrastructure, or debugging flaky browser tests. Invoke to write test scripts, create page objects, configure test fixtures, set up reporters, add CI integration, implement API mocking, or perform visual regression testing. Trigger terms: Playwright, E2E test, end-to-end, browser testing, automation, UI testing, visual testing, Page Object Model, test flakiness."
+      },
+      "b": {
+        "name": "generate",
+        "path": "alirezarezvani_claude-skills/.codex/skills/generate/SKILL.md",
+        "trigger": "when user says \"write tests\", \"generate tests\", \"add tests for\", \"test this component\", \"e2e test\", \"create test for\", \"test this page\", or \"test this feature\"."
+      },
+      "label": "collide",
+      "rationale": "B lists 'e2e test' explicitly, which is A's scope"
+    },
+    {
+      "id": "3-4",
+      "band": "0.3-0.4",
+      "score": 0.3609,
+      "a": {
+        "name": "playwright-expert",
+        "path": "Jeffallan_claude-skills/skills/playwright-expert/SKILL.md",
+        "trigger": "when writing E2E tests with Playwright, setting up test infrastructure, or debugging flaky browser tests. Invoke to write test scripts, create page objects, configure test fixtures, set up reporters, add CI integration, implement API mocking, or perform visual regression testing. Trigger terms: Playwright, E2E test, end-to-end, browser testing, automation, UI testing, visual testing, Page Object Model, test flakiness."
+      },
+      "b": {
+        "name": "init",
+        "path": "alirezarezvani_claude-skills/.codex/skills/playwright-pro/skills/init/SKILL.md",
+        "trigger": "when user says \"set up playwright\", \"add e2e tests\", \"configure playwright\", \"testing setup\", \"init playwright\", or \"add test infrastructure\"."
+      },
+      "label": "collide",
+      "rationale": "both claim Playwright setup and test infrastructure"
+    },
+    {
+      "id": "3-5",
+      "band": "0.3-0.4",
+      "score": 0.3383,
+      "a": {
+        "name": "playwright-expert",
+        "path": "Jeffallan_claude-skills/skills/playwright-expert/SKILL.md",
+        "trigger": "when writing E2E tests with Playwright, setting up test infrastructure, or debugging flaky browser tests. Invoke to write test scripts, create page objects, configure test fixtures, set up reporters, add CI integration, implement API mocking, or perform visual regression testing. Trigger terms: Playwright, E2E test, end-to-end, browser testing, automation, UI testing, visual testing, Page Object Model, test flakiness."
+      },
+      "b": {
+        "name": "senior-qa",
+        "path": "alirezarezvani_claude-skills/.codex/skills/senior-qa/SKILL.md",
+        "trigger": "when the user asks to \"generate tests\", \"write unit tests\", \"analyze test coverage\", \"scaffold E2E tests\", \"set up Playwright\", \"configure Jest\", \"implement testing patterns\", or \"improve test quality\"."
+      },
+      "label": "collide",
+      "rationale": "B lists 'scaffold E2E tests' and 'set up Playwright'"
+    },
+    {
+      "id": "3-6",
+      "band": "0.3-0.4",
+      "score": 0.306,
+      "a": {
+        "name": "security-reviewer",
+        "path": "Jeffallan_claude-skills/skills/security-reviewer/SKILL.md",
+        "trigger": "when conducting security audits, reviewing code for vulnerabilities, or analyzing infrastructure security. Invoke for SAST scans, penetration testing, DevSecOps practices, cloud security reviews, dependency audits, secrets scanning, or compliance checks. Produces vulnerability reports, prioritized recommendations, and compliance checklists."
+      },
+      "b": {
+        "name": "security-pen-testing",
+        "path": "alirezarezvani_claude-skills/.codex/skills/security-pen-testing/SKILL.md",
+        "trigger": "when the user asks to perform security audits, penetration testing, vulnerability scanning, OWASP Top 10 checks, or offensive security assessments. Covers static analysis, dependency scanning, secret detection, API security testing, and pen test report generation."
+      },
+      "label": "collide",
+      "rationale": "both trigger on security audits and penetration testing"
+    },
+    {
+      "id": "3-7",
+      "band": "0.3-0.4",
+      "score": 0.3398,
+      "a": {
+        "name": "test-master",
+        "path": "Jeffallan_claude-skills/skills/test-master/SKILL.md",
+        "trigger": "when writing unit tests, integration tests, or E2E tests; creating test strategies or automation frameworks; analyzing coverage gaps; performance testing with k6 or Artillery; security testing with OWASP methods; debugging flaky tests; or working on QA, regression, test automation, quality gates, shift-left testing, or test maintenance."
+      },
+      "b": {
+        "name": "senior-qa",
+        "path": "alirezarezvani_claude-skills/.codex/skills/senior-qa/SKILL.md",
+        "trigger": "when the user asks to \"generate tests\", \"write unit tests\", \"analyze test coverage\", \"scaffold E2E tests\", \"set up Playwright\", \"configure Jest\", \"implement testing patterns\", or \"improve test quality\"."
+      },
+      "label": "collide",
+      "rationale": "both trigger on writing unit tests and analysing coverage"
+    },
+    {
+      "id": "3-8",
+      "band": "0.3-0.4",
+      "score": 0.3405,
+      "a": {
+        "name": "ad-creative",
+        "path": "alirezarezvani_claude-skills/.codex/skills/ad-creative/SKILL.md",
+        "trigger": "when they say 'write ad copy,' 'generate headlines,' 'create ad variations,' 'bulk creative,' 'iterate on ads,' 'ad copy validation,' 'RSA headlines,' 'Meta ad copy,' 'LinkedIn ad,' or 'creative testing.' This is pure creative production — distinct from paid-ads (campaign strategy). Use ad-creative when you need the copy, not the campaign plan."
+      },
+      "b": {
+        "name": "paid-ads",
+        "path": "alirezarezvani_claude-skills/.codex/skills/paid-ads/SKILL.md",
+        "trigger": "when the user mentions 'PPC,' 'paid media,' 'ad copy,' 'ad creative,' 'ROAS,' 'CPA,' 'ad campaign,' 'retargeting,' or 'audience targeting.' This skill covers campaign strategy, ad creation, audience targeting, and optimization."
+      },
+      "label": "collide",
+      "rationale": "both trigger on the literal phrase 'ad copy'"
+    },
+    {
+      "id": "3-9",
+      "band": "0.3-0.4",
+      "score": 0.3996,
+      "a": {
+        "name": "aims-audit",
+        "path": "alirezarezvani_claude-skills/.codex/skills/aims-audit/SKILL.md",
+        "trigger": "before certification stage 1, before annual internal audit cycles, or when onboarding a new AI system into an existing AIMS."
+      },
+      "b": {
+        "name": "compliance-readiness",
+        "path": "alirezarezvani_claude-skills/.codex/skills/compliance-readiness/SKILL.md",
+        "trigger": "before starting a new framework, planning the annual audit calendar, or preparing for certification stage 1."
+      },
+      "label": "collide",
+      "rationale": "both trigger on 'certification stage 1' and the annual audit cycle"
+    },
+    {
+      "id": "3-10",
+      "band": "0.3-0.4",
+      "score": 0.3806,
+      "a": {
+        "name": "aims-audit",
+        "path": "alirezarezvani_claude-skills/.codex/skills/aims-audit/SKILL.md",
+        "trigger": "before certification stage 1, before annual internal audit cycles, or when onboarding a new AI system into an existing AIMS."
+      },
+      "b": {
+        "name": "iso27001-audit-prep",
+        "path": "alirezarezvani_claude-skills/.codex/skills/iso27001-audit-prep/SKILL.md",
+        "trigger": "before annual Clause 9.2 internal audit, surveillance audit prep, or stage 1 certification readiness."
+      },
+      "label": "collide",
+      "rationale": "both trigger on stage 1 certification readiness and annual internal audit"
+    },
+    {
+      "id": "3-11",
+      "band": "0.3-0.4",
+      "score": 0.3035,
+      "a": {
+        "name": "aims-audit",
+        "path": "alirezarezvani_claude-skills/.codex/skills/aims-audit/SKILL.md",
+        "trigger": "before certification stage 1, before annual internal audit cycles, or when onboarding a new AI system into an existing AIMS."
+      },
+      "b": {
+        "name": "iso42001-specialist",
+        "path": "alirezarezvani_claude-skills/.codex/skills/iso42001-specialist/SKILL.md",
+        "trigger": "when preparing for certification, scoping internal audit cycles, or onboarding AI systems into an existing ISMS (27001) / QMS (13485) program. NOT an executive AI strategy skill (see chief-ai-officer-advisor). NOT EU AI Act compliance (see compliance-team-eu-ai-act)."
+      },
+      "label": "collide",
+      "rationale": "both trigger on onboarding an AI system and scoping internal audit cycles"
+    },
+    {
+      "id": "3-12",
+      "band": "0.3-0.4",
+      "score": 0.3954,
+      "a": {
+        "name": "api-test-suite-builder",
+        "path": "alirezarezvani_claude-skills/.codex/skills/api-test-suite-builder/SKILL.md",
+        "trigger": "when the user asks to generate API tests, create integration test suites, test REST endpoints, or build contract tests."
+      },
+      "b": {
+        "name": "generate",
+        "path": "alirezarezvani_claude-skills/.codex/skills/generate/SKILL.md",
+        "trigger": "when user says \"write tests\", \"generate tests\", \"add tests for\", \"test this component\", \"e2e test\", \"create test for\", \"test this page\", or \"test this feature\"."
+      },
+      "label": "collide",
+      "rationale": "both trigger on generating tests including integration suites"
+    },
+    {
+      "id": "3-13",
+      "band": "0.3-0.4",
+      "score": 0.3631,
+      "a": {
+        "name": "board",
+        "path": "alirezarezvani_claude-skills/.codex/skills/board/SKILL.md",
+        "trigger": "when the user runs /hub:board or asks to post, read, or inspect coordination messages between competing AgentHub agents."
+      },
+      "b": {
+        "name": "spawn",
+        "path": "alirezarezvani_claude-skills/.codex/skills/spawn/SKILL.md",
+        "trigger": "when the user runs /hub:spawn or asks to start the competing agents for an initialized AgentHub session."
+      },
+      "label": "distinct",
+      "rationale": "different explicit slash commands: /hub:board vs /hub:spawn"
+    },
+    {
+      "id": "3-14",
+      "band": "0.3-0.4",
+      "score": 0.3773,
+      "a": {
+        "name": "board",
+        "path": "alirezarezvani_claude-skills/.codex/skills/board/SKILL.md",
+        "trigger": "when the user runs /hub:board or asks to post, read, or inspect coordination messages between competing AgentHub agents."
+      },
+      "b": {
+        "name": "status",
+        "path": "alirezarezvani_claude-skills/.codex/skills/status/SKILL.md",
+        "trigger": "when the user runs /hub:status or asks how the AgentHub agents are doing."
+      },
+      "label": "distinct",
+      "rationale": "different explicit slash commands: /hub:board vs /hub:status"
+    },
+    {
+      "id": "3-15",
+      "band": "0.3-0.4",
+      "score": 0.3702,
+      "a": {
+        "name": "business-growth-skills",
+        "path": "alirezarezvani_claude-skills/.codex/skills/business-growth-skills/SKILL.md",
+        "trigger": "when a growth/revenue request doesn't obviously match one skill and you need to pick the right one (e.g., 'which accounts are at risk', 'should we bid on this RFP')."
+      },
+      "b": {
+        "name": "finance-skills",
+        "path": "alirezarezvani_claude-skills/.codex/skills/finance-skills/SKILL.md",
+        "trigger": "when a finance request doesn't obviously match one skill and you need to pick the right one (e.g., 'analyze these financials', 'how healthy are my SaaS metrics')."
+      },
+      "label": "distinct",
+      "rationale": "router skills over disjoint domains: growth/revenue vs finance"
+    },
+    {
+      "id": "3-16",
+      "band": "0.3-0.4",
+      "score": 0.3121,
+      "a": {
+        "name": "business-growth-skills",
+        "path": "alirezarezvani_claude-skills/.codex/skills/business-growth-skills/SKILL.md",
+        "trigger": "when a growth/revenue request doesn't obviously match one skill and you need to pick the right one (e.g., 'which accounts are at risk', 'should we bid on this RFP')."
+      },
+      "b": {
+        "name": "ra-qm-skills",
+        "path": "alirezarezvani_claude-skills/.codex/skills/ra-qm-skills/SKILL.md",
+        "trigger": "when a compliance request doesn't obviously match one skill and you need to pick the right one (e.g., 'prepare us for an ISO 13485 audit', 'is my AI system high-risk under the AI Act')."
+      },
+      "label": "distinct",
+      "rationale": "router skills over disjoint domains: growth/revenue vs compliance"
+    },
+    {
+      "id": "3-17",
+      "band": "0.3-0.4",
+      "score": 0.3467,
+      "a": {
+        "name": "chief-data-officer-advisor",
+        "path": "alirezarezvani_claude-skills/.codex/skills/chief-data-officer-advisor/SKILL.md",
+        "trigger": "when deciding whether to train models on customer data, choosing data architecture, valuing data for fundraising or M&A, sequencing data hires, or when user mentions CDO, chief data officer, data strategy, data mesh, lakehouse, training data, data product, data monetization, or customer data asset. NOT a tactical data engineering skill — strategic decisions only."
+      },
+      "b": {
+        "name": "senior-data-engineer",
+        "path": "alirezarezvani_claude-skills/.codex/skills/senior-data-engineer/SKILL.md",
+        "trigger": "when designing data architectures, building data pipelines, optimizing data workflows, implementing data governance, or troubleshooting data issues."
+      },
+      "label": "collide",
+      "rationale": "both trigger on choosing/designing data architecture"
+    },
+    {
+      "id": "3-18",
+      "band": "0.3-0.4",
+      "score": 0.3456,
+      "a": {
+        "name": "cold-email",
+        "path": "alirezarezvani_claude-skills/.codex/skills/cold-email/SKILL.md",
+        "trigger": "when the user mentions 'cold email,' 'cold outreach,' 'prospecting emails,' 'SDR emails,' 'sales emails,' 'first touch email,' 'follow-up sequence,' or 'email prospecting.' Also use when they share an email draft that sounds too sales-y and needs to be humanized. Distinct from email-sequence (lifecycle/nurture to opted-in subscribers) — this is unsolicited outreach to new prospects. NOT for lifecycle emails, newsletters, or drip campaigns (use email-sequence)."
+      },
+      "b": {
+        "name": "email-sequence",
+        "path": "alirezarezvani_claude-skills/.codex/skills/email-sequence/SKILL.md",
+        "trigger": "when the user mentions \"email sequence,\" \"drip campaign,\" \"nurture sequence,\" \"onboarding emails,\" \"welcome sequence,\" \"re-engagement emails,\" \"email automation,\" or \"lifecycle emails.\" For in-app onboarding, see onboarding-cro."
+      },
+      "label": "distinct",
+      "rationale": "cold outbound prospecting vs nurture/drip sequences: disjoint quoted phrases"
+    },
+    {
+      "id": "3-19",
+      "band": "0.3-0.4",
+      "score": 0.3515,
+      "a": {
+        "name": "compliance-readiness",
+        "path": "alirezarezvani_claude-skills/.codex/skills/compliance-readiness/SKILL.md",
+        "trigger": "before starting a new framework, planning the annual audit calendar, or preparing for certification stage 1."
+      },
+      "b": {
+        "name": "iso27001-audit-prep",
+        "path": "alirezarezvani_claude-skills/.codex/skills/iso27001-audit-prep/SKILL.md",
+        "trigger": "before annual Clause 9.2 internal audit, surveillance audit prep, or stage 1 certification readiness."
+      },
+      "label": "collide",
+      "rationale": "both trigger on stage 1 certification and the annual audit calendar"
+    },
+    {
+      "id": "3-20",
+      "band": "0.3-0.4",
+      "score": 0.3749,
+      "a": {
+        "name": "content-creator",
+        "path": "alirezarezvani_claude-skills/.codex/skills/content-creator/SKILL.md",
+        "trigger": "when a user invokes 'content creator', asks to write a blog post, article, guide, or brand voice analysis (routes to content-production), or asks to plan content, build a topic cluster, or create a content calendar (routes to content-strategy). Does not handle requests directly — identifies user intent and redirects to content-production for writing/SEO/brand-voice tasks or content-strategy for planning tasks."
+      },
+      "b": {
+        "name": "content-production",
+        "path": "alirezarezvani_claude-skills/.codex/skills/content-production/SKILL.md",
+        "trigger": "when you need to execute content: write a blog post, article, or guide end-to-end. Triggers: 'write a post about', 'draft an article', 'create content for', 'help me write', 'I need a blog post'. NOT for content strategy or calendar planning (use content-strategy). NOT for repurposing existing content (use content-repurposing). NOT for social captions only."
+      },
+      "label": "collide",
+      "rationale": "both trigger on 'write a blog post/article/guide'"
+    },
+    {
+      "id": "3-21",
+      "band": "0.3-0.4",
+      "score": 0.3599,
+      "a": {
+        "name": "copy-editing",
+        "path": "alirezarezvani_claude-skills/.codex/skills/copy-editing/SKILL.md",
+        "trigger": "when the user mentions 'edit this copy,' 'review my copy,' 'copy feedback,' 'proofread,' 'polish this,' 'make this better,' or 'copy sweep.' This skill provides a systematic approach to editing marketing copy through multiple focused passes."
+      },
+      "b": {
+        "name": "copywriting",
+        "path": "alirezarezvani_claude-skills/.codex/skills/copywriting/SKILL.md",
+        "trigger": "when the user says \"write copy for,\" \"improve this copy,\" \"rewrite this page,\" \"marketing copy,\" \"headline help,\" or \"CTA copy.\" For email copy, see email-sequence. For popup copy, see popup-cro."
+      },
+      "label": "collide",
+      "rationale": "'edit this copy' and 'improve this copy' are the same request"
+    },
+    {
+      "id": "3-22",
+      "band": "0.3-0.4",
+      "score": 0.3987,
+      "a": {
+        "name": "cs-onboard",
+        "path": "alirezarezvani_claude-skills/.codex/skills/cs-onboard/SKILL.md",
+        "trigger": "when setting up the C-suite advisors for the first time, or when company context is missing or more than 90 days old — e.g. after a fundraise or pivot."
+      },
+      "b": {
+        "name": "onboard",
+        "path": "alirezarezvani_claude-skills/.codex/skills/onboard/SKILL.md",
+        "trigger": "when starting with c-level-agents. Use when setting up the virtual C-suite for a new company, or when advisors lack company context — e.g. before a first /cs:boardroom or after a fundraise changes the numbers."
+      },
+      "label": "collide",
+      "rationale": "both trigger on first-time C-suite setup and stale company context"
+    },
+    {
+      "id": "3-23",
+      "band": "0.3-0.4",
+      "score": 0.3387,
+      "a": {
+        "name": "database-designer",
+        "path": "alirezarezvani_claude-skills/.codex/skills/database-designer/SKILL.md",
+        "trigger": "when the user asks to design database schemas, plan data migrations, optimize queries, choose between SQL and NoSQL, or model data relationships."
+      },
+      "b": {
+        "name": "database-schema-designer",
+        "path": "alirezarezvani_claude-skills/.codex/skills/database-schema-designer/SKILL.md",
+        "trigger": "when the user asks to create ERD diagrams, normalize database schemas, design table relationships, or plan schema migrations."
+      },
+      "label": "collide",
+      "rationale": "both trigger on designing database schemas and planning migrations"
+    },
+    {
+      "id": "3-24",
+      "band": "0.3-0.4",
+      "score": 0.3175,
+      "a": {
+        "name": "database-designer",
+        "path": "alirezarezvani_claude-skills/.codex/skills/database-designer/SKILL.md",
+        "trigger": "when the user asks to design database schemas, plan data migrations, optimize queries, choose between SQL and NoSQL, or model data relationships."
+      },
+      "b": {
+        "name": "sql-database-assistant",
+        "path": "alirezarezvani_claude-skills/.codex/skills/sql-database-assistant/SKILL.md",
+        "trigger": "when the user asks to write SQL queries, optimize database performance, generate migrations, explore database schemas, or work with ORMs like Prisma, Drizzle, TypeORM, or SQLAlchemy."
+      },
+      "label": "collide",
+      "rationale": "both trigger on schema work, migrations and query optimisation"
+    },
+    {
+      "id": "3-25",
+      "band": "0.3-0.4",
+      "score": 0.3952,
+      "a": {
+        "name": "eval",
+        "path": "alirezarezvani_claude-skills/.codex/skills/eval/SKILL.md",
+        "trigger": "when the user runs /hub:eval or asks to score, compare, or pick a winner among completed AgentHub agents."
+      },
+      "b": {
+        "name": "status",
+        "path": "alirezarezvani_claude-skills/.codex/skills/status/SKILL.md",
+        "trigger": "when the user runs /hub:status or asks how the AgentHub agents are doing."
+      },
+      "label": "distinct",
+      "rationale": "different explicit slash commands: /hub:eval vs /hub:status"
+    },
+    {
+      "id": "4-0",
+      "band": "0.4-0.5",
+      "score": 0.4051,
+      "a": {
+        "name": "architecture-designer",
+        "path": "Jeffallan_claude-skills/skills/architecture-designer/SKILL.md",
+        "trigger": "when designing new high-level system architecture, reviewing existing designs, or making architectural decisions. Invoke to create architecture diagrams, write Architecture Decision Records (ADRs), evaluate technology trade-offs, design component interactions, and plan for scalability. Use for system design, architecture review, microservices structuring, ADR authoring, scalability planning, and infrastructure pattern selection — distinct from code-level design patterns or database-only design tasks."
+      },
+      "b": {
+        "name": "senior-architect",
+        "path": "alirezarezvani_claude-skills/.codex/skills/senior-architect/SKILL.md",
+        "trigger": "when the user asks to \"design system architecture\", \"evaluate microservices vs monolith\", \"create architecture diagrams\", \"analyze dependencies\", \"choose a database\", \"plan for scalability\", \"make technical decisions\", or \"review system design\". Use for architecture decision records (ADRs), tech stack evaluation, system design reviews, dependency analysis, and generating architecture diagrams in Mermaid, PlantUML, or ASCII format."
+      },
+      "label": "collide",
+      "rationale": "both trigger on designing system architecture and architecture diagrams"
+    },
+    {
+      "id": "4-1",
+      "band": "0.4-0.5",
+      "score": 0.4887,
+      "a": {
+        "name": "java-architect",
+        "path": "Jeffallan_claude-skills/skills/java-architect/SKILL.md",
+        "trigger": "when building, configuring, or debugging enterprise Java applications with Spring Boot 3.x, microservices, or reactive programming. Invoke to implement WebFlux endpoints, optimize JPA queries and database performance, configure Spring Security with OAuth2/JWT, or resolve authentication issues and async processing challenges in cloud-native Spring applications."
+      },
+      "b": {
+        "name": "spring-boot-engineer",
+        "path": "Jeffallan_claude-skills/skills/spring-boot-engineer/SKILL.md",
+        "trigger": "when building Spring Boot 3.x applications, microservices, or reactive Java applications; invoke for Spring Data JPA, Spring Security 6, WebFlux, Spring Cloud integration, Java REST API design, or Microservices Java architecture."
+      },
+      "label": "collide",
+      "rationale": "both trigger on Spring Boot 3.x microservices and reactive Java"
+    },
+    {
+      "id": "4-2",
+      "band": "0.4-0.5",
+      "score": 0.4321,
+      "a": {
+        "name": "compliance-os",
+        "path": "alirezarezvani_claude-skills/.codex/skills/compliance-os/SKILL.md",
+        "trigger": "when standing up a multi-framework program, planning the annual audit calendar, or preparing for certification stage 1. Does NOT replace per-framework skills (it orchestrates them)."
+      },
+      "b": {
+        "name": "compliance-readiness",
+        "path": "alirezarezvani_claude-skills/.codex/skills/compliance-readiness/SKILL.md",
+        "trigger": "before starting a new framework, planning the annual audit calendar, or preparing for certification stage 1."
+      },
+      "label": "collide",
+      "rationale": "both trigger on the annual audit calendar and certification stage 1"
+    },
+    {
+      "id": "4-3",
+      "band": "0.4-0.5",
+      "score": 0.4266,
+      "a": {
+        "name": "grill-me",
+        "path": "alirezarezvani_claude-skills/.codex/skills/grill-me/SKILL.md",
+        "trigger": "when user wants to stress-test a plan, get grilled on their design, or mentions \"grill me\"."
+      },
+      "b": {
+        "name": "grill-with-docs",
+        "path": "alirezarezvani_claude-skills/.codex/skills/grill-with-docs/SKILL.md",
+        "trigger": "when user wants to stress-test a plan against documented domain language, or mentions \"grill with docs\"."
+      },
+      "label": "collide",
+      "rationale": "both trigger on stress-testing a plan"
+    },
+    {
+      "id": "4-4",
+      "band": "0.4-0.5",
+      "score": 0.4595,
+      "a": {
+        "name": "inbox-setup",
+        "path": "alirezarezvani_claude-skills/.codex/skills/inbox-setup/SKILL.md",
+        "trigger": "when business, pricing, or priorities change significantly. Triggers: 'set up my inbox', 'configure inbox triage', 'set up my email system', 'configure email triage', 'build my email knowledge base', 'initialize email management', 'set up inbox triage', 'onboard email triage', or any variation where someone wants to get the email triage system running for the first time."
+      },
+      "b": {
+        "name": "inbox-triage",
+        "path": "alirezarezvani_claude-skills/.codex/skills/inbox-triage/SKILL.md",
+        "trigger": "on a recurring schedule (1-3x daily) or on demand. Use when the user wants their inbox processed, in any variation (e.g., 'triage my inbox', 'inbox triage', 'check my email', 'run email triage', 'process my inbox', 'what's new in my email', 'handle my email', 'email triage'). Requires the inbox-setup skill to have been run first."
+      },
+      "label": "collide",
+      "rationale": "A lists 'configure inbox triage', which is B's entire scope"
+    },
+    {
+      "id": "4-5",
+      "band": "0.4-0.5",
+      "score": 0.4093,
+      "a": {
+        "name": "loop",
+        "path": "alirezarezvani_claude-skills/.codex/skills/loop/SKILL.md",
+        "trigger": "when the user runs /ar:loop or asks to run an autoresearch experiment continuously on a schedule."
+      },
+      "b": {
+        "name": "resume",
+        "path": "alirezarezvani_claude-skills/.codex/skills/resume/SKILL.md",
+        "trigger": "when the user runs /ar:resume or asks to pick up a previously started autoresearch experiment."
+      },
+      "label": "distinct",
+      "rationale": "different explicit slash commands: /ar:loop vs /ar:resume"
+    },
+    {
+      "id": "4-6",
+      "band": "0.4-0.5",
+      "score": 0.4329,
+      "a": {
+        "name": "loop",
+        "path": "alirezarezvani_claude-skills/.codex/skills/loop/SKILL.md",
+        "trigger": "when the user runs /ar:loop or asks to run an autoresearch experiment continuously on a schedule."
+      },
+      "b": {
+        "name": "setup",
+        "path": "alirezarezvani_claude-skills/.codex/skills/setup/SKILL.md",
+        "trigger": "when the user runs /ar:setup or asks to start optimizing a file with the autoresearch loop."
+      },
+      "label": "distinct",
+      "rationale": "different explicit slash commands: /ar:loop vs /ar:setup"
+    },
+    {
+      "id": "4-7",
+      "band": "0.4-0.5",
+      "score": 0.4953,
+      "a": {
+        "name": "loop",
+        "path": "alirezarezvani_claude-skills/.codex/skills/loop/SKILL.md",
+        "trigger": "when the user runs /ar:loop or asks to run an autoresearch experiment continuously on a schedule."
+      },
+      "b": {
+        "name": "status",
+        "path": "alirezarezvani_claude-skills/.gemini/skills/status/SKILL.md",
+        "trigger": "when the user runs /ar:status or asks how an autoresearch experiment is going."
+      },
+      "label": "distinct",
+      "rationale": "different explicit slash commands: /ar:loop vs /ar:status"
+    },
+    {
+      "id": "4-8",
+      "band": "0.4-0.5",
+      "score": 0.4444,
+      "a": {
+        "name": "resume",
+        "path": "alirezarezvani_claude-skills/.codex/skills/resume/SKILL.md",
+        "trigger": "when the user runs /ar:resume or asks to pick up a previously started autoresearch experiment."
+      },
+      "b": {
+        "name": "status",
+        "path": "alirezarezvani_claude-skills/.gemini/skills/status/SKILL.md",
+        "trigger": "when the user runs /ar:status or asks how an autoresearch experiment is going."
+      },
+      "label": "distinct",
+      "rationale": "different explicit slash commands: /ar:resume vs /ar:status"
+    },
+    {
+      "id": "4-9",
+      "band": "0.4-0.5",
+      "score": 0.4543,
+      "a": {
+        "name": "spawn",
+        "path": "alirezarezvani_claude-skills/.codex/skills/spawn/SKILL.md",
+        "trigger": "when the user runs /hub:spawn or asks to start the competing agents for an initialized AgentHub session."
+      },
+      "b": {
+        "name": "status",
+        "path": "alirezarezvani_claude-skills/.codex/skills/status/SKILL.md",
+        "trigger": "when the user runs /hub:status or asks how the AgentHub agents are doing."
+      },
+      "label": "distinct",
+      "rationale": "different explicit slash commands: /hub:spawn vs /hub:status"
+    },
+    {
+      "id": "4-10",
+      "band": "0.4-0.5",
+      "score": 0.4247,
+      "a": {
+        "name": "run",
+        "path": "alirezarezvani_claude-skills/.gemini/skills/run/SKILL.md",
+        "trigger": "when the user runs /ar:run or asks for one manual autoresearch iteration."
+      },
+      "b": {
+        "name": "status",
+        "path": "alirezarezvani_claude-skills/.gemini/skills/status/SKILL.md",
+        "trigger": "when the user runs /ar:status or asks how an autoresearch experiment is going."
+      },
+      "label": "distinct",
+      "rationale": "different explicit slash commands: /ar:run vs /ar:status"
+    },
+    {
+      "id": "4-11",
+      "band": "0.4-0.5",
+      "score": 0.4015,
+      "a": {
+        "name": "algorithmic-art",
+        "path": "anthropics_skills/skills/algorithmic-art/SKILL.md",
+        "trigger": "when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems. Create original algorithmic art rather than copying existing artists' work to avoid copyright violations."
+      },
+      "b": {
+        "name": "canvas-design",
+        "path": "anthropics_skills/skills/canvas-design/SKILL.md",
+        "trigger": "when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations."
+      },
+      "label": "collide",
+      "rationale": "'create a piece of art' satisfies both triggers"
+    },
+    {
+      "id": "4-12",
+      "band": "0.4-0.5",
+      "score": 0.4355,
+      "a": {
+        "name": "golang-samber-do",
+        "path": "samber_cc-skills-golang/skills/golang-samber-do/SKILL.md",
+        "trigger": "when using or adopting samber/do, when the codebase imports github.com/samber/do or github.com/samber/do/v2, or when refactoring manual constructor injection into a DI container."
+      },
+      "b": {
+        "name": "golang-samber-oops",
+        "path": "samber_cc-skills-golang/skills/golang-samber-oops/SKILL.md",
+        "trigger": "when using or adopting samber/oops, or when the codebase already imports github.com/samber/oops."
+      },
+      "label": "distinct",
+      "rationale": "different libraries: samber/do vs samber/oops"
+    },
+    {
+      "id": "4-13",
+      "band": "0.4-0.5",
+      "score": 0.4997,
+      "a": {
+        "name": "golang-spf13-cobra",
+        "path": "samber_cc-skills-golang/skills/golang-spf13-cobra/SKILL.md",
+        "trigger": "when using or adopting spf13/cobra, or when the codebase imports `github.com/spf13/cobra`. For configuration layering alongside cobra, see the `a real repository@golang-spf13-viper` skill. For general CLI architecture (project layout, exit codes, signal handling, I/O patterns), see `a real repository@golang-cli`."
+      },
+      "b": {
+        "name": "golang-spf13-viper",
+        "path": "samber_cc-skills-golang/skills/golang-spf13-viper/SKILL.md",
+        "trigger": "when using or adopting spf13/viper, or when the codebase imports `github.com/spf13/viper`. For CLI command structure alongside viper, see the `a real repository@golang-spf13-cobra` skill. For general CLI architecture, see `a real repository@golang-cli`."
+      },
+      "label": "distinct",
+      "rationale": "different libraries: spf13/cobra vs spf13/viper"
+    },
+    {
+      "id": "4-14",
+      "band": "0.4-0.5",
+      "score": 0.402,
+      "a": {
+        "name": "golang-uber-dig",
+        "path": "samber_cc-skills-golang/skills/golang-uber-dig/SKILL.md",
+        "trigger": "when using or adopting uber-go/dig, when the codebase imports `go.uber.org/dig`, or when wiring an application graph at startup. For higher-level lifecycle and modules, see `a real repository@golang-uber-fx` skill."
+      },
+      "b": {
+        "name": "golang-uber-fx",
+        "path": "samber_cc-skills-golang/skills/golang-uber-fx/SKILL.md",
+        "trigger": "when using or adopting uber-go/fx, when the codebase imports `go.uber.org/fx`, or when wiring services with fx.New. For raw DI without lifecycle, see `a real repository@golang-uber-dig` skill."
+      },
+      "label": "distinct",
+      "rationale": "different libraries: uber-go/dig vs uber-go/fx"
+    },
+    {
+      "id": "4-15",
+      "band": "0.4-0.5",
+      "score": 0.4272,
+      "a": {
+        "name": "difficult-workplace-conversations",
+        "path": "softaworks_agent-toolkit/skills/difficult-workplace-conversations/SKILL.md",
+        "trigger": "when preparing for tough conversations, addressing conflicts, giving critical feedback, or navigating sensitive workplace discussions."
+      },
+      "b": {
+        "name": "feedback-mastery",
+        "path": "softaworks_agent-toolkit/skills/feedback-mastery/SKILL.md",
+        "trigger": "when preparing for difficult conversations, giving feedback, or managing conflicts."
+      },
+      "label": "collide",
+      "rationale": "both trigger on preparing for difficult conversations and giving feedback"
+    },
+    {
+      "id": "4-16",
+      "band": "0.4-0.5",
+      "score": 0.4357,
+      "a": {
+        "name": "sast-sqli",
+        "path": "utkusen_sast-skills/sast-files/.agents/skills/sast-sqli/SKILL.md",
+        "trigger": "when asked to find SQLi or database injection bugs."
+      },
+      "b": {
+        "name": "sast-ssti",
+        "path": "utkusen_sast-skills/sast-files/.agents/skills/sast-ssti/SKILL.md",
+        "trigger": "when asked to find SSTI or template injection bugs."
+      },
+      "label": "distinct",
+      "rationale": "different vulnerability classes: SQLi vs SSTI"
+    },
+    {
+      "id": "4-17",
+      "band": "0.4-0.5",
+      "score": 0.4271,
+      "a": {
+        "name": "sast-sqli",
+        "path": "utkusen_sast-skills/sast-files/.agents/skills/sast-sqli/SKILL.md",
+        "trigger": "when asked to find SQLi or database injection bugs."
+      },
+      "b": {
+        "name": "sast-xxe",
+        "path": "utkusen_sast-skills/sast-files/.agents/skills/sast-xxe/SKILL.md",
+        "trigger": "when asked to find XXE or XML injection bugs."
+      },
+      "label": "distinct",
+      "rationale": "different vulnerability classes: SQLi vs XXE"
+    },
+    {
+      "id": "4-18",
+      "band": "0.4-0.5",
+      "score": 0.4183,
+      "a": {
+        "name": "sast-ssti",
+        "path": "utkusen_sast-skills/sast-files/.agents/skills/sast-ssti/SKILL.md",
+        "trigger": "when asked to find SSTI or template injection bugs."
+      },
+      "b": {
+        "name": "sast-xxe",
+        "path": "utkusen_sast-skills/sast-files/.agents/skills/sast-xxe/SKILL.md",
+        "trigger": "when asked to find XXE or XML injection bugs."
+      },
+      "label": "distinct",
+      "rationale": "different vulnerability classes: SSTI vs XXE"
+    },
+    {
+      "id": "5-0",
+      "band": "0.5-0.6",
+      "score": 0.5681,
+      "a": {
+        "name": "golang-samber-oops",
+        "path": "samber_cc-skills-golang/skills/golang-samber-oops/SKILL.md",
+        "trigger": "when using or adopting samber/oops, or when the codebase already imports github.com/samber/oops."
+      },
+      "b": {
+        "name": "golang-samber-slog",
+        "path": "samber_cc-skills-golang/skills/golang-samber-slog/SKILL.md",
+        "trigger": "when using or adopting slog, or when the codebase already imports any github.com/samber/slog-* package."
+      },
+      "label": "distinct",
+      "rationale": "different libraries: samber/oops vs samber/slog"
+    }
+  ]
+}

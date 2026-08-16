@@ -1,0 +1,8 @@
+{
+  "name": "ledger-service",
+  "private": true,
+  "dependencies": {
+    "postgres": "^3.4.0",
+    "react": "^19.0.0"
+  }
+}

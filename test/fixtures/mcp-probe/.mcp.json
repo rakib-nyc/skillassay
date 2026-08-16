@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "warehouse": { "command": "node", "args": ["stub-server.mjs"] },
+    "broken": { "command": "definitely-not-a-real-binary-xyz", "args": [] },
+    "remote": { "url": "https://example.invalid/mcp" }
+  }
+}

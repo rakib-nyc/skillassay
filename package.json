@@ -1,0 +1,92 @@
+{
+  "name": "skillassay",
+  "version": "0.1.0",
+  "description": "Static analyzer for AI coding-agent context: measures always-on context-window cost of CLAUDE.md, AGENTS.md and Agent Skills, finds redundant and stale instructions, duplicate skill names and instruction conflicts. Research project.",
+  "keywords": [
+    "claude",
+    "claude-code",
+    "claude-md",
+    "agents-md",
+    "agent-skills",
+    "skills",
+    "context-engineering",
+    "context-window",
+    "token-counter",
+    "tokenizer",
+    "prompt-engineering",
+    "ai-agents",
+    "coding-agent",
+    "llm",
+    "llm-tools",
+    "mcp",
+    "model-context-protocol",
+    "cursor",
+    "gemini-cli",
+    "codex",
+    "static-analysis",
+    "linter",
+    "cli",
+    "developer-tools"
+  ],
+  "license": "Apache-2.0",
+  "type": "module",
+  "bin": {
+    "assay": "./dist/cli.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "RULES.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "engines": {
+    "node": ">=20.11"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepublishOnly": "npm run build",
+    "dev": "tsx src/cli.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint:honesty": "node scripts/anti-simulation.mjs",
+    "calibrate": "tsx scripts/calibrate.ts",
+    "self-audit": "tsx scripts/self-audit.ts",
+    "corpus:fetch": "bash scripts/fetch-corpus.sh",
+    "corpus:validate": "tsx scripts/corpus-validate.ts",
+    "verify": "npm run lint:honesty && npm run typecheck && npm run test",
+    "docs:rules": "tsx scripts/gen-rules-doc.ts",
+    "docs": "npm run docs:rules && npm run self-audit",
+    "measure:recall": "tsx scripts/measure-recall.ts",
+    "wild": "tsx scripts/wild-run.ts"
+  },
+  "dependencies": {
+    "commander": "^15.0.0",
+    "js-tiktoken": "^1.0.21",
+    "js-yaml": "^5.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "tsx": "^4.23.12",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rakib-nyc/skillassay.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rakib-nyc/skillassay/issues"
+  },
+  "homepage": "https://github.com/rakib-nyc/skillassay#readme",
+  "author": "Muhammad Rakibul Islam <imrakibul@gmail.com>"
+}

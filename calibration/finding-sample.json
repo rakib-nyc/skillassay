@@ -1,0 +1,520 @@
+{
+  "method": "Findings sorted by (ruleId, repo, location) then sampled at a fixed stride of 2. Deterministic: no RNG, and the sample cannot be re-drawn until it looks favourable.",
+  "corpusSkills": 1029,
+  "totalFindings": 1640,
+  "sampleSize": 50,
+  "findings": [
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-DUPLICATE-NAME",
+      "summary": "2 skills share the canonical name \"init\"",
+      "locations": [
+        ".codex/skills/init/SKILL.md",
+        ".codex/skills/playwright-pro/skills/init/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-DUPLICATE-NAME",
+      "summary": "2 skills share the canonical name \"a11yaudit\"",
+      "locations": [
+        ".gemini/skills/a11y-audit/SKILL.md",
+        ".gemini/skills/cmd-a11y-audit/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-DUPLICATE-NAME",
+      "summary": "2 skills share the canonical name \"chaosengineering\"",
+      "locations": [
+        ".gemini/skills/chaos-engineering/SKILL.md",
+        ".gemini/skills/skills-chaos-engineering/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-DUPLICATE-NAME",
+      "summary": "2 skills share the canonical name \"chiefcustomerofficeradvisor\"",
+      "locations": [
+        ".gemini/skills/chief-customer-officer-advisor/SKILL.md",
+        ".gemini/skills/skills-chief-customer-officer-advisor/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-DUPLICATE-NAME",
+      "summary": "2 skills share the canonical name \"codetoprd\"",
+      "locations": [
+        ".gemini/skills/cmd-code-to-prd/SKILL.md",
+        ".gemini/skills/code-to-prd/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-DUPLICATE-NAME",
+      "summary": "2 skills share the canonical name \"focusedfix\"",
+      "locations": [
+        ".gemini/skills/cmd-focused-fix/SKILL.md",
+        ".gemini/skills/focused-fix/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-DUPLICATE-NAME",
+      "summary": "2 skills share the canonical name \"featureflagsarchitect\"",
+      "locations": [
+        ".gemini/skills/feature-flags-architect/SKILL.md",
+        ".gemini/skills/skills-feature-flags-architect/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-DUPLICATE-NAME",
+      "summary": "2 skills share the canonical name \"handoff\"",
+      "locations": [
+        ".gemini/skills/handoff/SKILL.md",
+        ".gemini/skills/skills-handoff/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-DUPLICATE-NAME",
+      "summary": "2 skills share the canonical name \"iso42001specialist\"",
+      "locations": [
+        ".gemini/skills/iso42001-specialist/SKILL.md",
+        ".gemini/skills/skills-iso42001-specialist/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-DUPLICATE-NAME",
+      "summary": "2 skills share the canonical name \"postmortem\"",
+      "locations": [
+        ".gemini/skills/post-mortem/SKILL.md",
+        ".gemini/skills/postmortem/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-DUPLICATE-NAME",
+      "summary": "2 skills share the canonical name \"run\"",
+      "locations": [
+        ".gemini/skills/run/SKILL.md",
+        ".gemini/skills/skills-run/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-DUPLICATE-NAME",
+      "summary": "2 skills share the canonical name \"status\"",
+      "locations": [
+        ".gemini/skills/skills-status/SKILL.md",
+        ".gemini/skills/status/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "ConardLi_garden-skills",
+      "ruleId": "AMB-NO-TRIGGER",
+      "summary": "Skill \"beautiful-article\" does not say when to use it",
+      "locations": [
+        "skills/beautiful-article/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "ConardLi_garden-skills",
+      "ruleId": "AMB-NO-TRIGGER",
+      "summary": "Skill \"kb-retriever\" does not say when to use it",
+      "locations": [
+        "skills/kb-retriever/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-NO-TRIGGER",
+      "summary": "Skill \"Agent Name\" does not say when to use it",
+      "locations": [
+        ".gemini/skills/TEMPLATE/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-NO-TRIGGER",
+      "summary": "Skill \"chaos-experiment\" does not say when to use it",
+      "locations": [
+        ".gemini/skills/chaos-experiment/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-NO-TRIGGER",
+      "summary": "Skill \"code-to-prd\" does not say when to use it",
+      "locations": [
+        ".gemini/skills/cmd-code-to-prd/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-NO-TRIGGER",
+      "summary": "Skill \"focused-fix\" does not say when to use it",
+      "locations": [
+        ".gemini/skills/cmd-focused-fix/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-NO-TRIGGER",
+      "summary": "Skill \"cs-backend-engineer\" does not say when to use it",
+      "locations": [
+        ".gemini/skills/cs-backend-engineer/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-NO-TRIGGER",
+      "summary": "Skill \"cs-engineer-grill\" does not say when to use it",
+      "locations": [
+        ".gemini/skills/cs-engineer-grill/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-NO-TRIGGER",
+      "summary": "Skill \"cs-frontend-review\" does not say when to use it",
+      "locations": [
+        ".gemini/skills/cs-frontend-review/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-NO-TRIGGER",
+      "summary": "Skill \"cs-fullstack-review\" does not say when to use it",
+      "locations": [
+        ".gemini/skills/cs-fullstack-review/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-NO-TRIGGER",
+      "summary": "Skill \"financial-health\" does not say when to use it",
+      "locations": [
+        ".gemini/skills/financial-health/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-NO-TRIGGER",
+      "summary": "Skill \"google-workspace\" does not say when to use it",
+      "locations": [
+        ".gemini/skills/google-workspace/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-NO-TRIGGER",
+      "summary": "Skill \"okr\" does not say when to use it",
+      "locations": [
+        ".gemini/skills/okr/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-NO-TRIGGER",
+      "summary": "Skill \"persona\" does not say when to use it",
+      "locations": [
+        ".gemini/skills/persona/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-NO-TRIGGER",
+      "summary": "Skill \"plugin-audit\" does not say when to use it",
+      "locations": [
+        ".gemini/skills/plugin-audit/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-NO-TRIGGER",
+      "summary": "Skill \"project-health\" does not say when to use it",
+      "locations": [
+        ".gemini/skills/project-health/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-NO-TRIGGER",
+      "summary": "Skill \"rice\" does not say when to use it",
+      "locations": [
+        ".gemini/skills/rice/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-NO-TRIGGER",
+      "summary": "Skill \"seo-auditor\" does not say when to use it",
+      "locations": [
+        ".gemini/skills/seo-auditor/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-NO-TRIGGER",
+      "summary": "Skill \"sprint-health\" does not say when to use it",
+      "locations": [
+        ".gemini/skills/sprint-health/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-NO-TRIGGER",
+      "summary": "Skill \"tc\" does not say when to use it",
+      "locations": [
+        ".gemini/skills/tc/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-NO-TRIGGER",
+      "summary": "Skill \"tech-debt\" does not say when to use it",
+      "locations": [
+        ".gemini/skills/tech-debt/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-NO-TRIGGER",
+      "summary": "Skill \"wiki-ingest\" does not say when to use it",
+      "locations": [
+        ".gemini/skills/wiki-ingest/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-NO-TRIGGER",
+      "summary": "Skill \"wiki-lint\" does not say when to use it",
+      "locations": [
+        ".gemini/skills/wiki-lint/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "AMB-NO-TRIGGER",
+      "summary": "Skill \"wiki-query\" does not say when to use it",
+      "locations": [
+        ".gemini/skills/wiki-query/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "anthropics_skills",
+      "ruleId": "AMB-NO-TRIGGER",
+      "summary": "Skill \"webapp-testing\" does not say when to use it",
+      "locations": [
+        "skills/webapp-testing/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "hashicorp_agent-skills",
+      "ruleId": "AMB-NO-TRIGGER",
+      "summary": "Skill \"refactor-module\" does not say when to use it",
+      "locations": [
+        "plugins/terraform/skills/refactor-module/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "softaworks_agent-toolkit",
+      "ruleId": "AMB-NO-TRIGGER",
+      "summary": "Skill \"database-schema-designer\" does not say when to use it",
+      "locations": [
+        "skills/database-schema-designer/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "softaworks_agent-toolkit",
+      "ruleId": "AMB-NO-TRIGGER",
+      "summary": "Skill \"design-system-starter\" does not say when to use it",
+      "locations": [
+        "skills/design-system-starter/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "softaworks_agent-toolkit",
+      "ruleId": "AMB-NO-TRIGGER",
+      "summary": "Skill \"naming-analyzer\" does not say when to use it",
+      "locations": [
+        "skills/naming-analyzer/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "ConardLi_garden-skills",
+      "ruleId": "BUD-BODY-OUTLIER",
+      "summary": "Skill body is 10706 tokens, above the published 99th percentile (9253)",
+      "locations": [
+        "skills/beautiful-article/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "anthropics_skills",
+      "ruleId": "BUD-BODY-OUTLIER",
+      "summary": "Skill body is 18366 tokens, above the published 99th percentile (9253)",
+      "locations": [
+        "skills/claude-api/SKILL.md"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "RED-GENERIC",
+      "summary": "Generic advice that applies to any repository: \"provide clear error messages\"",
+      "locations": [
+        "finance/CLAUDE.md:91"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "RED-REPO-OVERVIEW",
+      "summary": "Repository overview section spanning 30 lines",
+      "locations": [
+        "CLAUDE.md:56"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "RED-REPO-OVERVIEW",
+      "summary": "Documents `.github/workflows`, which the agent can list",
+      "locations": [
+        "engineering-team/CLAUDE.md:277"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "samber_cc-skills-golang",
+      "ruleId": "RED-REPO-OVERVIEW",
+      "summary": "Repository overview section spanning 4 lines",
+      "locations": [
+        "CLAUDE.md:3"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "RED-STALE-PATH",
+      "summary": "References `.github/workflows/test.yml`, which is not present in the repository",
+      "locations": [
+        "engineering-team/CLAUDE.md:278"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "RED-STALE-PATH",
+      "summary": "References `.github/workflows/deploy.yml`, which is not present in the repository",
+      "locations": [
+        "engineering-team/CLAUDE.md:280"
+      ],
+      "verdict": null,
+      "note": ""
+    },
+    {
+      "repo": "alirezarezvani_claude-skills",
+      "ruleId": "RED-STALE-PATH",
+      "summary": "References `progress`, which is not present in the repository",
+      "locations": [
+        "engineering/agenthub/CLAUDE.md:47"
+      ],
+      "verdict": null,
+      "note": ""
+    }
+  ]
+}

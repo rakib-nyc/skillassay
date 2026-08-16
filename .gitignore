@@ -1,0 +1,11 @@
+node_modules/
+dist/
+corpus/
+*.tsbuildinfo
+.DS_Store
+.npm-cache/
+assay.patch
+wild/
+ship/
+.ship-git-stash/
+DEVELOPMENT_LOG.md

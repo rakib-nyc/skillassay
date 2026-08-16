@@ -1,0 +1,1668 @@
+{
+  "criterion": "A line is `redundant` when a careful reviewer would say the agent can rediscover its content by listing the directory tree, reading a dependency manifest, or running the configured linter. Everything else - project-specific facts, non-obvious constraints, workflow instructions, prose and ordinary headings - is `legitimate`. REFINEMENT (disclosed): during measurement it became clear the original criterion did not separate a *descriptive* listing (\"here is what the repo contains\" - rediscoverable, redundant) from a *prescriptive* layout specification (\"a skill MUST contain SKILL.md and scripts/\" - not rediscoverable, legitimate). Three labels were revised under the refined criterion and are marked `revised: true` with their reasoning. The refinement was made because the distinction is real, not because it improved a number; both the pre- and post-refinement figures are reported in RECALL.md. Labels have been revised twice as the criterion sharpened; every revision is recorded in `revisionLog` and every revised item carries `revised: true`. Revisions were driven by discovering that the original criterion was ambiguous, not by whether a number improved - round 2 in particular corrected labels that had been scoring in the tool's favour.",
+  "populationMethod": "Every substantive line from all 28 context files in the corpus (3087 lines after removing blanks, fenced code and table separators), sorted by (repo, file, line) and sampled at a fixed stride of 19. Drawn with no reference to any rule.",
+  "curatedMethod": "Lines hand-picked from the same corpus because they are clearly redundant, deliberately spanning forms the tool does catch (trees, path bullets, matching headings) and forms it may not (headings such as 'Navigation Map' and 'Skill Map' that the heading pattern does not match).",
+  "population": [
+    {
+      "id": "L0",
+      "repo": "Jeffallan_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 1,
+      "text": "# Claude Skills Project Configuration",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L1",
+      "repo": "Jeffallan_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 43,
+      "text": "license: MIT",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L2",
+      "repo": "Jeffallan_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 66,
+      "text": "- `triggers`: Comma-separated searchable keywords",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L3",
+      "repo": "Jeffallan_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 97,
+      "text": "Every `SKILL.md` MUST end with a single canonical Documentation link pointing back to the docs site:",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L4",
+      "repo": "Jeffallan_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 128,
+      "text": "- Edge cases and anti-patterns",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L5",
+      "repo": "Jeffallan_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 159,
+      "text": "When releasing a new version, follow these steps.",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L6",
+      "repo": "Jeffallan_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 196,
+      "text": "Add new version entry at the top following Keep a Changelog format:",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L7",
+      "repo": "Jeffallan_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 228,
+      "text": "**For modified skills/commands:**",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L8",
+      "repo": "Jeffallan_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 262,
+      "text": "python scripts/validate-skills.py --check yaml       # YAML checks only",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L9",
+      "repo": "Jeffallan_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 294,
+      "text": "### 7. Final Verification",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L10",
+      "repo": "alirezarezvani_claude-skills",
+      "file": ".codex/skills/playwright-pro/CLAUDE.md",
+      "line": 14,
+      "text": "8. **Fixtures over globals** \u2014 share state via `test.extend()`, not module-level variables",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L11",
+      "repo": "alirezarezvani_claude-skills",
+      "file": ".codex/skills/playwright-pro/CLAUDE.md",
+      "line": 42,
+      "text": "4. Match the project's language (check for `tsconfig.json` \u2192 TypeScript, else JavaScript)",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L12",
+      "repo": "alirezarezvani_claude-skills",
+      "file": ".codex/skills/playwright-pro/CLAUDE.md",
+      "line": 70,
+      "text": "- **Debugging sessions**: Use `/debug` alongside `/pw:fix` for trace analysis",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L13",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 17,
+      "text": "- `documentation/` \u2014 sprint plans, strategy, implementation roadmaps",
+      "label": "legitimate",
+      "rationale": "Revised to legitimate: this folder is gitignored and the section explicitly documents it as existing only on the maintainer's disk. The agent cannot rediscover it by listing the tree, so the line carries information rather than duplicating it.",
+      "revised": true
+    },
+    {
+      "id": "L14",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 42,
+      "text": "| **Engineering (Core)** | [engineering-team/CLAUDE.md](engineering-team/CLAUDE.md) | Fullstack, AI/ML, DevOps, security, data, QA tools |",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L15",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 65,
+      "text": "\u251c\u2500\u2500 product-team/              # 17 product skills (incl. apple-hig-expert) + Python tools",
+      "label": "redundant",
+      "rationale": "Tree line from a directory listing of the repository."
+    },
+    {
+      "id": "L16",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 86,
+      "text": "### Skill Package Pattern",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L17",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 117,
+      "text": "# 1. Always start from dev",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L18",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 143,
+      "text": "See [standards/git/git-workflow-standards.md](standards/git/git-workflow-standards.md) for commit standards.",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L19",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 171,
+      "text": "- Registered as its own installable marketplace plugin; **counters:** skills 358 \u2192 359; tools 603 \u2192 635; refs 732 (unchanged); commands 110 \u2192 111; plugins 84 \u2192 85 (derived via `scripts/derive_counters.py --check`).",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L20",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 211,
+      "text": "Completes the `markdown-html/` domain at 5 skills. The Tier-3 use case from Shihipar's essay (\"Slide Decks\"): a markdown deck (slides separated by `---` HR boundaries or `# ` H1 headings, with optional `<!-- notes: ... -->` presenter notes blocks) becomes a single-file HTML presentation that runs in any browser with keyboard nav, presenter mode, and print-to-PDF.",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L21",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 237,
+      "text": "- **1 template asset** documenting the canonical 2-col review HTML shape.",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L22",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 268,
+      "text": "**v2.10.0 foundation highlights \u2014 markdown-html/ domain (new top-level domain):**",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L23",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 297,
+      "text": "**v2.8.4 highlights \u2014 productivity/andreessen skill, Marc Andreessen-mode:**",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L24",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 330,
+      "text": "  - `business-operations-skills/` (orchestrator, `context: fork`) \u2014 routes inquiries via Matt Pocock grill discipline (one question per turn, recommended answer, canon citation)",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L25",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 363,
+      "text": "- **`marketing-skill/skills/aeo/`** (new, 8 files, ~3,200 LOC) \u2014 Answer Engine Optimization skill, a discipline distinct from SEO. 3 stdlib Python tools: `aeo_audit.py` (E-E-A-T + structure scoring, 0-100 composite, 8 industries with calibrated thresholds where YMYL industries hit 85+, SaaS/b2b/media 70, ecommerce 65), `aeo_optimizer.py` (conservative/balanced/aggressive rewrites + schema.org JSON-LD injection), `citation_tracker.py` (local-first citation ledger at `~/.aeo-data/citations.json` with verdict EARLY/EMERGING/STRONG). 3 references each citing 8 sources: E-E-A-T canon, per-LLM citation patterns (Perplexity / ChatGPT / Claude / Gemini / Mistral with 73% cross-LLM correlation analysis), AEO vs. SEO strategic choice. New `cs-aeo` agent + `/cs:aeo` slash command. New 8th pod (\"AEO\") added to marketing-skill.",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L26",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 389,
+      "text": "**Version:** v2.6.1",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L27",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 413,
+      "text": "- **vpe-advisor** skill (new, `./c-level-advisor/skills/vpe-advisor/`) \u2014 opinionated throughput-first VPE skill covering 4 specific decisions distinct from CTO. 3 stdlib Python tools with deterministic logic: `delivery_throughput_analyzer.py` (DORA 4 metrics with Elite/High/Medium/Low verdict per metric + cycle-time bottleneck identification with typical fix per stage), `eng_hiring_funnel_calculator.py` (7-stage funnel conversion + healthy/leaky verdict per stage + end-to-end conversion + required top-of-funnel volume + weakest-stage fixes), `eng_team_structure_designer.py` (headcount-to-structure map + squad-size assessment + manager-trigger + director-trigger + span-of-control). 4 in-depth references each citing 5+ authoritative sources (DORA / Forsgren / Kim, Spotify squad model, Conway's Law, Will Larson, Camille Fournier, Google SRE Workbook).",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L28",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 436,
+      "text": "- **cs-cdo-advisor** agent (new) \u2014 decision-driven realist orchestrating the skill via `/cs:cdo-review`. Distinct voice: \"What decision does this data drive?\" Refuses to recommend tooling before naming the consumer.",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L29",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 460,
+      "text": "- **chaos-engineering** (Phase 3) \u2014 experiment designer, blast-radius calculator, postmortem generator. `/chaos-experiment` command.",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L30",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 483,
+      "text": "**v2.1.2 (2026-03-10):**",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L31",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 507,
+      "text": "- Reliability portfolio: feature-flags-architect, kubernetes-operator, chaos-engineering, slo-architect (Google SRE Workbook canon)",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L32",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 534,
+      "text": "   **Canonical forms (CC 2.1.144+):**",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L33",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 564,
+      "text": "When I correct you, or you catch yourself making a mistake: before continuing add the lesson as a one-line rule under ## Lessons, so it never happens again",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L34",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "GEMINI.md",
+      "line": 15,
+      "text": "| **Engineering (Core)** | `engineering-team/` |",
+      "label": "redundant",
+      "rationale": "Table row mapping a name to a folder and nothing else; pure structure."
+    },
+    {
+      "id": "L35",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "GEMINI.md",
+      "line": 40,
+      "text": "activate_skill(name=\"cto-advisor\")",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L36",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "agents/CLAUDE.md",
+      "line": 5,
+      "text": "## Agent Architecture",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L37",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "agents/CLAUDE.md",
+      "line": 33,
+      "text": "| [cs-ceo-advisor](c-level/cs-ceo-advisor.md) | C-Level | Strategic leadership advisor for CEOs |",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L38",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "agents/CLAUDE.md",
+      "line": 55,
+      "text": "| Aspect | Agent (cs-*) | Skill |",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L39",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "agents/CLAUDE.md",
+      "line": 84,
+      "text": "- **domain**: Domain category (marketing, product, engineering, c-level, pm, ra-qm)",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L40",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "agents/CLAUDE.md",
+      "line": 111,
+      "text": "**Skill Location:** `../marketing-skill/skills/content-creator/`",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L41",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "agents/CLAUDE.md",
+      "line": 144,
+      "text": "python ../marketing-skill/skills/content-production/scripts/brand_voice_analyzer.py input.txt json",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L42",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "agents/CLAUDE.md",
+      "line": 172,
+      "text": "Each workflow must include:",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L43",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "agents/CLAUDE.md",
+      "line": 202,
+      "text": "## Agent Template",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L44",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "agents/CLAUDE.md",
+      "line": 235,
+      "text": "1. **Reference Name**",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L45",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "agents/CLAUDE.md",
+      "line": 263,
+      "text": "### Workflow 2: [Name]",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L46",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "agents/CLAUDE.md",
+      "line": 296,
+      "text": "- [ ] All required fields present (name, description, skills, domain, model, tools)",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L47",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "agents/CLAUDE.md",
+      "line": 323,
+      "text": "python ../marketing-skill/skills/content-production/scripts/brand_voice_analyzer.py test-input.txt",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L48",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "agents/CLAUDE.md",
+      "line": 352,
+      "text": "- Focus on scaffolding, code quality, fullstack development",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L49",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "agents/CLAUDE.md",
+      "line": 377,
+      "text": "6. Commit with conventional commit message: `feat(agents): implement cs-agent-name`",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L50",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "business-growth/CLAUDE.md",
+      "line": 25,
+      "text": "- Trend analysis comparing current vs previous period",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L51",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "business-growth/CLAUDE.md",
+      "line": 56,
+      "text": "- Whitespace mapping for unused features",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L52",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "business-growth/CLAUDE.md",
+      "line": 88,
+      "text": "**Features:**",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L53",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "business-growth/CLAUDE.md",
+      "line": 118,
+      "text": "#### 7. Pipeline Analyzer (`revenue-operations/scripts/pipeline_analyzer.py`)",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L54",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "business-growth/CLAUDE.md",
+      "line": 147,
+      "text": "python revenue-operations/scripts/forecast_accuracy_tracker.py forecast_data.json --format json",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L55",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "business-growth/CLAUDE.md",
+      "line": 175,
+      "text": "- Include argparse CLI with `--help` support",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L56",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "business-operations/CLAUDE.md",
+      "line": 17,
+      "text": "| `internal-comms` | ADKAR + Kotter 8-step change comms (NOT marketing) | NO |",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L57",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "business-operations/CLAUDE.md",
+      "line": 45,
+      "text": "- `/cs:grill-bizops <plan>` \u2014 Matt-style docs-anchored grilling **before** routing.",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L58",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "c-level-advisor/CLAUDE.md",
+      "line": 13,
+      "text": "    10 Roles    6 Cross-Cut  6 Culture",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L59",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "c-level-advisor/CLAUDE.md",
+      "line": 39,
+      "text": "| **Chief AI Officer** | `chief-ai-officer-advisor/` | Eval-Demanding | model_buildvsbuy_calculator, ai_risk_classifier, ai_cost_economics |",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L60",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "c-level-advisor/CLAUDE.md",
+      "line": 64,
+      "text": "| **International Expansion** | `intl-expansion/` | Market entry strategy |",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L61",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "c-level-advisor/CLAUDE.md",
+      "line": 91,
+      "text": "| cs-ciso-advisor | Risk-paranoid | ciso-advisor |",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L62",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "c-level-advisor/CLAUDE.md",
+      "line": 120,
+      "text": "| `/em:stress-test` | Stress-test any assumption |",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L63",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "c-level-advisor/CLAUDE.md",
+      "line": 149,
+      "text": "| CMO | marketing-skill/ (content, demand gen, ASO execution) |",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L64",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "commercial/CLAUDE.md",
+      "line": 16,
+      "text": "| `partnerships-architect` | 5-tier classifier + joint GTM + revshare modeler | NO |",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L65",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "commercial/CLAUDE.md",
+      "line": 41,
+      "text": "- `/cs:commercial <inquiry>` \u2014 top-level router",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L66",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "engineering-team/CLAUDE.md",
+      "line": 7,
+      "text": "**Core Engineering (16 skills):**",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L67",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "engineering-team/CLAUDE.md",
+      "line": 28,
+      "text": "- senior-prompt-engineer, senior-computer-vision",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L68",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "engineering-team/CLAUDE.md",
+      "line": 56,
+      "text": "# Start services",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L69",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "engineering-team/CLAUDE.md",
+      "line": 85,
+      "text": "- Security: 90/100 (2 medium issues)",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L70",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "engineering-team/CLAUDE.md",
+      "line": 115,
+      "text": "- Automated feature generation",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L71",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "engineering-team/CLAUDE.md",
+      "line": 139,
+      "text": "- Incremental loading",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L72",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "engineering-team/CLAUDE.md",
+      "line": 165,
+      "text": "**RAG System Builder** (`senior-prompt-engineer/scripts/rag_system_builder.py`)",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L73",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "engineering-team/CLAUDE.md",
+      "line": 189,
+      "text": "- Object tracking",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L74",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "engineering-team/CLAUDE.md",
+      "line": 212,
+      "text": "- Redis for caching",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L75",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "engineering-team/CLAUDE.md",
+      "line": 245,
+      "text": "# 4. Build production",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L76",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "engineering-team/CLAUDE.md",
+      "line": 277,
+      "text": ".github/workflows/",
+      "label": "redundant",
+      "rationale": "Bare directory path being used as a structure listing."
+    },
+    {
+      "id": "L77",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "engineering-team/CLAUDE.md",
+      "line": 309,
+      "text": "## epic-design",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L78",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "engineering-team/self-improving-agent/CLAUDE.md",
+      "line": 15,
+      "text": "## How auto-memory works",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L79",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "engineering-team/self-improving-agent/CLAUDE.md",
+      "line": 52,
+      "text": "- This plugin adds judgment: what's worth keeping, what should be promoted, what's stale.",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L80",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "engineering/agenthub/CLAUDE.md",
+      "line": 3,
+      "text": "This plugin enables multi-agent collaboration. Spawn N parallel subagents that compete on the same task, evaluate results, and merge the winner.",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L81",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "engineering/agenthub/CLAUDE.md",
+      "line": 31,
+      "text": "Agents never see each other's work. Every approach is preserved in the git DAG. The coordinator evaluates objectively and merges only the winner.",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L82",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "engineering/autoresearch-agent/CLAUDE.md",
+      "line": 1,
+      "text": "# Autoresearch Agent \u2014 Claude Code Instructions",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L83",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "engineering/autoresearch-agent/CLAUDE.md",
+      "line": 32,
+      "text": "Creates the experiment directory, config, program.md, results.tsv, and git branch.",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L84",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "finance/CLAUDE.md",
+      "line": 3,
+      "text": "This guide covers the 3 production-ready finance skills and their Python automation tools.",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L85",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "finance/CLAUDE.md",
+      "line": 32,
+      "text": "python financial-analyst/scripts/ratio_calculator.py financial_data.json",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L86",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "finance/CLAUDE.md",
+      "line": 61,
+      "text": "- Favorable/unfavorable classification",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L87",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "finance/CLAUDE.md",
+      "line": 91,
+      "text": "- Provide clear error messages for invalid input",
+      "label": "redundant",
+      "rationale": "Generic advice ('provide clear error messages for invalid input') that applies to any repository."
+    },
+    {
+      "id": "L88",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "markdown-html/CLAUDE.md",
+      "line": 15,
+      "text": "| `markdown-html-orchestrator` | Domain orchestrator \u2014 classifies doctype, gates on threshold + onboarding, routes to converter | YES | \u2713 live |",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L89",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "markdown-html/CLAUDE.md",
+      "line": 42,
+      "text": "- `cs-markdown-html-orchestrator` \u2014 density-first markdown-to-HTML converter. Voice: \"What decision does this HTML drive \u2014 is the reader skimming, deciding, or presenting?\"",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L90",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "markdown-html/CLAUDE.md",
+      "line": 66,
+      "text": "2. Wizard validates brand colors via `brand_palette_validator.py`, derives 12-token palette.",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L91",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "marketing-skill/CLAUDE.md",
+      "line": 13,
+      "text": "### Skill Map",
+      "label": "redundant",
+      "rationale": "Section heading introducing a catalogue of the repository's own folders."
+    },
+    {
+      "id": "L92",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "marketing-skill/CLAUDE.md",
+      "line": 39,
+      "text": "\u274c Don't install pip packages for Python tools",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L93",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "product-team/CLAUDE.md",
+      "line": 30,
+      "text": "0. **product-skills/** - Domain orchestrator (`context: fork`) + continuous-discovery loop (3 tools: goal router, cadence tracker, OST linter)",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L94",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "product-team/CLAUDE.md",
+      "line": 52,
+      "text": "**Slash Commands:** 11 (/cs:product, /cs:grill-product, /cs:product-loop, /rice, /okr, /persona, /user-story, /competitive-matrix, /prd, /sprint-plan, /code-to-prd)",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L95",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "product-team/CLAUDE.md",
+      "line": 83,
+      "text": "feature,reach,impact,confidence,effort",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L96",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "product-team/CLAUDE.md",
+      "line": 113,
+      "text": "**Features:**",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L97",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "product-team/CLAUDE.md",
+      "line": 141,
+      "text": "# Growth strategy OKRs",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L98",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "product-team/CLAUDE.md",
+      "line": 178,
+      "text": "### 8. Landing Page Scaffolder (`landing-page-generator/scripts/landing_page_scaffolder.py`)",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L99",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "product-team/CLAUDE.md",
+      "line": 210,
+      "text": "- Cohort grouping and comparison",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L100",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "product-team/CLAUDE.md",
+      "line": 241,
+      "text": "# Custom power/significance",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L101",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "product-team/CLAUDE.md",
+      "line": 277,
+      "text": "python product-manager-toolkit/scripts/rice_prioritizer.py features.csv --capacity 30",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L102",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "product-team/CLAUDE.md",
+      "line": 322,
+      "text": "## Quality Standards",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L103",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "project-management/CLAUDE.md",
+      "line": 9,
+      "text": "2. **senior-pm/** - Portfolio health, risk analysis, resource planning (3 scripts)",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L104",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "project-management/CLAUDE.md",
+      "line": 34,
+      "text": "python3 skills/scrum-master/scripts/velocity_analyzer.py sprint_data.json",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L105",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "project-management/CLAUDE.md",
+      "line": 63,
+      "text": "# Jira: create an issue (call getAccessibleAtlassianResources first to obtain cloudId)",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L106",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "project-management/CLAUDE.md",
+      "line": 92,
+      "text": "- Backlog refinement",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L107",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "project-management/CLAUDE.md",
+      "line": 119,
+      "text": "- Documentation standards",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L108",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "project-management/CLAUDE.md",
+      "line": 146,
+      "text": "- Risk register",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L109",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "project-management/CLAUDE.md",
+      "line": 181,
+      "text": "# JQL from natural language",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L110",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "project-management/CLAUDE.md",
+      "line": 211,
+      "text": "**Skills Deployed:** 9/9 PM skills production-ready (pm-skills is now a fork-orchestrator + delivery loop)",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L111",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "ra-qm-team/CLAUDE.md",
+      "line": 22,
+      "text": "- fda-consultant-specialist - FDA 510(k), PMA, QSR compliance",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L112",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "ra-qm-team/CLAUDE.md",
+      "line": 49,
+      "text": "### ISO 14971 (Medical Device Risk Management)",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L113",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "ra-qm-team/CLAUDE.md",
+      "line": 76,
+      "text": "**Managed by:** fda-consultant-specialist",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L114",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "ra-qm-team/CLAUDE.md",
+      "line": 102,
+      "text": "- Breach notification",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L115",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "ra-qm-team/CLAUDE.md",
+      "line": 135,
+      "text": "## Integration Patterns",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L116",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "research-ops/CLAUDE.md",
+      "line": 15,
+      "text": "| `research-ops-skills` | Domain orchestrator \u2014 routes to 4 sub-skills | YES |",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L117",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "research-ops/CLAUDE.md",
+      "line": 40,
+      "text": "- `/cs:research-ops <inquiry>` \u2014 top-level router",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L118",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "standards/CLAUDE.md",
+      "line": 1,
+      "text": "# Standards Library - Claude Code Guidance",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L119",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "standards/CLAUDE.md",
+      "line": 28,
+      "text": "- Zero fluff - Eliminate vague statements",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L120",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "standards/CLAUDE.md",
+      "line": 54,
+      "text": "- Creating feature branches",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L121",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "standards/CLAUDE.md",
+      "line": 86,
+      "text": "**Best Practices:**",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L122",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "standards/CLAUDE.md",
+      "line": 112,
+      "text": "### For New Skills",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L123",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "standards/CLAUDE.md",
+      "line": 144,
+      "text": "2. **Quality** - Zero defect handoff required",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L124",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "standards/CLAUDE.md",
+      "line": 170,
+      "text": "- **Domain Skills:** See navigation map in main CLAUDE.md",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L125",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "templates/CLAUDE.md",
+      "line": 27,
+      "text": "### Command Templates and Workflow Templates",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L126",
+      "repo": "hashicorp_agent-skills",
+      "file": "AGENTS.md",
+      "line": 4,
+      "text": "Packer product plugins that distribute them.",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L127",
+      "repo": "hashicorp_agent-skills",
+      "file": "AGENTS.md",
+      "line": 29,
+      "text": "that includes `@hashicorp/team-agent-skills-ecosystem`. Product-aligned owners",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L128",
+      "repo": "samber_cc-skills-golang",
+      "file": "CLAUDE.md",
+      "line": 3,
+      "text": "## Project Overview",
+      "label": "redundant",
+      "rationale": "'Project Overview' section: the repository-overview pattern the ETH Zurich study measured as unhelpful."
+    },
+    {
+      "id": "L129",
+      "repo": "samber_cc-skills-golang",
+      "file": "CLAUDE.md",
+      "line": 33,
+      "text": "| `license` | Project-required | License name or reference to a bundled license file. Use `MIT` for this project. |",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L130",
+      "repo": "samber_cc-skills-golang",
+      "file": "CLAUDE.md",
+      "line": 60,
+      "text": "metadata:",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L131",
+      "repo": "samber_cc-skills-golang",
+      "file": "CLAUDE.md",
+      "line": 84,
+      "text": "    requires:",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L132",
+      "repo": "samber_cc-skills-golang",
+      "file": "CLAUDE.md",
+      "line": 116,
+      "text": "# Good \u2014 triggers only when style is the actual concern",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L133",
+      "repo": "samber_cc-skills-golang",
+      "file": "CLAUDE.md",
+      "line": 151,
+      "text": "| `Bash(wire:*)` | Google Wire DI skills |",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L134",
+      "repo": "samber_cc-skills-golang",
+      "file": "CLAUDE.md",
+      "line": 177,
+      "text": "- **< 500 lines per SKILL.md** \u2014 move detailed reference material to `references/`",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L135",
+      "repo": "samber_cc-skills-golang",
+      "file": "CLAUDE.md",
+      "line": 210,
+      "text": "- The skill has a well-defined analytical or generative domain (security, performance, debugging) \u2014 it primes the model to prioritize angles it would otherwise reach only with longer prompts.",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L136",
+      "repo": "samber_cc-skills-golang",
+      "file": "CLAUDE.md",
+      "line": 239,
+      "text": "| **Review** | A PR diff | Sequential; start from changed files, then trace call sites and data flows into adjacent code \u2014 a bug may live outside the diff but be triggered by it |",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L137",
+      "repo": "samber_cc-skills-golang",
+      "file": "CLAUDE.md",
+      "line": 272,
+      "text": "**Thinking mode:** Use `ultrathink` for <task description>. <Why deep reasoning matters for this skill>.",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L138",
+      "repo": "samber_cc-skills-golang",
+      "file": "CLAUDE.md",
+      "line": 310,
+      "text": "Skills are structured for efficient context use:",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L139",
+      "repo": "samber_cc-skills-golang",
+      "file": "CLAUDE.md",
+      "line": 344,
+      "text": "- **`a real repository@golang-troubleshooting`** - debugging workflow, root cause finding, pprof setup/capture, Delve, GODEBUG",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L140",
+      "repo": "samber_cc-skills-golang",
+      "file": "CLAUDE.md",
+      "line": 378,
+      "text": "**Inline:** see the `a real repository@golang-database` skill. **Arrow-prefixed lists:** \"\u2192 See `a real repository@golang-database` skill for \u2026\"",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L141",
+      "repo": "samber_cc-skills-golang",
+      "file": "CLAUDE.md",
+      "line": 415,
+      "text": "- **Code example comments**: carry the reasoning \u2014 `// \u2717 Bad \u2014 nil map has no backing storage; writing panics at runtime`",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L142",
+      "repo": "samber_cc-skills-golang",
+      "file": "CLAUDE.md",
+      "line": 451,
+      "text": "| `Always reference the relevant changelog when suggesting X` | `Reference the relevant changelog when suggesting X` (remove imperative \"always\") |",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L143",
+      "repo": "samber_cc-skills-golang",
+      "file": "CLAUDE.md",
+      "line": 479,
+      "text": "## Evaluation",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L144",
+      "repo": "samber_cc-skills-golang",
+      "file": "CLAUDE.md",
+      "line": 507,
+      "text": "- **Stress-test edge cases.** The skill's common-mistakes tables and \"when NOT to use\" guidance are high-value targets.",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L145",
+      "repo": "samber_cc-skills-golang",
+      "file": "CLAUDE.md",
+      "line": 530,
+      "text": "Eval results go in `EVALUATIONS.md` at the repo root. Append new skill sections \u2014 never overwrite previous runs. The file is wrapped in `<!-- prettier-ignore-start/end -->` so Prettier doesn't break the HTML spans.",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L146",
+      "repo": "samber_cc-skills-golang",
+      "file": "CLAUDE.md",
+      "line": 565,
+      "text": "All implementation work MUST happen in a git worktree in `.claude/worktrees/`, never directly on the checked-out branch.",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L147",
+      "repo": "samber_cc-skills-golang",
+      "file": "CLAUDE.md",
+      "line": 593,
+      "text": "2. Verify the description against quality criteria: contains \"Golang\", has \"Use when\"/\"Apply when\" trigger clause with specific scenarios, no broad anti-patterns (`whenever writing Go code`, `Essential for ANY`, `proactively`), FQN cross-refs for competing skills (`a real repository@<skill>`), library skills use `Apply when the codebase imports github.com/...` pattern. Description must stay \u2264 1,000 characters.",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L148",
+      "repo": "samber_cc-skills-golang",
+      "file": "CLAUDE.md",
+      "line": 622,
+      "text": "- Keywords for discoverability",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L149",
+      "repo": "samber_cc-skills-golang",
+      "file": "CLAUDE.md",
+      "line": 649,
+      "text": "Common mistakes:",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L150",
+      "repo": "samber_cc-skills-golang",
+      "file": "CLAUDE.md",
+      "line": 680,
+      "text": "## Writing Rules",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L151",
+      "repo": "samber_cc-skills-golang",
+      "file": "CLAUDE.md",
+      "line": 721,
+      "text": "- Empty words (\"digital landscape\", \"incontournable\")",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L152",
+      "repo": "softaworks_agent-toolkit",
+      "file": "AGENTS.md",
+      "line": 19,
+      "text": "  {skill-name}.zip        # Required: packaged for distribution",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L153",
+      "repo": "softaworks_agent-toolkit",
+      "file": "AGENTS.md",
+      "line": 57,
+      "text": "## Output",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L154",
+      "repo": "softaworks_agent-toolkit",
+      "file": "AGENTS.md",
+      "line": 87,
+      "text": "- Reference the script path as `/mnt/skills/user/{skill-name}/scripts/{script}.sh`",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L155",
+      "repo": "softaworks_agent-toolkit",
+      "file": "CLAUDE.md",
+      "line": 15,
+      "text": "  {skill-name}/           # kebab-case directory name",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L156",
+      "repo": "softaworks_agent-toolkit",
+      "file": "CLAUDE.md",
+      "line": 51,
+      "text": "**Arguments:**",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L157",
+      "repo": "softaworks_agent-toolkit",
+      "file": "CLAUDE.md",
+      "line": 83,
+      "text": "- Use `set -e` for fail-fast behavior",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L158",
+      "repo": "utkusen_sast-skills",
+      "file": "sast-files/AGENTS.md",
+      "line": 9,
+      "text": "Before running, check if `sast/architecture.md` already exists. If it does, skip this step.",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    },
+    {
+      "id": "L159",
+      "repo": "utkusen_sast-skills",
+      "file": "sast-files/AGENTS.md",
+      "line": 37,
+      "text": "> Read `sast/architecture.md` for context, then run the named SAST skill. Write all findings to that skill's results file. Clean up any intermediate recon or threat files for that skill when done.",
+      "label": "legitimate",
+      "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
+    }
+  ],
+  "curated": [
+    {
+      "id": "C0",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 33,
+      "text": "## Navigation Map",
+      "label": "redundant",
+      "rationale": "Section heading introducing a navigation map of the repository's own folders."
+    },
+    {
+      "id": "C1",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "marketing-skill/CLAUDE.md",
+      "line": 13,
+      "text": "### Skill Map",
+      "label": "redundant",
+      "rationale": "Section heading introducing a catalogue of the repository's own skill folders."
+    },
+    {
+      "id": "C2",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 56,
+      "text": "### Repository Structure",
+      "label": "redundant",
+      "rationale": "'Repository Structure' heading: the repository-overview pattern."
+    },
+    {
+      "id": "C3",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 60,
+      "text": "\u251c\u2500\u2500 .claude-plugin/            # Plugin registry (marketplace.json)",
+      "label": "redundant",
+      "rationale": "Tree line listing a top-level directory."
+    },
+    {
+      "id": "C4",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 61,
+      "text": "\u251c\u2500\u2500 agents/                    # 32 standalone agents (cs-* + 7 personas); 51+ cs-* agents repo-wide",
+      "label": "redundant",
+      "rationale": "Tree line listing a top-level directory."
+    },
+    {
+      "id": "C5",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 62,
+      "text": "\u251c\u2500\u2500 commands/                  # slash commands (changelog, tdd, saas-health, prd, code-to-prd, plugin-audit, sprint-plan, slo-design, etc.); 87+ repo-wide",
+      "label": "redundant",
+      "rationale": "Tree line listing a top-level directory."
+    },
+    {
+      "id": "C6",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 63,
+      "text": "\u251c\u2500\u2500 engineering-team/          # 51 core engineering skills + Playwright Pro + Self-Improving Agent + Security Suite",
+      "label": "redundant",
+      "rationale": "Tree line listing a top-level directory."
+    },
+    {
+      "id": "C7",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 64,
+      "text": "\u251c\u2500\u2500 engineering/               # 81 POWERFUL-tier advanced skills (incl. AgentHub, autoresearch-agent, self-eval, llm-wiki, tc-tracker, ship-gate, slo-architect, write-a-skill, caveman, grill-me, handoff, agent-harness)",
+      "label": "redundant",
+      "rationale": "Tree line listing a top-level directory."
+    },
+    {
+      "id": "C8",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 65,
+      "text": "\u251c\u2500\u2500 product-team/              # 17 product skills (incl. apple-hig-expert) + Python tools",
+      "label": "redundant",
+      "rationale": "Tree line listing a top-level directory."
+    },
+    {
+      "id": "C9",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 17,
+      "text": "- `documentation/` \u2014 sprint plans, strategy, implementation roadmaps",
+      "label": "legitimate",
+      "rationale": "Revised to legitimate: this folder is gitignored and the section explicitly documents it as existing only on the maintainer's disk. The agent cannot rediscover it by listing the tree, so the line carries information rather than duplicating it.",
+      "revised": true
+    },
+    {
+      "id": "C10",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 18,
+      "text": "- `eval-workspace/` \u2014 Tessl evaluation outputs",
+      "label": "legitimate",
+      "rationale": "Revised to legitimate: this folder is gitignored and the section explicitly documents it as existing only on the maintainer's disk. The agent cannot rediscover it by listing the tree, so the line carries information rather than duplicating it.",
+      "revised": true
+    },
+    {
+      "id": "C11",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 19,
+      "text": "- `megaprompts/` \u2014 pre-skill draft specs (Path-B source material)",
+      "label": "legitimate",
+      "rationale": "Revised to legitimate: this folder is gitignored and the section explicitly documents it as existing only on the maintainer's disk. The agent cannot rediscover it by listing the tree, so the line carries information rather than duplicating it.",
+      "revised": true
+    },
+    {
+      "id": "C12",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "CLAUDE.md",
+      "line": 20,
+      "text": "- `tests/` \u2014 pytest suite (run locally; not in CI)",
+      "label": "legitimate",
+      "rationale": "Revised to legitimate: this folder is gitignored and the section explicitly documents it as existing only on the maintainer's disk. The agent cannot rediscover it by listing the tree, so the line carries information rather than duplicating it.",
+      "revised": true
+    },
+    {
+      "id": "C13",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "marketing-skill/CLAUDE.md",
+      "line": 15,
+      "text": "- `marketing-context/` \u2014 Run first to capture brand context",
+      "label": "redundant",
+      "rationale": "Path bullet describing a directory's contents."
+    },
+    {
+      "id": "C14",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "marketing-skill/CLAUDE.md",
+      "line": 16,
+      "text": "- `marketing-ops/` \u2014 Router (read this to know where to go)",
+      "label": "redundant",
+      "rationale": "Path bullet describing a directory's contents."
+    },
+    {
+      "id": "C15",
+      "repo": "alirezarezvani_claude-skills",
+      "file": "agents/CLAUDE.md",
+      "line": 63,
+      "text": "## Agent File Structure",
+      "label": "redundant",
+      "rationale": "'Agent File Structure' heading introducing a layout section."
+    },
+    {
+      "id": "C16",
+      "repo": "softaworks_agent-toolkit",
+      "file": "AGENTS.md",
+      "line": 5,
+      "text": "## Repository Overview",
+      "label": "redundant",
+      "rationale": "'Repository Overview' heading."
+    },
+    {
+      "id": "C17",
+      "repo": "softaworks_agent-toolkit",
+      "file": "AGENTS.md",
+      "line": 11,
+      "text": "### Directory Structure",
+      "label": "legitimate",
+      "rationale": "Revised to legitimate: this section prescribes the layout a skill MUST have (required files, optional directories, version-match constraints). That is not rediscoverable by listing the tree, so it is not the repository-overview pattern the ETH Zurich study found unhelpful.",
+      "revised": true
+    },
+    {
+      "id": "C18",
+      "repo": "softaworks_agent-toolkit",
+      "file": "CLAUDE.md",
+      "line": 5,
+      "text": "## Repository Overview",
+      "label": "redundant",
+      "rationale": "'Repository Overview' heading."
+    },
+    {
+      "id": "C19",
+      "repo": "softaworks_agent-toolkit",
+      "file": "CLAUDE.md",
+      "line": 11,
+      "text": "### Directory Structure",
+      "label": "legitimate",
+      "rationale": "Revised to legitimate: this section prescribes the layout a skill MUST have (required files, optional directories, version-match constraints). That is not rediscoverable by listing the tree, so it is not the repository-overview pattern the ETH Zurich study found unhelpful.",
+      "revised": true
+    },
+    {
+      "id": "C20",
+      "repo": "samber_cc-skills-golang",
+      "file": "CLAUDE.md",
+      "line": 3,
+      "text": "## Project Overview",
+      "label": "redundant",
+      "rationale": "'Project Overview' heading."
+    },
+    {
+      "id": "C21",
+      "repo": "samber_cc-skills-golang",
+      "file": "CLAUDE.md",
+      "line": 7,
+      "text": "## Project Structure",
+      "label": "legitimate",
+      "rationale": "Revised to legitimate: this section prescribes the layout a skill MUST have (required files, optional directories, version-match constraints). That is not rediscoverable by listing the tree, so it is not the repository-overview pattern the ETH Zurich study found unhelpful.",
+      "revised": true
+    }
+  ],
+  "preRefinementCuratedRecall": "86.4% (19/22) under the original criterion, before the descriptive/prescriptive refinement.",
+  "revisionLog": [
+    {
+      "round": 1,
+      "revised": 3,
+      "reason": "Original criterion did not separate a *descriptive* listing (rediscoverable, redundant) from a *prescriptive* layout specification (not rediscoverable, legitimate). Three 'Directory Structure' / 'Project Structure' sections that specify a required skill layout were relabelled legitimate."
+    },
+    {
+      "round": 2,
+      "revised": 5,
+      "reason": "Filesystem grounding revealed that the `documentation/`, `eval-workspace/`, `megaprompts/`, `tests/` bullets sit under a heading reading 'Maintainer-Local Folders (gitignored)', whose prose states they 'exist on the maintainer's disk but are excluded from the public GitHub tree'. The agent CANNOT rediscover them by listing - they are not there - so documenting them is the opposite of redundant. Relabelled legitimate. This was a labelling error, not a tool failure, and it moved the measured recall against the tool's favour before the labels were corrected."
+    }
+  ]
+}
