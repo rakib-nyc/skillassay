@@ -242,6 +242,8 @@ export interface AnalysisResult {
   readonly errors: readonly ArtifactError[];
   readonly budget: BudgetReport;
   readonly findings: readonly Finding[];
+  /** `--exclude` fragments that skipped nothing. See `DiscoveryResult`. */
+  readonly unmatchedExcludes: readonly string[];
   readonly stats: {
     readonly filesScanned: number;
     readonly skillsParsed: number;

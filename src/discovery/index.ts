@@ -35,6 +35,17 @@ export interface DiscoveryResult {
   readonly artifacts: readonly DiscoveredArtifact[];
   readonly errors: readonly ArtifactError[];
   readonly filesScanned: number;
+  /**
+   * Exclude fragments that skipped nothing.
+   *
+   * An exclusion that matches no path is almost always a mistake in the
+   * fragment rather than a genuinely empty selection — a glob, which this is
+   * not, or a bare directory name where a repository-relative path is wanted.
+   * Reporting it matters because the failure is otherwise invisible: the run
+   * succeeds, the numbers look plausible, and they silently include what the
+   * caller believed they had removed.
+   */
+  readonly unmatchedExcludes: readonly string[];
 }
 
 interface Classification {
@@ -128,6 +139,7 @@ export function discoverArtifacts(root: string, options: DiscoveryOptions = {}):
 
   const artifacts: DiscoveredArtifact[] = [];
   const errors: ArtifactError[] = [];
+  const usedExcludes = new Set<string>();
   let filesScanned = 0;
 
   if (!fs.existsSync(absoluteRoot)) {
@@ -176,7 +188,11 @@ export function discoverArtifacts(root: string, options: DiscoveryOptions = {}):
       const full = path.join(dir, entry.name);
       const relPath = toPosix(path.relative(absoluteRoot, full));
 
-      if (exclude.some((fragment) => relPath === fragment || relPath.startsWith(`${fragment}/`))) {
+      const matchedExclude = exclude.find(
+        (fragment) => relPath === fragment || relPath.startsWith(`${fragment}/`),
+      );
+      if (matchedExclude !== undefined) {
+        usedExcludes.add(matchedExclude);
         continue;
       }
 
@@ -284,5 +300,10 @@ export function discoverArtifacts(root: string, options: DiscoveryOptions = {}):
   artifacts.sort((a, b) => (a.relPath < b.relPath ? -1 : a.relPath > b.relPath ? 1 : 0));
   errors.sort((a, b) => (a.relPath < b.relPath ? -1 : a.relPath > b.relPath ? 1 : 0));
 
-  return { artifacts, errors, filesScanned };
+  return {
+    artifacts,
+    errors,
+    filesScanned,
+    unmatchedExcludes: exclude.filter((fragment) => !usedExcludes.has(fragment)),
+  };
 }

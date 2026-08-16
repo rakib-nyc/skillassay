@@ -240,6 +240,7 @@ export function analyze(root: string, options: AnalyzeOptions = {}): AnalysisRes
     errors,
     budget,
     findings,
+    unmatchedExcludes: fullDiscovery.unmatchedExcludes,
     stats: {
       filesScanned: discovery.filesScanned,
       skillsParsed: skills.length,

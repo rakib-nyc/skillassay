@@ -1,8 +1,40 @@
 # Changelog
 
-## Unreleased
+## v0.1.1 — 2026-08-16
 
-Agent Skills specification conformance, and usability as a skill.
+Fixes.1.0 binary against 54 adversarial
+scenarios rather than against the development tree.
+
+- **`--json` no longer truncates when piped.** Node writes to a pipe
+  asynchronously, and the CLI called `process.exit()` without waiting for the
+  buffer to drain, so any report larger than the operating system's 64 KiB pipe
+  capacity lost everything past that point. `assay . --json > file.json` was
+  complete while `assay . --json | jq` silently received a prefix — which is how
+  every agent consumes the tool. A 40-skill repository is enough to cross the
+  line. Every output path now flushes before exiting.
+- **A reader that closes early exits quietly.** `assay . --json | head -1` raised
+  an unhandled `EPIPE` over the caller's output instead of stopping.
+- **The compiled CLI is built on `prepack`, not `prepublishOnly`.** `npm pack`
+  runs the first and skips the second, so a tarball built for review or handed
+  to someone else to publish contained the sources and no `dist/` — six files
+  instead of sixty, with no error and a bin entry pointing at nothing. A test
+  now asserts the lifecycle hook and that every `bin` target lies under `files`.
+- **`--exclude` warns when a fragment matched nothing.** It compares literal
+  repository-relative path prefixes, so a glob such as `**/name/**` silently
+  excluded nothing and the run reported a budget that still contained the files
+  the caller believed they had removed. The help text now states the semantics.
+
+Verified on Node 20.11 and 24, and against the 1,029-file corpus with
+measurements unchanged.
+
+## v0.1.0 — 2026-08-16
+
+Research project. Apache-2.0. Provided as is, without warranties or conditions
+of any kind; see the Disclaimer in README.md.
+
+First release, published to npm as `skillassay`. Install with `npx skillassay .`.
+
+### Agent Skills specification conformance, and usability as a skill
 
 - **`SPEC-*` rules** validate against the published specification: `name`
   format (1–64 chars, lowercase alphanumeric, single hyphens, matching the
@@ -25,14 +57,9 @@ Agent Skills specification conformance, and usability as a skill.
   published 500-line / 5,000-token recommendation rather than an
   ecosystem percentile.
 
-## v0.1.0 — 2026-08-16
+### Scope
 
-Research project. Apache-2.0. Provided as is, without warranties or conditions
-of any kind; see the Disclaimer in README.md.
-
-First release, published to npm as `skillassay`. Install with `npx skillassay .`.
-
- Tier 0 budget attribution, redundancy and path rules,
+Tier 0 budget attribution, redundancy and path rules,
 duplicate-name detection, conflict detection and opt-in MCP probing are
 implemented and measured. Trigger-overlap detection exists but is opt-in and
 not good enough. Empirical mode does not exist.

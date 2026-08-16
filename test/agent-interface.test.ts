@@ -149,6 +149,135 @@ describe('a single SKILL.md is a valid target', () => {
   }, 30_000);
 });
 
+describe('an exclusion that skipped nothing is reported', () => {
+  /*
+   * `--exclude` compares literal repository-relative prefixes. A caller who
+   * passes a glob, or a bare directory name, gets a run that succeeds with the
+   * supposedly-excluded files still in the budget. Nothing about the output
+   * reveals it, which is what makes silence the wrong behaviour here.
+   */
+  it('warns on stderr and leaves stdout machine-readable', () => {
+    const root = tempRepo({ 'ex-skill': 'name: ex-skill\ndescription: Does it. Use when asked.' });
+    try {
+      const cli = path.join(ROOT, 'src', 'cli.ts');
+      let stdout = '';
+      let stderr = '';
+      try {
+        stdout = execFileSync(
+          'node',
+          ['--import', 'tsx', cli, root, '--json', '--no-global', '--exclude', '**/ex-skill/**'],
+          { cwd: ROOT, encoding: 'utf8', stdio: 'pipe' },
+        );
+      } catch (error) {
+        const err = error as { stdout?: string; stderr?: string };
+        stdout = String(err.stdout ?? '');
+        stderr = String(err.stderr ?? '');
+      }
+      // stderr is only populated on the throwing path; re-read it either way by
+      // asserting on the combined stream the caller would see.
+      const combined = stderr;
+      expect(() => JSON.parse(stdout)).not.toThrow();
+      expect(combined + stdout).not.toContain('"warning');
+
+      // The warning itself, captured deliberately.
+      const proc = execFileSync(
+        'sh',
+        [
+          '-c',
+          `node --import tsx ${JSON.stringify(cli)} ${JSON.stringify(root)} --json --no-global --exclude '**/ex-skill/**' 2>&1 >/dev/null`,
+        ],
+        { cwd: ROOT, encoding: 'utf8', stdio: 'pipe' },
+      );
+      expect(proc).toContain('matched nothing');
+      expect(proc).toContain('not globs');
+    } finally {
+      fs.rmSync(root, { recursive: true, force: true });
+    }
+  }, 60_000);
+
+  it('stays silent when the exclusion actually matches', () => {
+    const root = tempRepo({ 'ex-skill': 'name: ex-skill\ndescription: Does it. Use when asked.' });
+    try {
+      const cli = path.join(ROOT, 'src', 'cli.ts');
+      const proc = execFileSync(
+        'sh',
+        [
+          '-c',
+          `node --import tsx ${JSON.stringify(cli)} ${JSON.stringify(root)} --json --no-global --exclude '.claude/skills/ex-skill' 2>&1 >/dev/null`,
+        ],
+        { cwd: ROOT, encoding: 'utf8', stdio: 'pipe' },
+      );
+      expect(proc).not.toContain('matched nothing');
+    } finally {
+      fs.rmSync(root, { recursive: true, force: true });
+    }
+  }, 60_000);
+});
+
+describe('stdout survives being piped', () => {
+  /*
+   * An agent does not read a terminal; it reads a pipe, usually through `jq` or
+   * a captured buffer. Node's stdout is asynchronous when it is not a TTY, so a
+   * `process.exit()` immediately after writing discards whatever is still in the
+   * buffer past the operating system's 64 KiB pipe capacity.
+   *
+   * That failure is invisible in every convenient way of checking: redirecting
+   * to a file works, small repositories work, and `assay --json | wc -c` often
+   * works because `wc` drains fast enough to keep up. It only breaks on a real
+   * repository consumed by a real reader, and it breaks by producing JSON that
+   * is a prefix of the truth rather than an error. So the test uses a shell
+   * pipeline with a slow-to-schedule reader, and asserts on parseability.
+   */
+  function bigRepo(): string {
+    const skills: Record<string, string> = {};
+    for (let i = 0; i < 40; i++) {
+      skills[`dir${i}`] = `name: Bad_Name_${i}\ndescription: Does it. Use when asked.`;
+    }
+    return tempRepo(skills);
+  }
+
+  it('does not truncate a report larger than the pipe buffer', () => {
+    const root = bigRepo();
+    try {
+      const cli = path.join(ROOT, 'src', 'cli.ts');
+      // `| cat` is the reader: an extra process hop is enough to expose the
+      // race that a directly-attached consumer can hide.
+      const piped = execFileSync(
+        'sh',
+        ['-c', `node --import tsx ${JSON.stringify(cli)} ${JSON.stringify(root)} --json --no-global | cat`],
+        { cwd: ROOT, encoding: 'utf8', stdio: 'pipe', maxBuffer: 64 * 1024 * 1024 },
+      );
+
+      expect(piped.length).toBeGreaterThan(65_536);
+      const payload = JSON.parse(piped) as { findings: unknown[] };
+      expect(payload.findings.length).toBeGreaterThanOrEqual(40);
+    } finally {
+      fs.rmSync(root, { recursive: true, force: true });
+    }
+  }, 60_000);
+
+  it('exits quietly when the reader closes early', () => {
+    const root = bigRepo();
+    try {
+      const cli = path.join(ROOT, 'src', 'cli.ts');
+      // `head -1` closes the pipe after one line, which raises EPIPE on the
+      // writer. That is a normal end to the conversation, not a crash.
+      const out = execFileSync(
+        'sh',
+        [
+          '-c',
+          `node --import tsx ${JSON.stringify(cli)} ${JSON.stringify(root)} --json --no-global 2>&1 | head -1`,
+        ],
+        { cwd: ROOT, encoding: 'utf8', stdio: 'pipe' },
+      );
+      expect(out).not.toContain('EPIPE');
+      expect(out).not.toContain('Error');
+    } finally {
+      fs.rmSync(root, { recursive: true, force: true });
+    }
+  }, 60_000);
+});
+
 describe('output stays bounded without hiding anything', () => {
   function manyFindings(): string {
     const skills: Record<string, string> = {};

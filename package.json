@@ -1,6 +1,6 @@
 {
   "name": "skillassay",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Static analyzer for AI coding-agent context: measures always-on context-window cost of CLAUDE.md, AGENTS.md and Agent Skills, finds redundant and stale instructions, duplicate skill names and instruction conflicts. Research project.",
   "keywords": [
     "claude",
@@ -54,7 +54,7 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
-    "prepublishOnly": "npm run build",
+    "prepack": "npm run build",
     "dev": "tsx src/cli.ts",
     "test": "vitest run",
     "test:watch": "vitest",

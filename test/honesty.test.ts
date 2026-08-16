@@ -137,3 +137,34 @@ describe('version consistency', () => {
     expect(json).toContain(`export const VERSION = '${pkg.version}'`);
   });
 });
+
+describe('the package always carries a compiled CLI', () => {
+  /*
+   * `dist/` is generated, so it is not in the repository, and the published
+   * package is unusable without it — `npx skillassay` resolves a bin that is
+   * not there.
+   *
+   * The build must therefore run on `prepack`, not `prepublishOnly`. The two
+   * differ in exactly one case that matters: `npm pack` runs `prepack` and skips
+   * `prepublishOnly`, so a tarball built for review, for CI, or to hand to
+   * someone to publish came out with the sources and no CLI. That happened, and
+   * the tarball looked ordinary — 6 files instead of 60, with no error.
+   */
+  const pkg = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8')) as {
+    files?: string[];
+    bin?: Record<string, string>;
+    scripts?: Record<string, string>;
+  };
+
+  it('builds on prepack, so `npm pack` and `npm publish` agree', () => {
+    expect(pkg.scripts?.['prepack']).toBe('npm run build');
+  });
+
+  it('includes every path the bin entries point into', () => {
+    const files = pkg.files ?? [];
+    for (const target of Object.values(pkg.bin ?? {})) {
+      const top = target.replace(/^\.\//, '').split('/')[0];
+      expect(files).toContain(top);
+    }
+  });
+});

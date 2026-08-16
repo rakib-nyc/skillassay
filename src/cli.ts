@@ -29,6 +29,40 @@ import { probeAll } from './mcp/probe.js';
 import { countTokens } from './tokenize/index.js';
 import type { McpMeasurement, Severity } from './types.js';
 
+/*
+ * A reader that closes early — `assay --json | head -1`, or an agent that stops
+ * consuming once it has what it needs — makes stdout raise EPIPE. That is a
+ * normal end to the conversation, not a failure of the analysis, so it exits
+ * quietly instead of printing a stack trace over the caller's output.
+ */
+process.stdout.on('error', (error: NodeJS.ErrnoException) => {
+  if (error.code === 'EPIPE') process.exit(0);
+  throw error;
+});
+
+/**
+ * Write to stdout and wait for the bytes to actually leave the process.
+ *
+ * When stdout is a pipe rather than a TTY, Node writes asynchronously, and
+ * `process.exit()` does not flush what is still buffered. Anything past the
+ * 64 KiB pipe buffer is discarded, silently: a report of a few dozen skills
+ * crosses that line, so `assay --json | jq` would receive a truncated document
+ * and fail to parse it, while `assay --json > file.json` on the same repository
+ * would be complete. Waiting for the write callback is what makes the output
+ * safe to pipe, which is how every agent consumes it.
+ */
+async function emit(text: string): Promise<void> {
+  await new Promise<void>((resolve) => {
+    process.stdout.write(text, () => resolve());
+  });
+}
+
+/** Flush stdout, then exit with `code`. */
+async function emitAndExit(text: string, code: number): Promise<never> {
+  await emit(text);
+  process.exit(code);
+}
+
 /**
  * CLI.
  *
@@ -69,7 +103,7 @@ program
     '--experimental-ambiguity',
     'enable trigger-overlap detection (measured 62% precision — off by default)',
   )
-  .option('--exclude <path...>', 'relative paths to skip')
+  .option('--exclude <path...>', 'repository-relative paths to skip (literal prefixes, not globs)')
   .option('--fail-on <severity>', 'exit 1 at or above this severity: error | warn | info | never', 'warn')
   .option(
     '--top <n>',
@@ -91,8 +125,7 @@ program
   .action(async (targetPath: string, options: Record<string, unknown>) => {
     // --explain does not need a filesystem scan.
     if (typeof options['explain'] === 'string') {
-      process.stdout.write(explain(options['explain']));
-      process.exit(0);
+      await emitAndExit(explain(options['explain']), 0);
     }
 
     /*
@@ -113,12 +146,12 @@ program
 
     if (options['registry'] === true) {
       const audit = auditRegistry(root, options['target'] as string | undefined);
-      if (options['json'] === true) {
-        process.stdout.write(`${JSON.stringify(audit, null, 2)}\n`);
-      } else {
-        process.stdout.write(renderRegistryMarkdown(audit));
-      }
-      process.exit(0);
+      await emitAndExit(
+        options['json'] === true
+          ? `${JSON.stringify(audit, null, 2)}\n`
+          : renderRegistryMarkdown(audit),
+        0,
+      );
     }
 
     /*
@@ -149,9 +182,21 @@ program
       ...(Array.isArray(excludeOption) ? { exclude: excludeOption as string[] } : {}),
     });
 
+    /*
+     * An exclusion that matched nothing goes to stderr, so it reaches a person
+     * without corrupting `--json` or a `--fix` patch on stdout. The common cause
+     * is glob syntax: `--exclude` compares repository-relative path prefixes
+     * literally, and `**` is not special to it.
+     */
+    for (const fragment of result.unmatchedExcludes) {
+      const hint = /[*?[\]]/.test(fragment)
+        ? ' — --exclude takes repository-relative paths, not globs'
+        : '';
+      process.stderr.write(`warning: --exclude ${fragment} matched nothing${hint}\n`);
+    }
+
     if (options['fix'] === true) {
-      process.stdout.write(generatePatch(result));
-      process.exit(0);
+      await emitAndExit(generatePatch(result), 0);
     }
 
     const json = renderJson(result);
@@ -164,23 +209,22 @@ program
     if (typeof options['compare'] === 'string') {
       const baselineJson = fs.readFileSync(options['compare'], 'utf8');
       const comparison = compareToBaseline(result, baselineJson);
-      process.stdout.write(renderComparison(comparison));
-      process.exit(comparison.newFindings.length > 0 ? 1 : 0);
+      await emitAndExit(renderComparison(comparison), comparison.newFindings.length > 0 ? 1 : 0);
     }
 
-    if (options['json'] === true) {
-      process.stdout.write(`${json}\n`);
-    } else {
-      process.stdout.write(
-        `${renderTerminal(result, {
-          color: options['color'] !== false && process.stdout.isTTY === true,
-          verbose: options['verbose'] === true,
-          ...(typeof options['top'] === 'string' ? { top: Number(options['top']) } : {}),
-        })}\n`,
-      );
-    }
+    const report =
+      options['json'] === true
+        ? `${json}\n`
+        : `${renderTerminal(result, {
+            color: options['color'] !== false && process.stdout.isTTY === true,
+            verbose: options['verbose'] === true,
+            ...(typeof options['top'] === 'string' ? { top: Number(options['top']) } : {}),
+          })}\n`;
 
-    process.exit(exitCode(result.findings.map((f) => f.severity), options['failOn'] as string));
+    await emitAndExit(
+      report,
+      exitCode(result.findings.map((f) => f.severity), options['failOn'] as string),
+    );
   });
 
 /**
