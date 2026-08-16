@@ -1092,7 +1092,7 @@
       "b": {
         "name": "golang-observability",
         "path": "samber_cc-skills-golang/skills/golang-observability/SKILL.md",
-        "trigger": "when instrumenting Go services for production monitoring, setting up metrics or alerting, adding OpenTelemetry tracing, correlating logs with traces, migrating legacy loggers (zap/logrus/zerolog) to slog, adding observability to new features, or implementing GDPR/CCPA-compliant tracking with Customer Data Platforms (CDP). Not for temporary deep-dive performance investigation (→ See `a real repository@golang-benchmark` and `a real repository@golang-performance` skills)."
+        "trigger": "when instrumenting Go services for production monitoring, setting up metrics or alerting, adding OpenTelemetry tracing, correlating logs with traces, migrating legacy loggers (zap/logrus/zerolog) to slog, adding observability to new features, or implementing GDPR/CCPA-compliant tracking with Customer Data Platforms (CDP). Not for temporary deep-dive performance investigation (→ See `samber/cc-skills-golang@golang-benchmark` and `samber/cc-skills-golang@golang-performance` skills)."
       },
       "label": "distinct",
       "rationale": "general monitoring vs Go-specific instrumentation"
@@ -1194,7 +1194,7 @@
       "b": {
         "name": "golang-testing",
         "path": "samber_cc-skills-golang/skills/golang-testing/SKILL.md",
-        "trigger": "when writing or reviewing Go tests, choosing a testing approach, setting up Go test CI, or debugging flaky/slow tests. For testify-specific APIs see `a real repository@golang-stretchr-testify`; for measurement methodology see `a real repository@golang-benchmark`."
+        "trigger": "when writing or reviewing Go tests, choosing a testing approach, setting up Go test CI, or debugging flaky/slow tests. For testify-specific APIs see `samber/cc-skills-golang@golang-stretchr-testify`; for measurement methodology see `samber/cc-skills-golang@golang-benchmark`."
       },
       "label": "distinct",
       "rationale": "Playwright browser tests vs Go unit tests"
@@ -2005,12 +2005,12 @@
       "a": {
         "name": "golang-spf13-cobra",
         "path": "samber_cc-skills-golang/skills/golang-spf13-cobra/SKILL.md",
-        "trigger": "when using or adopting spf13/cobra, or when the codebase imports `github.com/spf13/cobra`. For configuration layering alongside cobra, see the `a real repository@golang-spf13-viper` skill. For general CLI architecture (project layout, exit codes, signal handling, I/O patterns), see `a real repository@golang-cli`."
+        "trigger": "when using or adopting spf13/cobra, or when the codebase imports `github.com/spf13/cobra`. For configuration layering alongside cobra, see the `samber/cc-skills-golang@golang-spf13-viper` skill. For general CLI architecture (project layout, exit codes, signal handling, I/O patterns), see `samber/cc-skills-golang@golang-cli`."
       },
       "b": {
         "name": "golang-spf13-viper",
         "path": "samber_cc-skills-golang/skills/golang-spf13-viper/SKILL.md",
-        "trigger": "when using or adopting spf13/viper, or when the codebase imports `github.com/spf13/viper`. For CLI command structure alongside viper, see the `a real repository@golang-spf13-cobra` skill. For general CLI architecture, see `a real repository@golang-cli`."
+        "trigger": "when using or adopting spf13/viper, or when the codebase imports `github.com/spf13/viper`. For CLI command structure alongside viper, see the `samber/cc-skills-golang@golang-spf13-cobra` skill. For general CLI architecture, see `samber/cc-skills-golang@golang-cli`."
       },
       "label": "distinct",
       "rationale": "different libraries: spf13/cobra vs spf13/viper"
@@ -2022,12 +2022,12 @@
       "a": {
         "name": "golang-uber-dig",
         "path": "samber_cc-skills-golang/skills/golang-uber-dig/SKILL.md",
-        "trigger": "when using or adopting uber-go/dig, when the codebase imports `go.uber.org/dig`, or when wiring an application graph at startup. For higher-level lifecycle and modules, see `a real repository@golang-uber-fx` skill."
+        "trigger": "when using or adopting uber-go/dig, when the codebase imports `go.uber.org/dig`, or when wiring an application graph at startup. For higher-level lifecycle and modules, see `samber/cc-skills-golang@golang-uber-fx` skill."
       },
       "b": {
         "name": "golang-uber-fx",
         "path": "samber_cc-skills-golang/skills/golang-uber-fx/SKILL.md",
-        "trigger": "when using or adopting uber-go/fx, when the codebase imports `go.uber.org/fx`, or when wiring services with fx.New. For raw DI without lifecycle, see `a real repository@golang-uber-dig` skill."
+        "trigger": "when using or adopting uber-go/fx, when the codebase imports `go.uber.org/fx`, or when wiring services with fx.New. For raw DI without lifecycle, see `samber/cc-skills-golang@golang-uber-dig` skill."
       },
       "label": "distinct",
       "rationale": "different libraries: uber-go/dig vs uber-go/fx"

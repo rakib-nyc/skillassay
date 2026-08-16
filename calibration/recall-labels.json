@@ -1260,7 +1260,7 @@
       "repo": "samber_cc-skills-golang",
       "file": "CLAUDE.md",
       "line": 344,
-      "text": "- **`a real repository@golang-troubleshooting`** - debugging workflow, root cause finding, pprof setup/capture, Delve, GODEBUG",
+      "text": "- **`samber/cc-skills-golang@golang-troubleshooting`** - debugging workflow, root cause finding, pprof setup/capture, Delve, GODEBUG",
       "label": "legitimate",
       "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
     },
@@ -1269,7 +1269,7 @@
       "repo": "samber_cc-skills-golang",
       "file": "CLAUDE.md",
       "line": 378,
-      "text": "**Inline:** see the `a real repository@golang-database` skill. **Arrow-prefixed lists:** \"\u2192 See `a real repository@golang-database` skill for \u2026\"",
+      "text": "**Inline:** see the `samber/cc-skills-golang@golang-database` skill. **Arrow-prefixed lists:** \"\u2192 See `samber/cc-skills-golang@golang-database` skill for \u2026\"",
       "label": "legitimate",
       "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
     },
@@ -1332,7 +1332,7 @@
       "repo": "samber_cc-skills-golang",
       "file": "CLAUDE.md",
       "line": 593,
-      "text": "2. Verify the description against quality criteria: contains \"Golang\", has \"Use when\"/\"Apply when\" trigger clause with specific scenarios, no broad anti-patterns (`whenever writing Go code`, `Essential for ANY`, `proactively`), FQN cross-refs for competing skills (`a real repository@<skill>`), library skills use `Apply when the codebase imports github.com/...` pattern. Description must stay \u2264 1,000 characters.",
+      "text": "2. Verify the description against quality criteria: contains \"Golang\", has \"Use when\"/\"Apply when\" trigger clause with specific scenarios, no broad anti-patterns (`whenever writing Go code`, `Essential for ANY`, `proactively`), FQN cross-refs for competing skills (`samber/cc-skills-golang@<skill>`), library skills use `Apply when the codebase imports github.com/...` pattern. Description must stay \u2264 1,000 characters.",
       "label": "legitimate",
       "rationale": "Project-specific instruction, prose, or heading that is not rediscoverable from the tree, a manifest, or a linter."
     },

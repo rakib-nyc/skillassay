@@ -59,7 +59,7 @@ not fixable without executing the project.
 
 **Non-English descriptions — 4 findings, `AMB-NO-TRIGGER`.**
 Descriptions written in Chinese. At least one
-(`a real repository` → `kb-retriever`) ends with
+(`ConardLi/garden-skills` → `kb-retriever`) ends with
 `用户问题涉及"从知识库目录回答问题/检索信息/查资料"时使用。` — literally "use when the
 user's question involves …", a perfectly good trigger clause the detector cannot
 read. Trigger detection is English-only and there is no plan to change that, so
@@ -95,7 +95,7 @@ repositories:
 | Templates read as directory listings | Proposed deleting required-layout specifications |
 | Paths never checked against disk | Could not tell a real directory from `{skill-name}/` |
 | Harness assumed to be Claude Code | A Codex repo reported 0 always-on tokens *and* 17 findings about the file it had excluded; the projection read `−Infinity%` |
-| Task-to-file checklists read as directory listings | `--fix` proposed deleting a real repository "when adding a partner, update these files" section |
+| Task-to-file checklists read as directory listings | `--fix` proposed deleting langchain's "when adding a partner, update these files" section |
 | `<\|endoftext\|>` in any file | Hard crash with a stack trace |
 
 ## What this number is not
