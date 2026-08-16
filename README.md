@@ -1,10 +1,16 @@
 # skillassay — measure what your AI coding agent loads before you type
 
-**A static analyzer for AI coding-agent context.** It measures the always-on
-context-window cost of `CLAUDE.md`, `AGENTS.md`, `GEMINI.md` and Agent Skills,
-then reports redundant instructions, stale path references, duplicate skill
-names and instruction conflicts — with a citation and a token count on every
-finding.
+**A static analyzer for AI coding-agent context, and an Agent Skill your agent
+can run itself.** It measures the always-on context-window cost of `CLAUDE.md`,
+`AGENTS.md`, `GEMINI.md` and Agent Skills, then reports skills that will not
+load, redundant instructions, stale path references, duplicate skill names and
+instruction conflicts — with a citation and a token count on every finding.
+
+Use it two ways:
+
+- **As a CLI** — `npx skillassay .`
+- **As an Agent Skill** — drop it into `.agents/skills/` and ask your agent to
+  audit the repo in plain language. It costs **98 always-on tokens**.
 
 Works with **Claude Code**, **Codex**, **Cursor** and **Gemini CLI**. Runs
 offline. No API key.
@@ -26,7 +32,7 @@ No install, no API key, no config. Requires Node.js ≥ 20.11.
 [![npm](https://img.shields.io/npm/v/skillassay)](https://www.npmjs.com/package/skillassay)
 [![license](https://img.shields.io/npm/l/skillassay)](LICENSE)
 
-## Use it as a skill
+## Install as an Agent Skill
 
 The package ships an Agent Skill in `.agents/skills/skillassay/` — the
 cross-client location that **Claude Code, Codex and Gemini CLI all read**, so one
@@ -38,13 +44,25 @@ mkdir -p .agents/skills
 cp -r node_modules/skillassay/.agents/skills/skillassay .agents/skills/
 ```
 
+Then just ask, in whichever agent you use:
+
+> *"Audit this repo's context cost."*
+> *"Will my new skill actually load?"*
+> *"What's in my always-on context and what can I delete?"*
+
+If you would rather scope it to one client, the same directory works under
+`.claude/skills/`, `.codex/skills/` or `.gemini/skills/`. `.agents/skills/` is
+preferred because it is read by all of them.
+
 It costs **98 always-on tokens** and passes its own audit with zero findings —
 asserted by a test, because a linter for skill authors that ships a
 non-conformant skill has refuted itself.
 
 The skill is deliberately thin: it invokes the CLI and interprets the result.
 All analysis stays in the deterministic binary, so adding the skill does not
-turn the tool into the non-deterministic thing it was built to replace.
+turn the tool into the non-deterministic thing it was built to replace. It
+instructs the agent never to estimate a token count — every number it reports
+comes from the CLI.
 
 ## What problem this measures
 
@@ -204,6 +222,10 @@ Precise, because "multi-harness" is the easiest claim to overstate:
 | **Codex** | `AGENTS.md`, nested chains | `.codex/skills/**` | `~/.codex/AGENTS.md` | — |
 | **Gemini CLI** | `GEMINI.md`, nested chains | `.gemini/skills/**` | `~/.gemini/GEMINI.md` | — |
 | **Cursor** | `.cursorrules`, `.cursor/rules/*.mdc` | `.cursor/skills/**` | not file-based | — |
+
+`.agents/skills/**` is counted for **every** harness above. It is the
+cross-client location from the Agent Skills specification's implementation
+guide, and it is where this package's own skill installs.
 
 The harness is detected from the repository; `--harness` overrides.
 

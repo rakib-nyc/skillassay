@@ -1,6 +1,7 @@
 node_modules/
 dist/
 corpus/
+release/
 *.tsbuildinfo
 .DS_Store
 .npm-cache/
