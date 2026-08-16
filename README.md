@@ -18,18 +18,13 @@ offline. No API key.
 ## Install
 
 ```bash
-npx skillassay .                  # once published to npm
+npx skillassay .
 ```
 
-Until the package is published, from source:
+No install, no API key, no config. Requires Node.js ≥ 20.11.
 
-```bash
-git clone https://github.com/rakib-nyc/skillassay && cd skillassay
-npm install && npm run build
-node dist/cli.js /path/to/your/repo
-```
-
-Requires Node.js ≥ 20.11.
+[![npm](https://img.shields.io/npm/v/skillassay)](https://www.npmjs.com/package/skillassay)
+[![license](https://img.shields.io/npm/l/skillassay)](LICENSE)
 
 ## Use it as a skill
 
@@ -38,6 +33,7 @@ cross-client location that **Claude Code, Codex and Gemini CLI all read**, so on
 file serves every harness:
 
 ```bash
+npm i -D skillassay
 mkdir -p .agents/skills
 cp -r node_modules/skillassay/.agents/skills/skillassay .agents/skills/
 ```

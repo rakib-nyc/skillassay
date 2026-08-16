@@ -30,8 +30,7 @@ Agent Skills specification conformance, and usability as a skill.
 Research project. Apache-2.0. Provided as is, without warranties or conditions
 of any kind; see the Disclaimer in README.md.
 
-First release. **Source install only — not yet published to npm**, so `npx
-skillassay` does not work; see the README for the clone-and-build command.
+First release, published to npm as `skillassay`. Install with `npx skillassay .`.
 
  Tier 0 budget attribution, redundancy and path rules,
 duplicate-name detection, conflict detection and opt-in MCP probing are
