@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.1.2 — 2026-08-16
+
+No functional change. The registry serves a package's README, description and
+keywords from its published tarball, so presentation changes need a version to
+travel — this is that version.
+
+- The README leads with both ways the tool is used — the CLI and the installable
+  Agent Skill — rather than treating the skill as a footnote, and states the
+  per-client install locations.
+- `.agents/skills/**` is documented as counted for every harness in the support
+  table, which is where readers look for it.
+- Keywords cover skill-authoring intent (`agent-skill`, `claude-skills`,
+  `skill`); the package description names the skill and the four harnesses.
+- Packed tarballs are excluded from the published repository. npm hosts them,
+  and `release/skillassay-0.1.0.tgz` had already been committed.
+
 ## v0.1.1 — 2026-08-16
 
 Fixes.1.0 binary against 54 adversarial

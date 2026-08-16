@@ -104,4 +104,4 @@ export function renderJson(result: AnalysisResult): string {
 }
 
 /** Kept in sync with package.json by test/meta.test.ts. */
-export const VERSION = '0.1.1';
+export const VERSION = '0.1.2';
